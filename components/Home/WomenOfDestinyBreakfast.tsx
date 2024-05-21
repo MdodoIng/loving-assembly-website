@@ -6,25 +6,23 @@ import mainImage from "@/assets/images/Home/Women Of Destiny Breakfast main.webp
 
 import Image from "next/image";
 
-const WomenOfDestinyBreakfast = () => {
+const WomenOfDestinyBreakfast = ({ data }: { data: HomePageType }) => {
   return (
     <SectionWrapper classBottom={`${main_padding.y} items-center flex-col`}>
       <HeadTitle className="text-center max-w-[900px]">
-        Women Of Destiny Breakfast
+        {data.page.acf.fifthSection.sectionTitle}
       </HeadTitle>
       <HeadSubtitle className="sm:mt-4 mt-2 text-center max-w-[900px] text-black">
-        A gathering where women unite to find strength, wisdom, and
-        encouragement as they explore their unique paths and divine purposes
-        through uplifting fellowship, inspiring stories, and spiritual
-        nourishment.
+      {data.page.acf.fifthSection.sectionDescription}
       </HeadSubtitle>
       <Image
-        src={mainImage}
+        src={data.page.acf.fifthSection.sectionImage.sourceUrl}
         alt=""
         data-aos="fade-up"
         data-aos-duration="700"
         loading="lazy"
-        placeholder="blur"
+        width={data.page.acf.fifthSection.sectionImage.mediaDetails.width}
+        height={data.page.acf.fifthSection.sectionImage.mediaDetails.height}
         className="w-full rounded-[10px] ld:mt-16 md:mt-14 sm:mt-12 mt-6 lg:aspect-[16/7] aspect-video object-cover"
       />
     </SectionWrapper>

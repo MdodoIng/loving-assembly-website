@@ -4,17 +4,19 @@ import React from "react";
 import bg from "@/assets/images/our programmes/Kids Of Excellence bg.webp";
 import Events from "@/components/contact-us/kids-of-excellence/Events";
 import Guiding from "@/components/contact-us/kids-of-excellence/Guiding";
+import { getPageContent } from "@/libs/contents/wordpress/data";
 
-const page = () => {
+const page = async () => {
+  const data: KidsOfExcellenceType = await getPageContent("kids-of-excellence");
   return (
     <Layout>
       <HeroSection
-        heroSectionImage={bg}
+        heroSectionImage={data.page.acf.bannerImage.sourceUrl}
         title="Kids Of Excellence"
-        subtitle="Empowering the Next Generation through Unwavering Faith, Virtuous Character, and Divine Purpose: Raising Our Kids of Excellence as Beacons of Spiritual Fortitude."
+        subtitle=""
       />
-      <Guiding />
-      <Events />
+      <Guiding data={data} />
+      <Events  data={data}/>
     </Layout>
   );
 };

@@ -3,7 +3,7 @@ const data = `{
       id
       title
       slug
-      acf {
+      acf : acfHome {
         bannerSection {
           bannerImage {
             sourceUrl
@@ -19,27 +19,36 @@ const data = `{
           button2Link
           button2Text
           description
-          fieldGroupName
           title
         }
-        fifthSection {
-          fieldGroupName
-        }
+        
         secondSectionChurch {
           button1Link
           button1Text
           button2Link
           button2Text
           description
-          fieldGroupName
           title
+          sectionImage {
+            sourceUrl
+            mediaDetails {
+              width
+              height
+            }
+          }
         }
         thirdSectionWho {
           buttonLink
           buttonText
           description
-          fieldGroupName
           title
+          sectionImage{
+            sourceUrl
+            mediaDetails {
+              width
+              height
+            }
+          }
         }
         fourthSection {
           fieldGroupName
@@ -47,12 +56,43 @@ const data = `{
           sectionTitle
         }
         fifthSection {
-          fieldGroupName
+          sectionTitle
+          sectionDescription
+          sectionTitleTwo
+          sectionDescriptionTwo
+          sectionImage{
+            sourceUrl
+            mediaDetails {
+              width
+              height
+            }
+          }
+          posts {
+            title
+            description
+            image {
+              sourceUrl
+              mediaDetails {
+               height
+               width
+               }
+              }
+           }
         }
         sixthSection {
           description
-          fieldGroupName
           title
+          boxSection {
+            title
+            description
+            image {
+              sourceUrl
+              mediaDetails {
+               height
+               width
+               }
+            }
+          }
         }
         seventhSectionJoinus {
           description

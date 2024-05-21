@@ -21,20 +21,16 @@ import Image from "next/image";
 
 import arrow from "@/assets/icons/swiper arrow btn.svg";
 
-const Guiding = () => {
+const Guiding = ({ data }: { data: KidsOfExcellenceType }) => {
   const navigationPrevRef = useRef(null);
   const navigationNextRef = useRef(null);
   return (
     <SectionWrapper classBottom={`${main_padding.y} flex-col items-center`}>
       <HeadTitle className="text-center max-w-[800px]">
-        Guiding &apos;Our Kids Of Excellence&apos;
+        {data.page.acf.firstSection.title}
       </HeadTitle>
       <HeadSubtitle className="sm:mt-4 mt-2 text-center max-w-[900px] text-black">
-        These young souls are not merely the future of our communities; they are
-        vessels of immense potential, entrusted to us by the Almighty Himself.
-        Through purposeful guidance and a steadfast commitment to instilling the
-        values of faith, character, and purpose, we embark on a sacred journey,
-        shaping their spiritual foundations for a lifetime.
+        {data.page.acf.firstSection.description}
       </HeadSubtitle>
       <div className=" lg:mt-16 md:mt-14 mt-6 w-full  sm:py-10">
         <Swiper
@@ -47,13 +43,13 @@ const Guiding = () => {
             el: "#paginationSwiper",
           }}
           loop
-          // autoplay={{
-          //   delay: 2500,
-          // }}
+          autoplay={{
+            delay: 2500,
+          }}
           navigation={{
             enabled: true,
-            prevEl: navigationPrevRef.current,
-            nextEl: navigationNextRef.current,
+            // prevEl: navigationPrevRef.current,
+            // nextEl: navigationNextRef.current,
           }}
           onInit={(swiper) => {
             // @ts-ignore
@@ -66,20 +62,20 @@ const Guiding = () => {
           modules={[Pagination, Navigation, Autoplay]}
           className="mySwiper"
         >
-          {images.map(
-            (item: { default: any }, idx: React.Key | null | undefined) => (
-              <SwiperSlide
-                key={idx}
-                className="!w-[80%] rounded-[10px] overflow-hidden bg-primary max-md:aspect-square"
-              >
-                <Image
-                  src={item.default}
-                  alt=""
-                  className="w-full h-full object-cover "
-                />
-              </SwiperSlide>
-            )
-          )}
+          {data.page.acf.firstSection.gallery.map((item, idx) => (
+            <SwiperSlide
+              key={idx}
+              className="!w-[80%] rounded-[10px] overflow-hidden bg-primary max-md:aspect-square"
+            >
+              <Image
+                src={item.sourceUrl}
+                alt=""
+                width={item.mediaDetails.width}
+                height={item.mediaDetails.height}
+                className="w-full h-full object-cover "
+              />
+            </SwiperSlide>
+          ))}
         </Swiper>
 
         <div className="flex items-center justify-between gap-3 mt-3">

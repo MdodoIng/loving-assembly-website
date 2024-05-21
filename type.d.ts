@@ -19,11 +19,31 @@ interface HomePageType {
         button2Link?: string;
         button2Text?: string;
         description?: string;
-        fieldGroupName: string;
         title?: string;
       };
       fifthSection: {
-        fieldGroupName: string;
+        sectionTitle: string;
+        sectionDescription: string;
+        sectionTitleTwo: string;
+        sectionDescriptionTwo: string;
+        sectionImage: {
+          sourceUrl: string;
+          mediaDetails: {
+            width: number;
+            height: number;
+          };
+        };
+        posts: Array<{
+          title: string;
+          image: {
+            sourceUrl: string;
+            mediaDetails: {
+              height: number;
+              width: number;
+            };
+          };
+          description: string;
+        }>;
       };
       secondSectionChurch: {
         button1Link?: string;
@@ -31,15 +51,27 @@ interface HomePageType {
         button2Link?: string;
         button2Text?: string;
         description?: string;
-        fieldGroupName: string;
         title?: string;
+        sectionImage: {
+          sourceUrl: string;
+          mediaDetails: {
+            width: number;
+            height: number;
+          };
+        };
       };
       thirdSectionWho: {
         buttonLink?: string;
         buttonText?: string;
         description?: string;
-        fieldGroupName: string;
         title?: string;
+        sectionImage: {
+          sourceUrl: string;
+          mediaDetails: {
+            width: number;
+            height: number;
+          };
+        };
       };
       fourthSection: {
         fieldGroupName: string;
@@ -48,13 +80,22 @@ interface HomePageType {
       };
       sixthSection: {
         description: any;
-        fieldGroupName: string;
         title: any;
+        boxSection: {
+          title: string;
+          description: string;
+          image: {
+            sourceUrl: string;
+            mediaDetails: {
+              height: number;
+              width: number;
+            };
+          };
+        }[];
       };
       seventhSectionJoinus: {
         description: any;
         facebookLink: any;
-        fieldGroupName: string;
         instaLink: any;
         title: any;
       };
@@ -63,6 +104,126 @@ interface HomePageType {
         fieldGroupName: string;
         title: any;
       };
+    };
+  };
+}
+
+interface KidsOfExcellenceType {
+  page: {
+    title: string;
+    slug: string;
+    acf: {
+      bannerImage: {
+        sourceUrl: string;
+        mediaDetails: {
+          height: number;
+          width: number;
+        };
+      };
+      firstSection: {
+        title: string;
+        description: string;
+        gallery: Array<{
+          sourceUrl: string;
+          mediaDetails: {
+            height: number;
+            width: number;
+          };
+        }>;
+      };
+      secondSection: {
+        programmes: Array<{
+          title: string;
+          description: string;
+          image: {
+            sourceUrl: string;
+            mediaDetails: {
+              height: number;
+              width: number;
+            };
+          };
+        }>;
+      };
+    };
+  };
+}
+
+interface ManOfValourType {
+  page: {
+    title: string;
+    slug: string;
+    acf: {
+      bannerImage: {
+        sourceUrl: string;
+        mediaDetails: {
+          width: number;
+          height: number;
+        };
+      };
+      firstSection: {
+        title: string;
+        description: string;
+        content: string;
+      };
+      secondSection: {
+        logo: {
+          sourceUrl: string;
+          mediaDetails: {
+            width: number;
+            height: number;
+          };
+        };
+        content: string;
+        buttonText: string;
+        buttonLink: string;
+      };
+      thirdSection: {
+        boxes: {
+          title: string;
+          icon: {
+            sourceUrl: string;
+            mediaDetails: {
+              width: number;
+              height: number;
+            };
+          };
+          description: string;
+        }[];
+      };
+    };
+  };
+}
+
+interface MinistriesType {
+  data: {
+    pages: {
+      nodes: Array<{
+        title: string;
+        slug: string;
+        acf: {
+          bannerSection: {
+            title: string;
+            subtitle: any;
+            bannerImage: {
+              sourceUrl: string;
+              mediaDetails: {
+                width: number;
+                height: number;
+              };
+            };
+          };
+          firstSection: {
+            icon: {
+              sourceUrl: string;
+              mediaDetails: {
+                width: number;
+                height: number;
+              };
+            };
+            content: string;
+          };
+        };
+      }>;
     };
   };
 }

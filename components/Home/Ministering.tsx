@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React from "react";
 import SectionWrapper from "../SectionWrapper";
 import main_padding from "@/styles/padding";
@@ -8,15 +8,15 @@ import Image from "next/image";
 import { NormalBtn } from "@/ui/buttons";
 import { useRouter } from "next/navigation";
 
-const Ministering = () => {
+const Ministering = ({ data }: { data: HomePageType }) => {
   const router = useRouter();
   return (
     <SectionWrapper classBottom={`${main_padding.y} items-center flex-col`}>
-      <HeadTitle className="text-center max-w-[900px]">Ministering</HeadTitle>
+      <HeadTitle className="text-center max-w-[900px]">
+        {data.page.acf.eighthSection.title}
+      </HeadTitle>
       <HeadSubtitle className="sm:mt-4 mt-2 text-center max-w-[900px] text-black">
-        Meet the faithful shepherds who, through divine wisdom and unwavering
-        devotion, minister to our congregation - guiding souls, nurturing
-        spiritual growth, and embodying Christ&apos;s loving embrace.
+        {data.page.acf.eighthSection.description}
       </HeadSubtitle>
       <div className="lg:mt-16 md:mt-14 mt-6  lg:gap-16 md:gap-14 gap-6 grid md:grid-cols-2 max-w-[1440px] ">
         {teamData.map((item, idx) => (

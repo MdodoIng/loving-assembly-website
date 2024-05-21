@@ -11,7 +11,7 @@ type Props = {
   btn1?: { title?: string; link?: string };
   btn2?: { title?: string; link?: string };
   direction?: "opposite" | "normal";
-  image: StaticImageData;
+  image: StaticImageData | string;
   imageLink?: string;
   playBtn?: boolean;
 };

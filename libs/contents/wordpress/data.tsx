@@ -1,5 +1,10 @@
 import { API_URL, WORDPRESS_AUTH_REFRESH_TOKEN } from "./clinet";
-import { homeQuery } from "./queries";
+import {
+  homeQuery,
+  kidsOfExcellenceQuery,
+  manOfValourQuery,
+  ministriesQuery,
+} from "./queries";
 
 async function fetchApi(query = "", { variables }: Record<string, any> = {}) {
   const headers: any = { "Content-Type": "application/json" };
@@ -27,10 +32,18 @@ async function fetchApi(query = "", { variables }: Record<string, any> = {}) {
   return json.data;
 }
 
-export async function getPageContent(id: "home") {
+export async function getPageContent(
+  id: "home" | "kids-of-excellence" | "man-of-valour"
+) {
   const query = {
-    home : homeQuery
-  }
-  const data = await fetchApi(query[id], { variables: { } });
+    home: homeQuery,
+    "kids-of-excellence": kidsOfExcellenceQuery,
+    "man-of-valour": manOfValourQuery,
+  };
+  const data = await fetchApi(query[id], { variables: {} });
+  return data;
+}
+export async function getPageContentBySlug(slug: string) {
+  const data = await fetchApi(ministriesQuery, { variables: { slug } });
   return data;
 }

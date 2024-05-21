@@ -38,20 +38,18 @@ const data = [
   },
 ];
 
-const OurPrograms = () => {
+const OurPrograms = ({ data }: { data: HomePageType }) => {
   return (
     <SectionWrapper classBottom={`${main_padding.y} flex-col items-center`}>
       <HeadTitle className="max-w-[900px] text-center">
-        Ministries at Loving grace assembly
+        {data.page.acf.fourthSection.sectionTitle}
       </HeadTitle>
       <HeadSubtitle className="text-center text-black sm:mt-4 mt-2 max-w-[900px]">
-        Offering expatriates nurturing pathways to deepen their faith, discover
-        divine purpose through immersive study of sacred texts, and cultivate
-        spiritual growth guided by transformative teachings.
+        {data.page.acf.fourthSection.sectionDescription}
       </HeadSubtitle>
 
       <div className="grid lg:grid-cols-5 md:grid-cols-4 sm:grid-cols-3 grid-cols-2 lg:gap-10 gap-6 lg:mt-16 md:mt-14 mt-6">
-        {data.map((item, idx) => (
+        {/* {data.map((item, idx) => (
           <Link
             key={idx}
             href={item.link}
@@ -71,7 +69,7 @@ const OurPrograms = () => {
               {item.title}
             </p>
           </Link>
-        ))}
+        ))} */}
       </div>
     </SectionWrapper>
   );

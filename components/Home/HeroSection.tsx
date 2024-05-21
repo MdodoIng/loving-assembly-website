@@ -11,7 +11,6 @@ const HeroSection = ({ data }: { data: HomePageType }) => {
       <Image
         src={data.page.acf.bannerSection.bannerImage.sourceUrl}
         alt=""
-        
         priority
         width={data.page.acf.bannerSection.bannerImage.mediaDetails.width}
         height={data.page.acf.bannerSection.bannerImage.mediaDetails.height}
@@ -20,13 +19,15 @@ const HeroSection = ({ data }: { data: HomePageType }) => {
 
       <SectionWrapper classBottom={main_padding.y}>
         <HeroSectionBottom
-          title="Welcome to Loving Grace Assembly"
-          description="Loving Grace Assembly, born from spiritual fasting, provides expatriates a nurturing community to study scripture, discover purpose, and deepen their faith through transformative teachings and divine wisdom."
+          title={data.page.acf.firstSectionWelcome.title}
+          description={data.page.acf.firstSectionWelcome.description}
           btn1={{
-            title: "become a member",
+            title: data.page.acf.firstSectionWelcome.buttion1Text,
+            link: data.page.acf.firstSectionWelcome.button1Link,
           }}
           btn2={{
-            title: "Experience more sermons",
+            title: data.page.acf.firstSectionWelcome.button2Text,
+            link: data.page.acf.firstSectionWelcome.button2Link,
           }}
         />
       </SectionWrapper>

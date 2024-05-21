@@ -14,7 +14,7 @@ const HeroSection = ({
 }: {
   title: string;
   subtitle: string;
-  heroSectionImage: StaticImageData;
+  heroSectionImage: StaticImageData | string;
   statement?: boolean | undefined;
 }) => {
   const pathname = usePathname();
@@ -25,6 +25,8 @@ const HeroSection = ({
       <Image
         src={heroSectionImage}
         alt=""
+        width={1440}
+        height={1000}
         className="object-cover h-full w-full -z-10 sm:max-h-[80vh] max-sm:h-[80vh]  "
       />
 

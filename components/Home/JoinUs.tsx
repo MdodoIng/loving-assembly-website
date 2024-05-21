@@ -7,13 +7,13 @@ import { HeadSubtitle, HeadTitle } from "@/ui/Typography";
 import insta from "@/assets/icons/instagram.svg";
 import fb from "@/assets/icons/facebook.svg";
 import Link from "next/link";
+import descriptionExtractor from "@/libs/hooks/descriptionExtractor";
 
-const socialMedia = [
-  { link: "", icon: fb },
-  { link: "", icon: insta },
-];
-
-const JoinUs = () => {
+const JoinUs = ({ data }: { data: HomePageType }) => {
+  const socialMedia = [
+    { link: data.page.acf.seventhSectionJoinus.facebookLink, icon: fb },
+    { link: data.page.acf.seventhSectionJoinus.instaLink, icon: insta },
+  ];
   return (
     <SectionWrapper
       classTop="relative z-0 bg-black"
@@ -27,16 +27,9 @@ const JoinUs = () => {
         className="-z-10 object-cover opacity-30"
         alt={""}
       />
-      <HeadTitle>Join Us Online</HeadTitle>
+      <HeadTitle>{data.page.acf.seventhSectionJoinus.title}</HeadTitle>
       <HeadSubtitle className="text-center text-off-white mt-6 leading-[200%]">
-        Worship Service: Sunday 10 am, Taj Hotel JLT, Dubai
-        <br />
-        Bible Study each Wednesday at 7 pm via Zoom. <br />
-        Please email us at{" "}
-        <a href="mailto:lovinggraceassembly@gmail.com">
-          lovinggraceassembly@gmail.com
-        </a>{" "}
-        to receive login details
+        {descriptionExtractor(data.page.acf.seventhSectionJoinus.description)}
       </HeadSubtitle>
 
       <div className="flex items-center justify-center gap-4 w-max max-w-full mt-6">
