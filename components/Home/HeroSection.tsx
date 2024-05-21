@@ -5,12 +5,16 @@ import bg from "@/assets/images/Home/hero section bg.webp";
 import HeroSectionBottom from "@/ui/HeroSectionBottom";
 import main_padding from "@/styles/padding";
 
-const HeroSection = () => {
+const HeroSection = ({ data }: { data: HomePageType }) => {
   return (
     <section className="flex flex-col justify-end w-full">
       <Image
-        src={bg}
-        alt="" 
+        src={data.page.acf.bannerSection.bannerImage.sourceUrl}
+        alt=""
+        
+        priority
+        width={data.page.acf.bannerSection.bannerImage.mediaDetails.width}
+        height={data.page.acf.bannerSection.bannerImage.mediaDetails.height}
         className="object-cover h-full w-full -z-10 sm:max-h-[80vh] max-sm:h-[80vh] object-top "
       />
 

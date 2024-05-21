@@ -1,4 +1,3 @@
-"use client";
 import HeroSection from "@/components/Home/HeroSection";
 import SectionWrapper from "@/components/SectionWrapper";
 import Layout from "@/components/layout";
@@ -13,21 +12,17 @@ import JoinUs from "@/components/Home/JoinUs";
 import Ministering from "@/components/Home/Ministering";
 import { useEffect, useState } from "react";
 import Loading from "./loading";
+import { getPageContent } from "@/libs/contents/wordpress/data";
 
-export default function Home() {
-  const [isLoading, setIsLoading] = useState(false);
+export default async function Home() {
+  const data :HomePageType = await getPageContent("home");
 
-  useEffect(() => {
-    setTimeout(() => {
-      setIsLoading(true);
-    }, 800);
-  }, []);
 
-  if (!isLoading) return <Loading />;
+  console.log(data.page.title);
 
   return (
     <Layout>
-      <HeroSection />
+      <HeroSection data={data} />
       <SectionWrapper classBottom={main_padding.y}>
         <LeftContentRightImg
           title="Our church"
