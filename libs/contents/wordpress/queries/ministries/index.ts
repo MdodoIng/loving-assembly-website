@@ -1,4 +1,4 @@
-const data = `query new($slug: String!) {
+const data = `query PageBySlug($slug: String!) {
   pages(where: {name: $slug}) {
     nodes {
       title
@@ -24,6 +24,8 @@ const data = `query new($slug: String!) {
             }
           }
           content
+          buttonText
+          buttonLink
         }
       }
     }

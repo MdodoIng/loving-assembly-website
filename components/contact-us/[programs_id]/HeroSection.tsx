@@ -15,7 +15,7 @@ const HeroSection = ({
   title: string;
   subtitle: string;
   heroSectionImage: StaticImageData | string;
-  statement?: boolean | undefined;
+  statement?: string;
 }) => {
   const pathname = usePathname();
 
@@ -36,7 +36,7 @@ const HeroSection = ({
       >
         <HeroSectionBottom
           title={title}
-          subtitle={statement ? "Statement" : ""}
+          subtitle={statement}
         />
       </SectionWrapper>
     </section>

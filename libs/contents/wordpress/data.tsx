@@ -1,5 +1,6 @@
 import { API_URL, WORDPRESS_AUTH_REFRESH_TOKEN } from "./clinet";
 import {
+  contactUsQuery,
   homeQuery,
   kidsOfExcellenceQuery,
   manOfValourQuery,
@@ -33,17 +34,21 @@ async function fetchApi(query = "", { variables }: Record<string, any> = {}) {
 }
 
 export async function getPageContent(
-  id: "home" | "kids-of-excellence" | "man-of-valour"
+  id: "home" | "kids-of-excellence" | "man-of-valour" | "contact-us"
 ) {
   const query = {
     home: homeQuery,
     "kids-of-excellence": kidsOfExcellenceQuery,
     "man-of-valour": manOfValourQuery,
+    "contact-us": contactUsQuery,
   };
   const data = await fetchApi(query[id], { variables: {} });
   return data;
 }
-export async function getPageContentBySlug(slug: string) {
-  const data = await fetchApi(ministriesQuery, { variables: { slug } });
+
+export async function getMinistriesPageContentBySlug(slug: string) {
+  const data = await fetchApi(ministriesQuery, {
+    variables: { slug },
+  });
   return data;
 }

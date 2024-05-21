@@ -195,35 +195,75 @@ interface ManOfValourType {
 }
 
 interface MinistriesType {
-  data: {
-    pages: {
-      nodes: Array<{
-        title: string;
-        slug: string;
-        acf: {
-          bannerSection: {
-            title: string;
-            subtitle: any;
-            bannerImage: {
-              sourceUrl: string;
-              mediaDetails: {
-                width: number;
-                height: number;
-              };
+  pages: {
+    nodes: Array<{
+      title: string;
+      slug: string;
+      acf: {
+        bannerSection: {
+          title: string;
+          subtitle: any;
+          bannerImage: {
+            sourceUrl: string;
+            mediaDetails: {
+              width: number;
+              height: number;
             };
-          };
-          firstSection: {
-            icon: {
-              sourceUrl: string;
-              mediaDetails: {
-                width: number;
-                height: number;
-              };
-            };
-            content: string;
           };
         };
-      }>;
+        firstSection: {
+          icon: {
+            sourceUrl: string;
+            mediaDetails: {
+              width: number;
+              height: number;
+            };
+          };
+          content: string;
+          buttonText: string;
+          buttonLink: string;
+        };
+      };
+    }>;
+  };
+}
+
+interface ContactUsPageType {
+  page: {
+    title: string;
+    slug: string;
+    acf: {
+      firstSection: {
+        title: string;
+        description: string;
+        boxes: Array<{
+          title: string;
+          description: string;
+          link: any;
+          icon: {
+            sourceUrl: string;
+            mediaDetails: {
+              height: number;
+              width: number;
+            };
+          };
+        }>;
+      };
+      secondSection: {
+        title: string;
+        description: string;
+        boxesLayout: Array<{
+          title: string;
+          description: string;
+          icon: {
+            sourceUrl: string;
+            mediaDetails: {
+              height: number;
+              width: number;
+            };
+          };
+        }>;
+      };
     };
   };
 }

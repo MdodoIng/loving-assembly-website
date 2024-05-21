@@ -2,19 +2,16 @@ import SectionWrapper from "@/components/SectionWrapper";
 import HeroSection from "@/components/blog/[blog_id]/HeroSection";
 import Layout from "@/components/layout";
 import { blogData, teamData } from "@/libs/contents";
+import { getPageContent } from "@/libs/contents/wordpress/data";
 import main_padding from "@/styles/padding";
 import { HeadSubtitle } from "@/ui/Typography";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
-export  function generateStaticParams() {
-  return teamData.map((team) => ({
-    author_id: team.slug,
-  }));
-}
 
-const page = ({ params }: any) => {
+
+const page = async ({ params }: any) => {
   const aboutAuthor = teamData.filter(
     (item) => item.slug === params.author_id
   )[0];
@@ -22,6 +19,8 @@ const page = ({ params }: any) => {
   const blogs = blogData.filter(
     (item) => item.author.slug === params.author_id
   );
+
+ 
 
   return (
     <Layout>
