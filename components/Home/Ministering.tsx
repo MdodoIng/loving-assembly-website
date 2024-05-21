@@ -26,7 +26,7 @@ const Ministering = ({
       </HeadSubtitle>
       <div className="lg:mt-16 md:mt-14 mt-6  lg:gap-16 md:gap-14 gap-6 grid md:grid-cols-2 max-w-[1440px] ">
         {teams.teams.edges
-          .sort((a, b) => b - a)
+          .sort(() => -1)
           .map((item, idx) => (
             <div
               key={idx}
