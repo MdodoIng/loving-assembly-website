@@ -9,6 +9,7 @@ import WomenOfDestinyLogo from "@/assets/icons/our programs/Women Of Destiny.web
 import YouthMissionLogo from "@/assets/icons/our programs/Youth Mission.webp";
 import Link from "next/link";
 import Image from "next/image";
+import { IBM_Plex_Sans_Devanagari } from "next/font/google";
 
 const data = [
   {
@@ -49,10 +50,9 @@ const OurPrograms = ({ data }: { data: HomePageType }) => {
       </HeadSubtitle>
 
       <div className="grid lg:grid-cols-5 md:grid-cols-4 sm:grid-cols-3 grid-cols-2 lg:gap-10 gap-6 lg:mt-16 md:mt-14 mt-6">
-        {/* {data.map((item, idx) => (
-          <Link
+        {data.page.acf.fourthSection.offerings.map((item, idx) => (
+          <div
             key={idx}
-            href={item.link}
             data-aos="fade-up"
             data-aos-duration="400"
             data-aos-delay={idx * 300}
@@ -60,16 +60,18 @@ const OurPrograms = ({ data }: { data: HomePageType }) => {
           >
             <div />
             <Image
-              src={item.icon}
+              src={item.icon.sourceUrl}
               alt=""
+              width={160}
+              height={160}
               loading="lazy"
               className="h-[120px] w-auto aspect-square object-contain px-3"
             />
             <p className="bg-secondary sm:px-6 px-4 py-2  w-full text-center text-white font-semibold sm:text-sm text-xs">
               {item.title}
             </p>
-          </Link>
-        ))} */}
+          </div>
+        ))}
       </div>
     </SectionWrapper>
   );

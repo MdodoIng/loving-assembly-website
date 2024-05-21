@@ -54,6 +54,16 @@ const data = `{
           fieldGroupName
           sectionDescription
           sectionTitle
+          offerings {
+            icon {
+              sourceUrl
+              mediaDetails {
+                height
+                width
+              }
+            }
+            title
+          }
         }
         fifthSection {
           sectionTitle

@@ -77,6 +77,16 @@ interface HomePageType {
         fieldGroupName: string;
         sectionDescription: any;
         sectionTitle: any;
+        offerings: {
+          icon: {
+            sourceUrl: string;
+            mediaDetails: {
+              width: number;
+              height: number;
+            };
+          };
+          title: string;
+        }[];
       };
       sixthSection: {
         description: any;
@@ -265,5 +275,46 @@ interface ContactUsPageType {
         }>;
       };
     };
+  };
+}
+
+interface TeamsType {
+  teams: {
+    edges: Array<{
+      node: {
+        title: string;
+        slug: string;
+        acf: {
+          teamMemberDetails: {
+            name: string;
+            image: {
+              sourceUrl: string;
+              mediaDetails: {
+                height: number;
+                width: number;
+              };
+            };
+            designation: string;
+            details: string;
+            buttonsTitle?: string;
+            buttons?: Array<{
+              link: any;
+              title: string;
+            }>;
+            socialMedia?: Array<{
+              icon: {
+                sourceUrl: string;
+                mediaDetails: {
+                  height: number;
+                  width: number;
+                };
+              };
+              link: any;
+            }>;
+            description?: string;
+          };
+        };
+      };
+    }>;
   };
 }

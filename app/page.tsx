@@ -16,7 +16,10 @@ import { getPageContent } from "@/libs/contents/wordpress/data";
 import descriptionExtractor from "@/libs/hooks/descriptionExtractor";
 
 export default async function Home() {
-  const data: HomePageType = await getPageContent("home");
+  const [data, teams]: [HomePageType, TeamsType] = await Promise.all([
+    getPageContent("home"),
+    getPageContent("teams"),
+  ]);
 
   return (
     <Layout>
@@ -57,7 +60,7 @@ export default async function Home() {
       <Journey data={data} />
       <VisionAndMission data={data} />
       <JoinUs data={data} />
-      <Ministering data={data} />
+      <Ministering data={data} teams={teams} />
     </Layout>
   );
 }
