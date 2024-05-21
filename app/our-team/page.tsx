@@ -2,6 +2,7 @@ import SectionWrapper from "@/components/SectionWrapper";
 import Layout from "@/components/layout";
 import { teamData } from "@/libs/contents";
 import { getPageContent } from "@/libs/contents/wordpress/data";
+import descriptionExtractor from "@/libs/hooks/descriptionExtractor";
 import main_padding from "@/styles/padding";
 import { HeadSubtitle, HeadTitle } from "@/ui/Typography";
 import { NormalBtn } from "@/ui/buttons";
@@ -62,7 +63,9 @@ const Page = async () => {
                   {item.node.acf.teamMemberDetails.name}
                 </h2>
                 <HeadSubtitle className="mt-2 ">
-                  {item.node.acf.teamMemberDetails.details}
+                  {descriptionExtractor(
+                    item.node.acf.teamMemberDetails.details
+                  )}
                 </HeadSubtitle>
                 {item.node.acf.teamMemberDetails.buttons && (
                   <div className="flex flex-col w-full mt-6">
@@ -100,7 +103,7 @@ const Page = async () => {
                       (socialMedia, socialMediaIdx) => (
                         <Link
                           key={socialMediaIdx}
-                          href={socialMedia.link}
+                          href={`${socialMedia.link}`}
                           shallow
                           data-aos="fade-up"
                           data-aos-duration="700"

@@ -15,14 +15,17 @@ const HeroSection = ({
   title: string;
   description: string | JSX.Element;
   position: string;
-  heroSectionImage: StaticImageData;
+  heroSectionImage: StaticImageData | string;
 }) => {
   return (
-    <SectionWrapper classBottom={`${main_padding.y} items-start max-md:flex-col mt-40 md:gap-20 gap-10`}>
+    <SectionWrapper
+      classBottom={`${main_padding.y} items-start max-md:flex-col mt-40 md:gap-20 gap-10`}
+    >
       <Image
         src={heroSectionImage}
         alt=""
-        placeholder="blur"
+        width={1440}
+        height={500}
         priority
         className="md:object-cover object-contain md:w-[50%] w-full h-[-webkit-fill-available] rounded-[10px] overflow-hidden"
       />

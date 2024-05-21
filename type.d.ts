@@ -311,7 +311,7 @@ interface TeamsType {
               };
               link: any;
             }>;
-            description?: string;
+            description: string;
           };
         };
       };
