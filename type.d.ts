@@ -301,7 +301,7 @@ interface TeamsType {
               link: any;
               title: string;
             }>;
-            socialMedia?: Array<{
+            socialMedia: Array<{
               icon: {
                 sourceUrl: string;
                 mediaDetails: {
@@ -316,5 +316,15 @@ interface TeamsType {
         };
       };
     }>;
+  };
+}
+
+interface TeamPageType {
+  page: {
+    title: string;
+    acf: {
+      title: string;
+      description: string;
+    };
   };
 }

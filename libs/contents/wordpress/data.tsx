@@ -5,6 +5,7 @@ import {
   kidsOfExcellenceQuery,
   manOfValourQuery,
   ministriesQuery,
+  teamPageQuery,
   teamsQuery,
 } from "./queries";
 
@@ -35,7 +36,13 @@ async function fetchApi(query = "", { variables }: Record<string, any> = {}) {
 }
 
 export async function getPageContent(
-  id: "home" | "kids-of-excellence" | "man-of-valour" | "contact-us" | "teams"
+  id:
+    | "home"
+    | "kids-of-excellence"
+    | "man-of-valour"
+    | "contact-us"
+    | "teams"
+    | "team-page"
 ) {
   const query = {
     home: homeQuery,
@@ -43,6 +50,7 @@ export async function getPageContent(
     "man-of-valour": manOfValourQuery,
     "contact-us": contactUsQuery,
     teams: teamsQuery,
+    "team-page": teamPageQuery,
   };
   const data = await fetchApi(query[id], { variables: {} });
   return data;

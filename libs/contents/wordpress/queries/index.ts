@@ -4,6 +4,7 @@ import manOfValourQuery from "./ministries/man-of-valour";
 import ministriesQuery from "./ministries";
 import contactUsQuery from "./contact-us";
 import teamsQuery from "./teams";
+import teamPageQuery from "./teamPage";
 
 export {
   homeQuery,
@@ -12,4 +13,5 @@ export {
   ministriesQuery,
   contactUsQuery,
   teamsQuery,
+  teamPageQuery
 };
