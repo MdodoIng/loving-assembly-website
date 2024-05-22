@@ -3,7 +3,7 @@ const data = `
   utility(id: "cG9zdDozMjI=") {
     title
     id
-    acfMinistriesNavLink: acfMinistriesNavLink {
+    acf: acfMinistriesNavLink {
       items {
         link {
           title

@@ -14,7 +14,7 @@ const Header = () => {
       title: string;
       link: string;
     }[];
-    ministries?: {
+    ministries: {
       title: string;
       link: string;
     }[];
@@ -49,6 +49,8 @@ const Header = () => {
     getData();
   }, []);
 
+  if (!menuLinks?.blogs && !menuLinks?.ministries) return;
+
   const links = [
     {
       title: "Home",
@@ -75,7 +77,6 @@ const Header = () => {
       link: "/contact-us",
     },
   ];
-
 
   return (
     <nav className="flex items-center lg:justify-center justify-between gap-28 absolute top-5 bg-white/50 backdrop-blur-sm md:px-20 px-2 py-1 rounded-[10px] shadow-md z-50 max-lg:w-[90vw] overflow-x-clip">

@@ -42,6 +42,9 @@ const Footer = () => {
     }
     getData();
   }, []);
+
+  if (!footerLinks) return;
+
   const data = [
     {
       title: "Team",

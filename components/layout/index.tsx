@@ -20,7 +20,10 @@ const Layout = ({ children }: { children: ReactNode }) => {
     <>
       <main className="flex flex-col w-full flex-1 items-center justify-center text-black relative z-10">
         <Header />
+
         {children}
+
+
         <Footer />
       </main>
       <Curser />
