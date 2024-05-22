@@ -1,12 +1,9 @@
-import SectionWrapper from "@/components/SectionWrapper";
 import NavigationBtns from "@/components/blog/[blog_id]/NavigationBtns";
 import Layout from "@/components/layout";
 import HeroSection from "@/components/our-team/[team_id]/HeroSection";
-import { teamData } from "@/libs/contents";
 import { getPageContent } from "@/libs/contents/wordpress/data";
 import descriptionExtractor from "@/libs/hooks/descriptionExtractor";
-import main_padding from "@/styles/padding";
-import Link from "next/link";
+
 import React from "react";
 
 const page = async ({ params }: any) => {

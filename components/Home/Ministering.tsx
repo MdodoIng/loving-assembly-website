@@ -3,7 +3,6 @@ import React from "react";
 import SectionWrapper from "../SectionWrapper";
 import main_padding from "@/styles/padding";
 import { HeadSubtitle, HeadTitle } from "@/ui/Typography";
-import { teamData } from "@/libs/contents";
 import Image from "next/image";
 import { NormalBtn } from "@/ui/buttons";
 import { useRouter } from "next/navigation";

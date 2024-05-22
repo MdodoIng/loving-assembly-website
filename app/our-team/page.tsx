@@ -1,6 +1,5 @@
 import SectionWrapper from "@/components/SectionWrapper";
 import Layout from "@/components/layout";
-import { teamData } from "@/libs/contents";
 import { getPageContent } from "@/libs/contents/wordpress/data";
 import descriptionExtractor from "@/libs/hooks/descriptionExtractor";
 import main_padding from "@/styles/padding";

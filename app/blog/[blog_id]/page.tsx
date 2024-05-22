@@ -3,7 +3,6 @@ import HeroSection from "@/components/blog/[blog_id]/HeroSection";
 import NavigationBtns from "@/components/blog/[blog_id]/NavigationBtns";
 import RecentBlogs from "@/components/blog/[blog_id]/RecentBlogs";
 import Layout from "@/components/layout";
-import { blogData } from "@/libs/contents";
 import { getPageContent } from "@/libs/contents/wordpress/data";
 import descriptionExtractor from "@/libs/hooks/descriptionExtractor";
 import main_padding from "@/styles/padding";

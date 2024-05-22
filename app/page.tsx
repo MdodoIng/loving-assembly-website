@@ -3,15 +3,13 @@ import SectionWrapper from "@/components/SectionWrapper";
 import Layout from "@/components/layout";
 import main_padding from "@/styles/padding";
 import LeftContentRightImg from "@/ui/LeftContentRightImg";
-import our_churchImg from "@/assets/images/Home/Our church.webp";
 import OurPrograms from "@/components/Home/OurPrograms";
 import WomenOfDestinyBreakfast from "@/components/Home/WomenOfDestinyBreakfast";
 import Journey from "@/components/Home/Journey";
 import VisionAndMission from "@/components/Home/VisionAndMission";
 import JoinUs from "@/components/Home/JoinUs";
 import Ministering from "@/components/Home/Ministering";
-import { useEffect, useState } from "react";
-import Loading from "./loading";
+
 import { getPageContent } from "@/libs/contents/wordpress/data";
 import descriptionExtractor from "@/libs/hooks/descriptionExtractor";
 

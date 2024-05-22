@@ -1,21 +1,17 @@
 import SectionWrapper from "@/components/SectionWrapper";
 import HeroSection from "@/components/blog/[blog_id]/HeroSection";
 import Layout from "@/components/layout";
-import { blogData, teamData } from "@/libs/contents";
 import { getPageContent } from "@/libs/contents/wordpress/data";
 import main_padding from "@/styles/padding";
-import { HeadSubtitle } from "@/ui/Typography";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
-
-
 const page = async ({ params }: any) => {
-  const data: BlogsBySlugType = await getPageContent("blogs-by-slug", params.author_id);
-
-
- 
+  const data: BlogsBySlugType = await getPageContent(
+    "blogs-by-slug",
+    params.author_id
+  );
 
   return (
     <Layout>

@@ -1,7 +1,7 @@
 import About from "@/components/contact-us/[programs_id]/About";
 import HeroSection from "@/components/contact-us/[programs_id]/HeroSection";
 import Layout from "@/components/layout";
-import { programsData } from "@/libs/contents";
+
 import {
   getPageContent
 } from "@/libs/contents/wordpress/data";
