@@ -8,10 +8,6 @@ import NavMobile from "./NavMobile";
 import { blogData } from "@/libs/contents";
 import { getPageContent } from "@/libs/contents/wordpress/data";
 
-
-
-
-
 const Header = () => {
   const [expand, setExpand] = useState(0);
   const [menuLinks, setMenuLinks] = useState<{
@@ -19,7 +15,7 @@ const Header = () => {
       title: string;
       link: string;
     }[];
-    ministries: {
+    ministries?: {
       title: string;
       link: string;
     }[];
@@ -35,7 +31,7 @@ const Header = () => {
         };
         return d;
       });
-      setMenuLinks({ blogs: blogSubLinks, ministries : [{}] });
+      setMenuLinks({ blogs: blogSubLinks });
     }
     getData();
   }, []);
@@ -90,7 +86,7 @@ const Header = () => {
     },
   ];
 
-  console.log(menuLinks)
+  console.log(menuLinks);
 
   return (
     <nav className="flex items-center lg:justify-center justify-between gap-28 absolute top-5 bg-white/50 backdrop-blur-sm md:px-20 px-2 py-1 rounded-[10px] shadow-md z-50 max-lg:w-[90vw] overflow-x-clip">
