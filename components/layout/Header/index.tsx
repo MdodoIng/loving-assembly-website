@@ -5,7 +5,6 @@ import arrowDown from "@/assets/icons/arrow down.svg";
 import Link from "next/link";
 import { NormalBtn } from "@/ui/buttons";
 import NavMobile from "./NavMobile";
-import { blogData } from "@/libs/contents";
 import { getPageContent } from "@/libs/contents/wordpress/data";
 
 const Header = () => {
@@ -77,7 +76,6 @@ const Header = () => {
     },
   ];
 
-  console.log(menuLinks);
 
   return (
     <nav className="flex items-center lg:justify-center justify-between gap-28 absolute top-5 bg-white/50 backdrop-blur-sm md:px-20 px-2 py-1 rounded-[10px] shadow-md z-50 max-lg:w-[90vw] overflow-x-clip">
