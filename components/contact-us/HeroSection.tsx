@@ -3,25 +3,9 @@ import SectionWrapper from "../SectionWrapper";
 import main_padding from "@/styles/padding";
 import { HeadSubtitle, HeadTitle } from "@/ui/Typography";
 
-import address from "@/assets/icons/address.svg";
-import email from "@/assets/icons/email.svg";
 import Image from "next/image";
 import Link from "next/link";
 
-const data = [
-  {
-    title: "Email",
-    subtitle: "lovinggrace assembly@gmail.com",
-    link: "mailto:lovinggraceassembly@gmail.com",
-    icon: email,
-  },
-  {
-    title: "Address",
-    subtitle: "Taj Hotel JLT, Dubai",
-    link: "",
-    icon: address,
-  },
-];
 
 const HeroSection = ({ data }: { data: ContactUsPageType }) => {
   return (

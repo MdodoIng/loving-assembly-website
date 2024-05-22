@@ -3,8 +3,6 @@ import SectionWrapper from "../SectionWrapper";
 import main_padding from "@/styles/padding";
 import { HeadSubtitle, HeadTitle } from "@/ui/Typography";
 
-import fromHumbleBeginningsImage from "@/assets/images/Home/From Humble Beginnings .webp";
-import milestonesAndAffiliationsImage from "@/assets/images/Home/Milestones and Affiliations.webp";
 import Image from "next/image";
 
 const Journey = ({ data }: { data: HomePageType }) => {

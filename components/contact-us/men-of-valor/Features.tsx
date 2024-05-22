@@ -1,8 +1,5 @@
 import SectionWrapper from "@/components/SectionWrapper";
 import main_padding from "@/styles/padding";
-import excellence from "@/assets/icons/excellence.webp";
-import integrity from "@/assets/icons/integrity.webp";
-import leadership from "@/assets/icons/leadership.webp";
 import Image from "next/image";
 
 const Features = ({ data }: { data: ManOfValourType }) => {

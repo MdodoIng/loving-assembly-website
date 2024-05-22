@@ -1,10 +1,6 @@
 import SectionWrapper from "@/components/SectionWrapper";
 import main_padding from "@/styles/padding";
 import React from "react";
-import discoveringPurpose from "@/assets/images/events/Discovering Purpose in God's Plan.webp";
-import FaithAsTheBedrock from "@/assets/images/events/Faith as the Bedrock.webp";
-import FosteringACommunityOfBelievers from "@/assets/images/events/Fostering a Community of Believers.webp";
-import TheEmbodimentOfVirtue from "@/assets/images/events/The Embodiment of Virtue.webp";
 import LeftContentRightImg from "@/ui/LeftContentRightImg";
 
 

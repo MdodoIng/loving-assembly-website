@@ -1,6 +1,5 @@
 import React from "react";
 import SectionWrapper from "../SectionWrapper";
-import main_padding from "@/styles/padding";
 import bg from "@/assets/images/Home/joins us.webp";
 import Image from "next/image";
 import { HeadSubtitle, HeadTitle } from "@/ui/Typography";

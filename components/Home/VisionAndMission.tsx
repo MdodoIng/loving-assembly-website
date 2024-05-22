@@ -3,8 +3,6 @@ import SectionWrapper from "../SectionWrapper";
 import main_padding from "@/styles/padding";
 import { HeadSubtitle, HeadTitle } from "@/ui/Typography";
 
-import mission from "@/assets/images/Home/Our Mission.webp";
-import vision from "@/assets/images/Home/Our Vision.webp";
 import Image from "next/image";
 
 const VisionAndMission = ({ data }: { data: HomePageType }) => {

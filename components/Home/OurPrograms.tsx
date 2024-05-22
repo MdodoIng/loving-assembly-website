@@ -2,42 +2,9 @@ import React from "react";
 import SectionWrapper from "../SectionWrapper";
 import main_padding from "@/styles/padding";
 import { HeadSubtitle, HeadTitle } from "@/ui/Typography";
-import MenOfValorLogo from "@/assets/icons/our programs/Men of Valor.webp";
-import MusicMinistryLogo from "@/assets/icons/our programs/Music Ministry.webp";
-import OutreachLogo from "@/assets/icons/our programs/Outreach.webp";
-import WomenOfDestinyLogo from "@/assets/icons/our programs/Women Of Destiny.webp";
-import YouthMissionLogo from "@/assets/icons/our programs/Youth Mission.webp";
-import Link from "next/link";
-import Image from "next/image";
-import { IBM_Plex_Sans_Devanagari } from "next/font/google";
 
-const data = [
-  {
-    title: "Outreach",
-    link: "",
-    icon: OutreachLogo,
-  },
-  {
-    title: "Music Ministry",
-    link: "",
-    icon: MusicMinistryLogo,
-  },
-  {
-    title: "Men of Valor",
-    link: "",
-    icon: MenOfValorLogo,
-  },
-  {
-    title: "Youth Mission",
-    link: "",
-    icon: YouthMissionLogo,
-  },
-  {
-    title: "Women of destiny",
-    link: "",
-    icon: WomenOfDestinyLogo,
-  },
-];
+import Image from "next/image";
+
 
 const OurPrograms = ({ data }: { data: HomePageType }) => {
   return (

@@ -1,9 +1,7 @@
 import SectionWrapper from "@/components/SectionWrapper";
 import main_padding from "@/styles/padding";
-import HeroSectionBottom from "@/ui/HeroSectionBottom";
 import Image from "next/image";
 import React from "react";
-import bg from "@/assets/images/our programmes/Man of Valour bg.webp";
 import { HeadSubtitle, HeadTitle } from "@/ui/Typography";
 import descriptionExtractor from "@/libs/hooks/descriptionExtractor";
 

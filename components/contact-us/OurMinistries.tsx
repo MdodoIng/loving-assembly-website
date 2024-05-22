@@ -2,18 +2,7 @@ import React from "react";
 import SectionWrapper from "../SectionWrapper";
 import main_padding from "@/styles/padding";
 import { HeadSubtitle, HeadTitle } from "@/ui/Typography";
-import IntercessoryPrayerMinistry from "@/assets/icons/our programs/Intercessory Prayer Ministry.webp";
-import MarriageMinistry from "@/assets/icons/our programs/Marriage Ministry.webp";
-import MediaMinistry from "@/assets/icons/our programs/Media Ministry.webp";
-import MenOfValor from "@/assets/icons/our programs/Men of Valor.webp";
-import MusicMinistry from "@/assets/icons/our programs/Music Ministry.webp";
-import Outreach from "@/assets/icons/our programs/Outreach.webp";
-import SinglesMinistry from "@/assets/icons/our programs/Singles Ministry.webp";
-// import second from '@/assets/icons/our programs/Women Of Destiny.webp'
-import YouthMission from "@/assets/icons/our programs/Youth Mission.webp";
 import Image from "next/image";
-import { programsData } from "@/libs/contents";
-import Link from "next/link";
 
 const OurMinistries = ({ data }: { data: ContactUsPageType }) => {
   return (

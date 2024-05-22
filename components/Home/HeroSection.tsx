@@ -1,7 +1,6 @@
 import React from "react";
 import SectionWrapper from "../SectionWrapper";
 import Image from "next/image";
-import bg from "@/assets/images/Home/hero section bg.webp";
 import HeroSectionBottom from "@/ui/HeroSectionBottom";
 import main_padding from "@/styles/padding";
 

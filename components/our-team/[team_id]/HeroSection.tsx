@@ -1,8 +1,6 @@
 import SectionWrapper from "@/components/SectionWrapper";
 import main_padding from "@/styles/padding";
-import HeroSectionBottom from "@/ui/HeroSectionBottom";
 import { HeadSubtitle, HeadTitle } from "@/ui/Typography";
-import { imageConfigDefault } from "next/dist/shared/lib/image-config";
 import Image, { StaticImageData } from "next/image";
 import React, { useRef } from "react";
 

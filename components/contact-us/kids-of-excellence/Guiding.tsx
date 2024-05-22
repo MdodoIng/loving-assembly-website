@@ -5,7 +5,6 @@ import main_padding from "@/styles/padding";
 import { HeadSubtitle, HeadTitle } from "@/ui/Typography";
 import React, { useRef } from "react";
 
-import { images } from "@/assets/images/kids-of-excellence/guiding";
 
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
