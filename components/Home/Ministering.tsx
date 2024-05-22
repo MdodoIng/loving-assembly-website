@@ -7,6 +7,7 @@ import { teamData } from "@/libs/contents";
 import Image from "next/image";
 import { NormalBtn } from "@/ui/buttons";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 const Ministering = ({
   data,
@@ -62,13 +63,11 @@ const Ministering = ({
                 >
                   {item.node.acf.teamMemberDetails.designation}
                 </p>
-
-                <NormalBtn
-                  onClick={() => router.push(`/our-team/${item.node.slug}`)}
-                  className="mt-4 sm:w-max max-w-full"
-                >
-                  Read More
-                </NormalBtn>
+                <Link href={`/our-team/${item.node.slug}`} shallow>
+                  <NormalBtn className="mt-4 sm:w-max max-w-full">
+                    Read More
+                  </NormalBtn>
+                </Link>
               </div>
             </div>
           ))}
