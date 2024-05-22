@@ -3,9 +3,11 @@ import {
   blogsBySlugQuery,
   blogsQuery,
   contactUsQuery,
+  footerLinksQuery,
   homeQuery,
   kidsOfExcellenceQuery,
   manOfValourQuery,
+  ministriesNavLinksQuery,
   ministriesQuery,
   teamPageQuery,
   teamsQuery,
@@ -47,7 +49,9 @@ export async function getPageContent(
     | "team-page"
     | "blogs"
     | "blogs-by-slug"
-    | "ministries-by-slug",
+    | "ministries-by-slug"
+    | "ministries-nav-links"
+    | "footer-links",
   slug?: string
 ) {
   const query = {
@@ -60,6 +64,8 @@ export async function getPageContent(
     blogs: blogsQuery,
     "blogs-by-slug": blogsBySlugQuery,
     "ministries-by-slug": ministriesQuery,
+    "ministries-nav-links": ministriesNavLinksQuery,
+    "footer-links": footerLinksQuery,
   };
   const data = await fetchApi(query[id], { variables: { slug } });
   return data;

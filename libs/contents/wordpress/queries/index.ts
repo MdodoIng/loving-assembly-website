@@ -7,6 +7,8 @@ import teamsQuery from "./teams";
 import teamPageQuery from "./teamPage";
 import blogsQuery from "./blogs";
 import blogsBySlugQuery from "./blogs-by-slug";
+import ministriesNavLinksQuery from "./mics/ministries-nav-links";
+import footerLinksQuery from "./mics/footer-links";
 
 export {
   homeQuery,
@@ -18,4 +20,6 @@ export {
   teamPageQuery,
   blogsBySlugQuery,
   blogsQuery,
+  ministriesNavLinksQuery,
+  footerLinksQuery
 };

@@ -386,3 +386,19 @@ interface BlogsBySlugType {
     }>;
   };
 }
+
+interface MinistriesNavLinksType {
+  utility: {
+    title: string;
+    id: string;
+    acf: {
+      items: Array<{
+        link: {
+          target: string;
+          title: string;
+          url: string;
+        };
+      }>;
+    };
+  };
+}

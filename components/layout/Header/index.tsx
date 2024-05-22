@@ -23,7 +23,12 @@ const Header = () => {
 
   useEffect(() => {
     async function getData() {
-      const blog: BlogsType = await getPageContent("blogs");
+      const [blog, ministries]: [BlogsType, MinistriesNavLinksType] =
+        await Promise.all([
+          getPageContent("blogs"),
+          getPageContent("ministries-nav-links"),
+        ]);
+
       const blogSubLinks = [...blog.blogs.edges].slice(0, 3).map((item) => {
         const d = {
           title: item.node.acf.title,
@@ -31,7 +36,16 @@ const Header = () => {
         };
         return d;
       });
-      setMenuLinks({ blogs: blogSubLinks });
+      const ministriesSubLinks = [...ministries.utility.acf.items].map(
+        (item) => {
+          const d = {
+            title: item.link.title,
+            link: `/contact-us/${item.link.url}`,
+          };
+          return d;
+        }
+      );
+      setMenuLinks({ blogs: blogSubLinks, ministries: ministriesSubLinks });
     }
     getData();
   }, []);
@@ -49,30 +63,7 @@ const Header = () => {
           title: "Team",
           link: "/our-team",
         },
-        {
-          title: "Men Of Valor",
-          link: "/contact-us/man-of-valour",
-        },
-        {
-          title: "Kids Of Excellence",
-          link: "/contact-us/kids-of-excellence",
-        },
-        {
-          title: "Music Ministry",
-          link: "/contact-us/music-ministry",
-        },
-        {
-          title: "Women of Destiny",
-          link: "/contact-us/women-of-destiny",
-        },
-        {
-          title: "Outreach",
-          link: "/contact-us/outreach",
-        },
-        {
-          title: "Youth Mission Statement",
-          link: "/contact-us/children-youth-mission",
-        },
+        ...menuLinks?.ministries!,
       ],
     },
     {

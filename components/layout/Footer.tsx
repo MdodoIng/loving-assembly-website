@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import SectionWrapper from "../SectionWrapper";
 import Link from "next/link";
 import logo from "@/assets/icons/logo.webp";
 import Image from "next/image";
 import main_padding from "@/styles/padding";
+import { getPageContent } from "@/libs/contents/wordpress/data";
 
 const data = [
   {
@@ -42,6 +43,30 @@ const bottomLinks = [
 ];
 
 const Footer = () => {
+  const [menuLinks, setMenuLinks] = useState<
+    {
+      title: string;
+      link: string;
+    }[]
+  >();
+
+  useEffect(() => {
+    async function getData() {
+      const links: MinistriesNavLinksType = await getPageContent(
+        "footer-links"
+      );
+
+      const ministriesSubLinks = [...links.utility.acf.items].map((item) => {
+        const d = {
+          title: item.link.title,
+          link: `/contact-us/${item.link.url}`,
+        };
+        return d;
+      });
+      setMenuLinks(ministriesSubLinks);
+    }
+    getData();
+  }, []);
   return (
     <SectionWrapper classBottom={`${main_padding.t} flex-col items-center`}>
       <Link href="/" scroll shallow data-aos="fade-up" data-aos-duration="700">
