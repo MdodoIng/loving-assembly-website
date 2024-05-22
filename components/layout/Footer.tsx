@@ -12,7 +12,7 @@ const data = [
   },
   {
     title: "Men Of Valor",
-    link: "/contact-us/men-of-valor",
+    link: "/contact-us/man-of-valour",
   },
 
   {
@@ -21,7 +21,7 @@ const data = [
   },
   {
     title: "Youth Mission Statement",
-    link: "/contact-us/children-and-youth-mission",
+    link: "/contact-us/children-youth-mission",
   },
 
   {
