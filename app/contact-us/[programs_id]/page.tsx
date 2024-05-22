@@ -3,13 +3,13 @@ import HeroSection from "@/components/contact-us/[programs_id]/HeroSection";
 import Layout from "@/components/layout";
 import { programsData } from "@/libs/contents";
 import {
-  getMinistriesPageContentBySlug,
+  getPageContent
 } from "@/libs/contents/wordpress/data";
 import descriptionExtractor from "@/libs/hooks/descriptionExtractor";
 import React from "react";
 
 const page = async ({ params }: any) => {
-  const data: MinistriesType = await getMinistriesPageContentBySlug(params.programs_id);
+  const data: MinistriesType = await getPageContent("ministries-by-slug",params.programs_id);
 
   return (
     <Layout>

@@ -12,39 +12,37 @@ import React from "react";
 
 
 const page = async ({ params }: any) => {
-  const aboutAuthor = teamData.filter(
-    (item) => item.slug === params.author_id
-  )[0];
+  const data: BlogsBySlugType = await getPageContent("blogs-by-slug", params.author_id);
 
-  const blogs = blogData.filter(
-    (item) => item.author.slug === params.author_id
-  );
 
  
 
   return (
     <Layout>
       <HeroSection
-        heroSectionImage={aboutAuthor.image}
+        heroSectionImage={data.users.edges[0].node.avatar.url}
         author={""}
-        title={aboutAuthor.title}
+        title={data.users.edges[0].node.name}
         imageContain={true}
       />
       <SectionWrapper
         classBottom={`${main_padding.b} grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 gap-6`}
       >
-        {blogs.map((item, idx) => (
+        {data.users.edges[0].node.blogs.edges.map((item, idx) => (
           <Link
-            href={`/blog/${item.slug}`}
+            href={`/blog/${item.node.slug}`}
             key={idx}
+            shallow
             data-aos="fade-up"
             data-aos-duration="700"
             data-aos-delay={idx * 300}
             className="bg-off-white rounded-[10px] overflow-hidden"
           >
             <Image
-              src={item.heroSectionImage}
+              src={item.node.acf.bannerImage.sourceUrl}
               alt=""
+              width={500}
+              height={500}
               loading="lazy"
               className="w-full aspect-[16/12] h-auto object-cover rounded-b-[10px]"
             />
@@ -55,7 +53,7 @@ const page = async ({ params }: any) => {
                 data-aos-delay={idx * 300}
                 className="text-lg font-semibold text-primary leading-[150%]"
               >
-                {item.title}
+                {item.node.acf.title}
               </h2>
 
               <p
@@ -64,7 +62,7 @@ const page = async ({ params }: any) => {
                 data-aos-delay={idx * 300}
                 className="mt-2 text-sm leading-[150%] line-clamp-3"
               >
-                {item.subtitle}
+                {item.node.acf.content}
               </p>
             </div>
           </Link>

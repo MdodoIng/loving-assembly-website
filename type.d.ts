@@ -328,3 +328,61 @@ interface TeamPageType {
     };
   };
 }
+
+interface BlogsType {
+  blogs: {
+    edges: Array<{
+      node: {
+        title: string;
+        slug: string;
+        date: string;
+        author: {
+          node: {
+            name: string;
+            slug: string;
+          };
+        };
+        acf: {
+          title: string;
+          bannerImage: {
+            sourceUrl: string;
+            mediaDetails: {
+              height: number;
+              width: number;
+            };
+          };
+          content: string;
+        };
+      };
+    }>;
+  };
+}
+
+interface BlogsBySlugType {
+  users: {
+    edges: Array<{
+      node: {
+        avatar: {
+          url: string;
+        };
+        name: string;
+        slug: string;
+        blogs: {
+          edges: Array<{
+            node: {
+              title: string;
+              slug: string;
+              acf: {
+                title: string;
+                content: string;
+                bannerImage: {
+                  sourceUrl: string;
+                };
+              };
+            };
+          }>;
+        };
+      };
+    }>;
+  };
+}

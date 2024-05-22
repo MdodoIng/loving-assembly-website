@@ -1,5 +1,7 @@
 import { API_URL, WORDPRESS_AUTH_REFRESH_TOKEN } from "./clinet";
 import {
+  blogsBySlugQuery,
+  blogsQuery,
   contactUsQuery,
   homeQuery,
   kidsOfExcellenceQuery,
@@ -43,6 +45,10 @@ export async function getPageContent(
     | "contact-us"
     | "teams"
     | "team-page"
+    | "blogs"
+    | "blogs-by-slug"
+    | "ministries-by-slug",
+  slug?: string
 ) {
   const query = {
     home: homeQuery,
@@ -51,14 +57,10 @@ export async function getPageContent(
     "contact-us": contactUsQuery,
     teams: teamsQuery,
     "team-page": teamPageQuery,
+    blogs: blogsQuery,
+    "blogs-by-slug": blogsBySlugQuery,
+    "ministries-by-slug": ministriesQuery,
   };
-  const data = await fetchApi(query[id], { variables: {} });
-  return data;
-}
-
-export async function getMinistriesPageContentBySlug(slug: string) {
-  const data = await fetchApi(ministriesQuery, {
-    variables: { slug },
-  });
+  const data = await fetchApi(query[id], { variables: { slug } });
   return data;
 }

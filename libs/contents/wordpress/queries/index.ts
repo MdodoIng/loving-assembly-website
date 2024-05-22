@@ -5,6 +5,8 @@ import ministriesQuery from "./ministries";
 import contactUsQuery from "./contact-us";
 import teamsQuery from "./teams";
 import teamPageQuery from "./teamPage";
+import blogsQuery from "./blogs";
+import blogsBySlugQuery from "./blogs-by-slug";
 
 export {
   homeQuery,
@@ -13,5 +15,7 @@ export {
   ministriesQuery,
   contactUsQuery,
   teamsQuery,
-  teamPageQuery
+  teamPageQuery,
+  blogsBySlugQuery,
+  blogsQuery,
 };

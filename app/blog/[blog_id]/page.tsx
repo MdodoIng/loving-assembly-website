@@ -4,43 +4,55 @@ import NavigationBtns from "@/components/blog/[blog_id]/NavigationBtns";
 import RecentBlogs from "@/components/blog/[blog_id]/RecentBlogs";
 import Layout from "@/components/layout";
 import { blogData } from "@/libs/contents";
+import { getPageContent } from "@/libs/contents/wordpress/data";
+import descriptionExtractor from "@/libs/hooks/descriptionExtractor";
 import main_padding from "@/styles/padding";
 import Link from "next/link";
 
-const page = ({ params }: any) => {
-  const data = blogData.filter((item) => item.slug === params.blog_id)[0];
+const page = async ({ params }: any) => {
+  const blogs: BlogsType = await getPageContent("blogs");
+  const data = blogs.blogs.edges.filter(
+    (item) => item.node.slug === params.blog_id
+  )[0];
 
-  const index = blogData.findIndex((item) => item.slug === params.blog_id);
+  const index = blogs.blogs.edges.findIndex(
+    (item) => item.node.slug === params.blog_id
+  );
 
   const buttons = [
     {
       title: "Prev",
-      link: index === 0 ? "" : `/blog/${blogData[index - 1].slug}`,
+      link:
+        index === 0 ? "" : `/blog/${blogs.blogs.edges[index - 1].node.slug}`,
     },
     {
       title: "Next",
       link:
-        index === blogData.length - 1
+        index === blogs.blogs.edges.length - 1
           ? ""
-          : `/blog/${blogData[index + 1].slug}`,
+          : `/blog/${blogs.blogs.edges[index + 1].node.slug}`,
     },
   ];
+
+  const date = new Date(data.node.date);
+  const formattedDate = date.toLocaleString("en-US", {
+    month: "short",
+    day: "numeric",
+  });
 
   return (
     <Layout>
       <HeroSection
-        heroSectionImage={data.heroSectionImage}
+        heroSectionImage={data.node.acf.bannerImage.sourceUrl}
         author={
-          data.date && (
-            <>
-              {data.date} - Blog - By&nbsp;
-              <Link href={`/author/${data.author.slug}`} shallow>
-                {data.author.title}
-              </Link>
-            </>
-          )
+          <>
+            {formattedDate} - Blog - By&nbsp;
+            <Link href={`/author/${data.node.author.node.slug}`} shallow className="capitalize">
+              {data.node.author.node.name}
+            </Link>
+          </>
         }
-        title={data.title}
+        title={data.node.acf.title}
       />
       <SectionWrapper
         classBottom={`md:gap-20 gap-10 max-md:flex-col md:justify-between  ${main_padding.b}`}
@@ -51,10 +63,10 @@ const page = ({ params }: any) => {
           data-aos-duration="700"
           className=" text-lg leading-[190%] md:max-w-[70%]"
         >
-          {data.description}
+          {descriptionExtractor(data.node.acf.content)}
         </p>
 
-        <RecentBlogs />
+        <RecentBlogs data={blogs} />
       </SectionWrapper>
 
       <NavigationBtns buttons={buttons} />
