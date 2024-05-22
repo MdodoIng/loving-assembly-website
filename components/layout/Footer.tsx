@@ -6,31 +6,6 @@ import Image from "next/image";
 import main_padding from "@/styles/padding";
 import { getPageContent } from "@/libs/contents/wordpress/data";
 
-const data = [
-  {
-    title: "Team",
-    link: "/our-team",
-  },
-  {
-    title: "Men Of Valor",
-    link: "/contact-us/man-of-valour",
-  },
-
-  {
-    title: "Outreach",
-    link: "/contact-us/outreach",
-  },
-  {
-    title: "Youth Mission Statement",
-    link: "/contact-us/children-youth-mission",
-  },
-
-  {
-    title: "Contact Us",
-    link: "/contact-us",
-  },
-];
-
 const bottomLinks = [
   {
     title: "Privacy Policy",
@@ -43,7 +18,7 @@ const bottomLinks = [
 ];
 
 const Footer = () => {
-  const [menuLinks, setMenuLinks] = useState<
+  const [footerLinks, setFooterLinks] = useState<
     {
       title: string;
       link: string;
@@ -63,10 +38,21 @@ const Footer = () => {
         };
         return d;
       });
-      setMenuLinks(ministriesSubLinks);
+      setFooterLinks(ministriesSubLinks);
     }
     getData();
   }, []);
+  const data = [
+    {
+      title: "Team",
+      link: "/our-team",
+    },
+    ...footerLinks!,
+    {
+      title: "Contact Us",
+      link: "/contact-us",
+    },
+  ];
   return (
     <SectionWrapper classBottom={`${main_padding.t} flex-col items-center`}>
       <Link href="/" scroll shallow data-aos="fade-up" data-aos-duration="700">
