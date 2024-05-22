@@ -1,7 +1,7 @@
 import Image from "next/image";
 import logo from "@/assets/icons/logo.webp";
 
-const loading = () => {
+const Loading = () => {
   return (
     <div className="w-screen h-svh bg-off-white flex items-center justify-center ">
       <div
@@ -21,4 +21,4 @@ const loading = () => {
   );
 };
 
-export default loading;
+export default Loading;

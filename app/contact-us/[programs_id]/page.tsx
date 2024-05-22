@@ -1,16 +1,19 @@
+import Loading from "@/app/loading";
 import About from "@/components/contact-us/[programs_id]/About";
 import HeroSection from "@/components/contact-us/[programs_id]/HeroSection";
 import Layout from "@/components/layout";
 
-import {
-  getPageContent
-} from "@/libs/contents/wordpress/data";
+import { getPageContent } from "@/libs/contents/wordpress/data";
 import descriptionExtractor from "@/libs/hooks/descriptionExtractor";
 import React from "react";
 
 const page = async ({ params }: any) => {
-  const data: MinistriesType = await getPageContent("ministries-by-slug",params.programs_id);
+  const data: MinistriesType = await getPageContent(
+    "ministries-by-slug",
+    params.programs_id
+  );
 
+  if (!data) return <Loading />;;
   return (
     <Layout>
       <HeroSection

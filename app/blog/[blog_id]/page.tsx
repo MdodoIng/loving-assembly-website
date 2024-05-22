@@ -1,3 +1,4 @@
+import Loading from "@/app/loading";
 import SectionWrapper from "@/components/SectionWrapper";
 import HeroSection from "@/components/blog/[blog_id]/HeroSection";
 import NavigationBtns from "@/components/blog/[blog_id]/NavigationBtns";
@@ -38,6 +39,8 @@ const page = async ({ params }: any) => {
     month: "short",
     day: "numeric",
   });
+
+  if (!data) return <Loading />;
 
   return (
     <Layout>

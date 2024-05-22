@@ -6,10 +6,12 @@ import logo from "@/assets/icons/our programs/Men of Valor.webp";
 import Features from "@/components/contact-us/men-of-valor/Features";
 import { getPageContent } from "@/libs/contents/wordpress/data";
 import descriptionExtractor from "@/libs/hooks/descriptionExtractor";
+import Loading from "@/app/loading";
 
 const page = async () => {
   const data: ManOfValourType = await getPageContent("man-of-valour");
   
+  if (!data) return <Loading />;
   return (
     <Layout>
       <HeroSection data={data} />

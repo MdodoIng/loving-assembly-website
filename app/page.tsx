@@ -12,12 +12,15 @@ import Ministering from "@/components/Home/Ministering";
 
 import { getPageContent } from "@/libs/contents/wordpress/data";
 import descriptionExtractor from "@/libs/hooks/descriptionExtractor";
+import Loading from "./loading";
 
 export default async function Home() {
   const [data, teams]: [HomePageType, TeamsType] = await Promise.all([
     getPageContent("home"),
     getPageContent("teams"),
   ]);
+
+  if (!data && !teams) return <Loading />;
 
   return (
     <Layout>

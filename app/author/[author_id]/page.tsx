@@ -1,3 +1,4 @@
+import Loading from "@/app/loading";
 import SectionWrapper from "@/components/SectionWrapper";
 import HeroSection from "@/components/blog/[blog_id]/HeroSection";
 import Layout from "@/components/layout";
@@ -12,6 +13,8 @@ const page = async ({ params }: any) => {
     "blogs-by-slug",
     params.author_id
   );
+
+  if (!data) return <Loading />;
 
   return (
     <Layout>

@@ -8,12 +8,14 @@ import { NormalBtn } from "@/ui/buttons";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import Loading from "../loading";
 
 const Page = async () => {
   const [data, teams]: [TeamPageType, TeamsType] = await Promise.all([
     getPageContent("team-page"),
     getPageContent("teams"),
   ]);
+  if (!data && !teams) return  <Loading />;
   return (
     <Layout>
       <SectionWrapper

@@ -5,9 +5,12 @@ import bg from "@/assets/images/our programmes/Kids Of Excellence bg.webp";
 import Events from "@/components/contact-us/kids-of-excellence/Events";
 import Guiding from "@/components/contact-us/kids-of-excellence/Guiding";
 import { getPageContent } from "@/libs/contents/wordpress/data";
+import Loading from "@/app/loading";
 
 const page = async () => {
   const data: KidsOfExcellenceType = await getPageContent("kids-of-excellence");
+
+  if (!data) return <Loading />;;
   return (
     <Layout>
       <HeroSection
