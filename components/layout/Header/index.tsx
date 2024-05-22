@@ -1,72 +1,97 @@
 import Image from "next/image";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import logo from "@/assets/icons/logo.webp";
 import arrowDown from "@/assets/icons/arrow down.svg";
 import Link from "next/link";
 import { NormalBtn } from "@/ui/buttons";
 import NavMobile from "./NavMobile";
 import { blogData } from "@/libs/contents";
+import { getPageContent } from "@/libs/contents/wordpress/data";
 
-const blogSubLinks = [...blogData].slice(0, 3).map((item) => {
-  const d = {
-    title: item.title,
-    link: `/blog/${item.slug}`,
-  };
-  return d;
-});
 
-const links = [
-  {
-    title: "Home",
-    link: "/",
-  },
-  {
-    title: "Ministries",
-    link: "",
-    subLinks: [
-      {
-        title: "Team",
-        link: "/our-team",
-      },
-      {
-        title: "Men Of Valor",
-        link: "/contact-us/men-of-valor",
-      },
-      {
-        title: "Kids Of Excellence",
-        link: "/contact-us/kids-of-excellence",
-      },
-      {
-        title: "Music Ministry",
-        link: "/contact-us/music-ministry",
-      },
-      {
-        title: "Women of Destiny",
-        link: "/contact-us/women-of-destiny",
-      },
-      {
-        title: "Outreach",
-        link: "/contact-us/outreach",
-      },
-      {
-        title: "Youth Mission Statement",
-        link: "/contact-us/children-and-youth-mission",
-      },
-    ],
-  },
-  {
-    title: "Blog",
-    link: "",
-    subLinks: blogSubLinks,
-  },
-  {
-    title: "Contact Us",
-    link: "/contact-us",
-  },
-];
+
+
 
 const Header = () => {
   const [expand, setExpand] = useState(0);
+  const [menuLinks, setMenuLinks] = useState<{
+    blogs: {
+      title: string;
+      link: string;
+    }[];
+    ministries: {
+      title: string;
+      link: string;
+    }[];
+  }>();
+
+  useEffect(() => {
+    async function getData() {
+      const blog: BlogsType = await getPageContent("blogs");
+      const blogSubLinks = [...blog.blogs.edges].slice(0, 3).map((item) => {
+        const d = {
+          title: item.node.acf.title,
+          link: `/blog/${item.node.slug}`,
+        };
+        return d;
+      });
+      setMenuLinks({ blogs: blogSubLinks, ministries : [{}] });
+    }
+    getData();
+  }, []);
+
+  const links = [
+    {
+      title: "Home",
+      link: "/",
+    },
+    {
+      title: "Ministries",
+      link: "",
+      subLinks: [
+        {
+          title: "Team",
+          link: "/our-team",
+        },
+        {
+          title: "Men Of Valor",
+          link: "/contact-us/man-of-valour",
+        },
+        {
+          title: "Kids Of Excellence",
+          link: "/contact-us/kids-of-excellence",
+        },
+        {
+          title: "Music Ministry",
+          link: "/contact-us/music-ministry",
+        },
+        {
+          title: "Women of Destiny",
+          link: "/contact-us/women-of-destiny",
+        },
+        {
+          title: "Outreach",
+          link: "/contact-us/outreach",
+        },
+        {
+          title: "Youth Mission Statement",
+          link: "/contact-us/children-youth-mission",
+        },
+      ],
+    },
+    {
+      title: "Blog",
+      link: "",
+      subLinks: menuLinks?.blogs,
+    },
+    {
+      title: "Contact Us",
+      link: "/contact-us",
+    },
+  ];
+
+  console.log(menuLinks)
+
   return (
     <nav className="flex items-center lg:justify-center justify-between gap-28 absolute top-5 bg-white/50 backdrop-blur-sm md:px-20 px-2 py-1 rounded-[10px] shadow-md z-50 max-lg:w-[90vw] overflow-x-clip">
       <Link href="/" shallow>

@@ -27,7 +27,7 @@ const HeroSectionBottom = ({
         className="flex flex-col gap-1"
       >
         {subtitle && (
-          <HeadSubtitle className="md:text-xl text-lg text-secondary font-bold md:hidden">
+          <HeadSubtitle className="md:text-xl text-lg text-secondary font-bold md:hidden capitalize">
             {subtitle}
           </HeadSubtitle>
         )}

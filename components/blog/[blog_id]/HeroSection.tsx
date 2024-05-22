@@ -25,9 +25,9 @@ const HeroSection = ({
             <Image
               src={heroSectionImage}
               alt=""
-              width={1440}
-              height={900}
-              className="object-contain object-left h-full w-max -z-10 sm:max-h-[80vh] rounded-[10px] overflow-hidden"
+              width={640}
+              height={800}
+              className="object-contain object-left h-full sm:min-w-[300px] w-max -z-10 sm:max-h-[80vh] rounded-[10px] overflow-hidden"
             />
           </div>
         </SectionWrapper>
