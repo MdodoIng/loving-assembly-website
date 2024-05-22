@@ -52,7 +52,7 @@ export async function getPageContent(
     | "ministries-by-slug"
     | "ministries-nav-links"
     | "footer-links",
-  slug: string = ""
+  slug?: string
 ) {
   const query = {
     home: homeQuery,

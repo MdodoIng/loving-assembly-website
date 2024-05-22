@@ -9,6 +9,7 @@ import descriptionExtractor from "@/libs/hooks/descriptionExtractor";
 
 const page = async () => {
   const data: ManOfValourType = await getPageContent("man-of-valour");
+  console.log(data)
   return (
     <Layout>
       <HeroSection data={data} />
