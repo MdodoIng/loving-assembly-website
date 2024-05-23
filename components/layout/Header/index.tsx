@@ -140,7 +140,7 @@ const Header = () => {
           </li>
         ))}
       </menu>
-      <NormalBtn mode="day" className="bg-transparent max-lg:hidden">
+      <NormalBtn mode="night" className="max-lg:hidden hover:bg-primary hover:border-primary hover:text-white">
         Live
       </NormalBtn>
 
