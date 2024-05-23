@@ -35,7 +35,7 @@ const Journey = ({ data }: { data: HomePageType }) => {
               <h2
                 data-aos="fade-up"
                 data-aos-duration="700"
-                className="text-2xl leading-[140%] font-bold text-secondary"
+                className="text-2xl leading-[140%] font-black text-secondary"
               >
                 {item.title}
               </h2>
