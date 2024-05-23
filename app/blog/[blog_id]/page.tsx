@@ -56,7 +56,7 @@ const page = async ({ params }: any) => {
         heroSectionImage={data.node.acf.bannerImage.sourceUrl}
         author={
           <>
-            {formattedDate} - Blog - By&nbsp;
+            {formattedDate} - By&nbsp;
             <Link
               href={`/author/${data.node.author.node.slug}`}
               shallow
