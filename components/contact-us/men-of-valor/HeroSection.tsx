@@ -34,7 +34,7 @@ const HeroSection = ({ data }: { data: ManOfValourType }) => {
         <div
           data-aos="fade-up"
           data-aos-duration="700"
-          className={`grid md:grid-cols-2 md:gap-10 gap-2 lg:mt-16 md:mt-14 mt-6 w-full sm:bg-off-white sm:px-8   sm:py-10 rounded-[10px] sm:text-lg text-sm`}
+          className={`grid md:grid-cols-2 md:gap-10 gap-2 lg:mt-16 md:mt-14 mt-6 w-full sm:bg-off-white sm:px-8   sm:py-10 rounded-[10px] sm:text-lg text-sm sm:leading-[190%] leading-[170%]`}
         >
           {description.map((item, idx) => (
             <p key={idx} className="block">
