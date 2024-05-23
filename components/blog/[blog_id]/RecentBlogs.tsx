@@ -22,14 +22,15 @@ const RecentBlogs = ({ data }: { data: BlogsType }) => {
             />
 
             <div className="flex flex-col ">
-              <span className="text-[10px]">
+              <span className="text-[12px]">
                 {new Date(item.node.date).toLocaleString("en-US", {
                   month: "short",
                   day: "numeric",
+                  
                 })}{" "}
-                - Blog - By {item.node.author.node.name}
+                - By {item.node.author.node.name}
               </span>
-              <h5 className="text-secondary font-medium line-clamp-1">
+              <h5 className="text-secondary font-bold line-clamp-1">
                 {item.node.acf.title}
               </h5>
               <p className="line-clamp-2 text-xs mt-1">
