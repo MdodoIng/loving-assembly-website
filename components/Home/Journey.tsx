@@ -42,7 +42,7 @@ const Journey = ({ data }: { data: HomePageType }) => {
               <p
                 data-aos="fade-up"
                 data-aos-duration="700"
-                className="text-lg leading-[150%] mt-4"
+                className="text-lg leading-[190%] mt-4"
               >
                 {item.description}
               </p>
