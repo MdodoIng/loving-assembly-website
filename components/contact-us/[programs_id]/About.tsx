@@ -33,7 +33,7 @@ const About = ({
           className="aspect-square max-h-[400px] object-contain md:w-[40%] w-full"
         />
         <div data-aos="fade-up" data-aos-duration="700">
-          <p className="leading-[190%]">{description}</p>
+          <p className="leading-[190%] text-lg">{description}</p>
           <NormalBtn
             onClick={() => router.push(`/${button.link}`)}
             className="mt-6 max-sm:w-full capitalize"

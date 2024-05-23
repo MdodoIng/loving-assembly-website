@@ -72,7 +72,7 @@ const Footer = () => {
       <menu className="flex items-center justify-center gap-6 lg:mt-16 md:mt-14 mt-6 max-sm:flex-wrap ">
         {data.map((item, idx) => (
           <li key={idx}>
-            <Link href={item.link} shallow className="font-semibold text-base">
+            <Link href={item.link} shallow className="font-semibold text-base px-4 py-2 border rounded-lg hover:border-black border-transparent duration-300">
               {item.title}
             </Link>
           </li>

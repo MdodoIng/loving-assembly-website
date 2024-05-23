@@ -79,14 +79,17 @@ const Header = () => {
   ];
 
   return (
-    <nav className="flex items-center lg:justify-center justify-between gap-28 absolute top-5 bg-white/50 backdrop-blur-sm md:px-20 px-2 py-1 rounded-[10px] shadow-md z-50 max-lg:w-[90vw] overflow-x-clip">
+    <nav
+      onMouseLeave={() => setExpand(0)}
+      className="flex items-center lg:justify-center justify-between gap-28 absolute top-5 bg-white/50 backdrop-blur-sm md:px-20 px-2 py-1 rounded-[10px] shadow-md z-50 max-lg:w-[90vw] overflow-x-clip"
+    >
       <Link href="/" shallow>
         <Image
           src={logo}
           alt=""
           width={220}
           height={160}
-          className="lg:h-[66px] h-[60px] w-auto object-contain"
+          className="lg:h-[80px] h-[63px] w-auto object-contain"
         />
       </Link>
 
@@ -96,7 +99,7 @@ const Header = () => {
             onClick={() => (expand !== idx ? setExpand(idx) : setExpand(0))}
             onMouseOver={() => setExpand(idx)}
             key={idx}
-            className="font-semibold text-sm cursor-pointer"
+            className="font-bold text-sm cursor-pointer"
           >
             {item.subLinks ? (
               <div className="relative z-0 flex flex-col items-center justify-center">
@@ -114,18 +117,20 @@ const Header = () => {
                 </span>
                 {/*  */}
                 {expand === idx && (
-                  <div className="flex flex-col items-start justify-center gap-3 absolute top-[280%] bg-white/50 backdrop-blur-md w-max px-4 py-6 rounded-[10px] shadow-md ">
-                    {item.subLinks.map((subLink, subLinkIdx) => (
-                      <Link
-                        key={subLinkIdx}
-                        onClick={() => setExpand(0)}
-                        href={subLink.link}
-                        shallow
-                        className="text-center "
-                      >
-                        {subLink.title}
-                      </Link>
-                    ))}
+                  <div className="absolute top-0">
+                    <div className="flex flex-col items-start justify-center gap-5 mt-[30%] bg-white/90 backdrop-blur-md w-max px-6 py-10 rounded-[10px] shadow-md ">
+                      {item.subLinks.map((subLink, subLinkIdx) => (
+                        <Link
+                          key={subLinkIdx}
+                          onClick={() => setExpand(0)}
+                          href={subLink.link}
+                          shallow
+                          className="text-center "
+                        >
+                          {subLink.title}
+                        </Link>
+                      ))}
+                    </div>
                   </div>
                 )}
               </div>

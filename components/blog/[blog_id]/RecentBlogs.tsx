@@ -18,11 +18,11 @@ const RecentBlogs = ({ data }: { data: BlogsType }) => {
               alt=""
               width={400}
               height={400}
-              className="object-cover w-[75px] h-auto rounded-sm aspect-square"
+              className="object-cover w-[75px] h-auto rounded-md aspect-square"
             />
 
             <div className="flex flex-col ">
-              <span className="text-[8px]">
+              <span className="text-[10px]">
                 {new Date(item.node.date).toLocaleString("en-US", {
                   month: "short",
                   day: "numeric",

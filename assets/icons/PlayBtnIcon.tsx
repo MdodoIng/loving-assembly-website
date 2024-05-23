@@ -4,8 +4,8 @@ import { twMerge } from "tailwind-merge";
 const PlayBtnIcon = ({ className }: { className?: string }) => {
   return (
     <svg
-      width="64"
-      height="64"
+      width="75"
+      height="75"
       viewBox="0 0 64 64"
       fill="none"
       className={twMerge("animate-pulse", className)}

@@ -25,7 +25,7 @@ const Guiding = ({ data }: { data: KidsOfExcellenceType }) => {
   const navigationNextRef = useRef(null);
   return (
     <SectionWrapper classBottom={`${main_padding.y} flex-col items-center`}>
-      <HeadTitle className="text-center max-w-[800px]">
+      <HeadTitle border className="text-center max-w-[800px]">
         {data.page.acf.firstSection.title}
       </HeadTitle>
       <HeadSubtitle className="sm:mt-4 mt-2 text-center max-w-[900px] text-black">

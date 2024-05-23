@@ -9,7 +9,7 @@ import Image from "next/image";
 const OurPrograms = ({ data }: { data: HomePageType }) => {
   return (
     <SectionWrapper classBottom={`${main_padding.y} flex-col items-center`}>
-      <HeadTitle className="max-w-[900px] text-center">
+      <HeadTitle border className="max-w-[900px] text-center">
         {data.page.acf.fourthSection.sectionTitle}
       </HeadTitle>
       <HeadSubtitle className="text-center text-black sm:mt-4 mt-2 max-w-[900px]">

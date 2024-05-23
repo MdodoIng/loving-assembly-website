@@ -26,7 +26,7 @@ const NavigationBtns = ({
             <Link
               href={item.link}
               shallow
-              className=" text-black text-sm px-4 py-2 hover:border-secondary hover:bg-secondary hover:text-white duration-300 border-black border rounded-lg"
+              className=" text-black text-sm px-8 py-2 hover:border-secondary hover:bg-secondary hover:text-white duration-300 border-black border rounded-lg"
             >
               {item.title}
             </Link>

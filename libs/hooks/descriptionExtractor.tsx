@@ -2,10 +2,10 @@ const descriptionExtractor = (description?: string) => {
   return (
     <>
       {description?.split("\r\n").map((item, idx) => (
-        <p key={idx} className="group">
+        <p key={idx} className="group flex flex-col">
           {item}
 
-          <br className="group-last:hidden" />
+          <span className="group-last:hidden h-2" />
         </p>
       ))}
     </>

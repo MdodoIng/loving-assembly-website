@@ -10,6 +10,7 @@ type Props = {
   description?: string;
   btn1?: { title?: string; link?: string };
   btn2?: { title?: string; link?: string };
+  border?: boolean;
 };
 const HeroSectionBottom = ({
   btn1,
@@ -17,6 +18,7 @@ const HeroSectionBottom = ({
   description,
   subtitle,
   title,
+  border,
 }: Props) => {
   const pathname = usePathname();
   return (
@@ -33,6 +35,7 @@ const HeroSectionBottom = ({
         )}
         {title && (
           <HeadTitle
+            border={border}
             className={
               pathname === "/"
                 ? "lg:text-[5rem] md:text-[4.5rem] text-3xl tracking-tight"

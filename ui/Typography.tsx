@@ -4,15 +4,19 @@ import { twJoin, twMerge } from "tailwind-merge";
 const HeadTitle = ({
   children,
   className,
+  border,
 }: {
   children: ReactNode;
   className?: string;
+  border?: boolean;
 }) => (
   <h1
     data-aos="fade-up"
     data-aos-duration="700"
     className={twJoin(
-      "font-bold text-secondary lg:leading-[120%] md:leading-[120%] leading-[120%] lg:text-5xl md:text-4xl text-3xl",
+      `font-black text-secondary lg:leading-[120%] md:leading-[120%] leading-[120%]  lg:text-5xl md:text-4xl text-3xl tracking-tight ${
+        border && "px-6 py-2 border rounded-md border-black w-max max-w-full"
+      }`,
       className
     )}
   >

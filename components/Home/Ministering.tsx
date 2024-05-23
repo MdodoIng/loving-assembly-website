@@ -18,7 +18,7 @@ const Ministering = ({
   const router = useRouter();
   return (
     <SectionWrapper classBottom={`${main_padding.y} items-center flex-col`}>
-      <HeadTitle className="text-center max-w-[900px]">
+      <HeadTitle border className="text-center max-w-[900px]">
         {data.page.acf.eighthSection.title}
       </HeadTitle>
       <HeadSubtitle className="sm:mt-4 mt-2 text-center max-w-[900px] text-black">
@@ -58,7 +58,7 @@ const Ministering = ({
                   data-aos="fade-up"
                   data-aos-duration="700"
                   data-aos-delay={idx * 300}
-                  className="md:mt-2 mt-1 text-base leading-[150%]"
+                  className="md:mt-2 mt-1 text-base uppercase font-bold leading-[150%]"
                 >
                   {item.node.acf.teamMemberDetails.designation}
                 </p>

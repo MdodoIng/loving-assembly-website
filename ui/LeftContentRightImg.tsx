@@ -14,6 +14,7 @@ type Props = {
   image: StaticImageData | string;
   imageLink?: string;
   playBtn?: boolean;
+  border?: boolean;
 };
 
 const LeftContentRightImg = ({
@@ -25,6 +26,7 @@ const LeftContentRightImg = ({
   image,
   playBtn,
   imageLink,
+  border,
 }: Props) => {
   return (
     <div className="grid md:grid-cols-2 lg:gap-20 md:gap-14 gap-6 items-center">
@@ -35,7 +37,8 @@ const LeftContentRightImg = ({
           direction === "opposite" && "md:order-1"
         } `}
       >
-        <HeadTitle>{title}</HeadTitle>
+        
+        <HeadTitle border={border}>{title}</HeadTitle>
         <HeadSubtitle className="sm:mt-4 mt-2">{subtitle}</HeadSubtitle>
         <div>
           {(btn1 || btn2) && (

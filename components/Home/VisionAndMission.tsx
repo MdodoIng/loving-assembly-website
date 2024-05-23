@@ -8,7 +8,7 @@ import Image from "next/image";
 const VisionAndMission = ({ data }: { data: HomePageType }) => {
   return (
     <SectionWrapper classBottom={`${main_padding.y} items-center flex-col`}>
-      <HeadTitle className="text-center max-w-[900px]">
+      <HeadTitle border className="text-center max-w-[900px]">
         {data.page.acf.sixthSection.title}
       </HeadTitle>
       <HeadSubtitle className="sm:mt-4 mt-2 text-center max-w-[900px] text-black">
@@ -31,7 +31,7 @@ const VisionAndMission = ({ data }: { data: HomePageType }) => {
               height={item.image.mediaDetails.height}
               className="aspect-[16/12] object-cover"
             />
-            <div className="flex flex-col px-6 py-6">
+            <div className="flex flex-col px-6 pt-6 pb-10">
               <h3
                 data-aos="fade-up"
                 data-aos-duration="700"

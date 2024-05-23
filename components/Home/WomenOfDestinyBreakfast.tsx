@@ -9,7 +9,7 @@ import Image from "next/image";
 const WomenOfDestinyBreakfast = ({ data }: { data: HomePageType }) => {
   return (
     <SectionWrapper classBottom={`${main_padding.y} items-center flex-col`}>
-      <HeadTitle className="text-center max-w-[900px]">
+      <HeadTitle border className="text-center max-w-[900px]">
         {data.page.acf.fifthSection.sectionTitle}
       </HeadTitle>
       <HeadSubtitle className="sm:mt-4 mt-2 text-center max-w-[900px] text-black">

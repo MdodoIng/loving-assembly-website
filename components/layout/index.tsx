@@ -13,6 +13,7 @@ const Layout = ({ children }: { children: ReactNode }) => {
     if (typeof document !== "undefined") {
       AOS.init({
         once: true,
+        disable: true,
       });
     }
   }, []);

@@ -9,7 +9,7 @@ const Features = ({ data }: { data: ManOfValourType }) => {
         {data.page.acf.thirdSection.boxes.map((item, idx) => (
           <div
             key={idx}
-            className="bg-off-white px-6 py-4 rounded-[10px] flex flex-col w-full h-full items-center"
+            className="bg-off-white px-8 py-10 rounded-[10px] flex flex-col w-full h-full items-center"
           >
             <Image
               data-aos="fade-up"
@@ -26,7 +26,7 @@ const Features = ({ data }: { data: ManOfValourType }) => {
               data-aos="fade-up"
               data-aos-duration="700"
               data-aos-delay={idx * 300}
-              className="mt-3 text-primary font-semibold text-2xl"
+              className="mt-3 text-primary font-bold text-2xl px-4 py-2 border border-black rounded-md"
             >
               {item.title}
             </h3>
@@ -34,7 +34,7 @@ const Features = ({ data }: { data: ManOfValourType }) => {
               data-aos="fade-up"
               data-aos-duration="700"
               data-aos-delay={idx * 300}
-              className="mt-1 text-base text-center leading-[150%]"
+              className="mt-4 text-base text-center leading-[150%]"
             >
               {item.description}
             </p>

@@ -8,7 +8,7 @@ import Image from "next/image";
 const Journey = ({ data }: { data: HomePageType }) => {
   return (
     <SectionWrapper classBottom={`${main_padding.y} items-center flex-col`}>
-      <HeadTitle className="text-center max-w-[900px]">
+      <HeadTitle border className="text-center max-w-[900px]">
         {data.page.acf.fifthSection.sectionTitleTwo}
       </HeadTitle>
       <HeadSubtitle className="sm:mt-4 mt-2 text-center max-w-[900px] text-black">
@@ -18,8 +18,8 @@ const Journey = ({ data }: { data: HomePageType }) => {
         {data.page.acf.fifthSection.posts.map((item, idx) => (
           <div
             key={idx}
-            className={`md:max-w-[70%]  ${
-              idx % 2 === 0 ? "mr-auto" : "ml-auto"
+            className={`w-full flex md:gap-20 gap-6 ${
+              idx % 2 === 0 ? "md:flex-row flex-col" : "md:flex-row-reverse flex-col"
             }`}
           >
             <Image
@@ -29,22 +29,24 @@ const Journey = ({ data }: { data: HomePageType }) => {
               data-aos-duration="700"
               width={item.image.mediaDetails.width}
               height={item.image.mediaDetails.height}
-              className="w-full object-cover rounded-[10px] overflow-hidden"
+              className="object-cover rounded-[10px] overflow-hidden md:w-[60%] w-full shrink-0"
             />
-            <h2
-              data-aos="fade-up"
-              data-aos-duration="700"
-              className="text-2xl leading-[190%] font-bold mt-6 text-secondary"
-            >
-              {item.title}
-            </h2>
-            <p
-              data-aos="fade-up"
-              data-aos-duration="700"
-              className="text-base leading-[150%]"
-            >
-              {item.description}
-            </p>
+            <div className="flex flex-col justify-center">
+              <h2
+                data-aos="fade-up"
+                data-aos-duration="700"
+                className="text-2xl leading-[140%] font-bold text-secondary"
+              >
+                {item.title}
+              </h2>
+              <p
+                data-aos="fade-up"
+                data-aos-duration="700"
+                className="text-lg leading-[150%] mt-4"
+              >
+                {item.description}
+              </p>
+            </div>
           </div>
         ))}
       </div>

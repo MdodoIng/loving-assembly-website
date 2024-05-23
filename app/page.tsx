@@ -27,6 +27,7 @@ export default async function Home() {
       <HeroSection data={data} />
       <SectionWrapper classBottom={main_padding.y}>
         <LeftContentRightImg
+          border={true}
           title={data.page.acf.secondSectionChurch.title}
           subtitle={data.page.acf.secondSectionChurch.description}
           btn1={{
@@ -39,11 +40,12 @@ export default async function Home() {
           }}
           image={data.page.acf.secondSectionChurch.sectionImage.sourceUrl}
           playBtn={true}
-          imageLink="ddsaf"
+          imageLink={data.page.acf.secondSectionChurch.sectionImage.sourceUrl}
         />
       </SectionWrapper>
       <SectionWrapper classBottom={main_padding.y}>
         <LeftContentRightImg
+          border={true}
           title={data.page.acf.thirdSectionWho.title}
           subtitle={descriptionExtractor(
             data.page.acf.thirdSectionWho.description

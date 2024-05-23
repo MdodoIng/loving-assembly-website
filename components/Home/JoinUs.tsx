@@ -26,7 +26,9 @@ const JoinUs = ({ data }: { data: HomePageType }) => {
         className="-z-10 object-cover opacity-30"
         alt={""}
       />
-      <HeadTitle>{data.page.acf.seventhSectionJoinus.title}</HeadTitle>
+      <HeadTitle border className="border-white">
+        {data.page.acf.seventhSectionJoinus.title}
+      </HeadTitle>
       <HeadSubtitle className="text-center text-off-white mt-6 leading-[200%]">
         {descriptionExtractor(data.page.acf.seventhSectionJoinus.description)}
       </HeadSubtitle>

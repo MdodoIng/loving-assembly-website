@@ -12,7 +12,7 @@ const HeroSection = ({ data }: { data: ContactUsPageType }) => {
     <SectionWrapper
       classBottom={`${main_padding.y} flex-col items-center mt-40`}
     >
-      <HeadTitle className="text-center max-w-[900px]">
+      <HeadTitle border className="text-center max-w-[900px]">
         {data.page.acf.firstSection.title}
       </HeadTitle>
       <HeadSubtitle className="sm:mt-4 mt-2 text-center max-w-[900px] text-black">
@@ -39,7 +39,7 @@ const HeroSection = ({ data }: { data: ContactUsPageType }) => {
               data-aos="fade-up"
               data-aos-duration="700"
               data-aos-delay={idx * 300}
-              className="text-primary font-bold text-2xl mt-3"
+              className="text-primary font-bold text-2xl mt-3 px-4 py-1 border border-black rounded-lg"
             >
               {item.title}
             </h2>
@@ -49,7 +49,7 @@ const HeroSection = ({ data }: { data: ContactUsPageType }) => {
               data-aos-delay={idx * 300}
               href={`${item.link}`}
               target="_blank"
-              className="mt-2 text-base max-w-[200px] text-center "
+              className="mt-2 text-base text-center font-medium"
             >
               {item.description}
             </Link>
