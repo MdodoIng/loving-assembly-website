@@ -9,6 +9,7 @@ import blogsQuery from "./blogs";
 import blogsBySlugQuery from "./blogs-by-slug";
 import ministriesNavLinksQuery from "./mics/ministries-nav-links";
 import footerLinksQuery from "./mics/footer-links";
+import usersQuery from "./ministries/users";
 
 export {
   homeQuery,
@@ -21,5 +22,6 @@ export {
   blogsBySlugQuery,
   blogsQuery,
   ministriesNavLinksQuery,
-  footerLinksQuery
+  footerLinksQuery,
+  usersQuery,
 };

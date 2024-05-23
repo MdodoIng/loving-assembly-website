@@ -9,6 +9,14 @@ import descriptionExtractor from "@/libs/hooks/descriptionExtractor";
 import main_padding from "@/styles/padding";
 import Link from "next/link";
 
+export async function generateStaticParams() {
+  const data: BlogsType = await getPageContent("blogs");
+
+  return data.blogs.edges.map((post) => ({
+    blog_id: post.node.slug,
+  }));
+}
+
 const page = async ({ params }: any) => {
   const blogs: BlogsType = await getPageContent("blogs");
   const data = blogs.blogs.edges.filter(
@@ -49,7 +57,11 @@ const page = async ({ params }: any) => {
         author={
           <>
             {formattedDate} - Blog - By&nbsp;
-            <Link href={`/author/${data.node.author.node.slug}`} shallow className="capitalize">
+            <Link
+              href={`/author/${data.node.author.node.slug}`}
+              shallow
+              className="capitalize"
+            >
               {data.node.author.node.name}
             </Link>
           </>

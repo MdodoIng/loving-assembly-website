@@ -6,6 +6,14 @@ import descriptionExtractor from "@/libs/hooks/descriptionExtractor";
 
 import React from "react";
 
+export async function generateStaticParams() {
+  const data: TeamsType = await getPageContent("teams");
+
+  return data.teams.edges.map((post) => ({
+    team_id: post.node.slug,
+  }));
+}
+
 const page = async ({ params }: any) => {
   const teams: TeamsType = await getPageContent("teams");
   const data = teams.teams.edges.filter(

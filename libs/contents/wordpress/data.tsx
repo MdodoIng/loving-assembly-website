@@ -11,6 +11,7 @@ import {
   ministriesQuery,
   teamPageQuery,
   teamsQuery,
+  usersQuery,
 } from "./queries";
 
 async function fetchApi(query = "", { variables }: Record<string, any> = {}) {
@@ -51,7 +52,8 @@ export async function getPageContent(
     | "blogs-by-slug"
     | "ministries-by-slug"
     | "ministries-nav-links"
-    | "footer-links",
+    | "footer-links"
+    | "users",
   slug?: string
 ) {
   const query = {
@@ -66,6 +68,7 @@ export async function getPageContent(
     "ministries-by-slug": ministriesQuery,
     "ministries-nav-links": ministriesNavLinksQuery,
     "footer-links": footerLinksQuery,
+    users: usersQuery,
   };
   const data = await fetchApi(query[id], { variables: { slug } });
   return data;

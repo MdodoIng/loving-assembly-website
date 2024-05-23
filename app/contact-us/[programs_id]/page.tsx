@@ -7,13 +7,28 @@ import { getPageContent } from "@/libs/contents/wordpress/data";
 import descriptionExtractor from "@/libs/hooks/descriptionExtractor";
 import React from "react";
 
+export async function generateStaticParams() {
+  const data: MinistriesNavLinksType = await getPageContent(
+    "ministries-nav-links"
+  );
+  const valuesToFilter = ["kids-of-excellence", "man-of-valour"];
+
+  const filtered = data.utility.acf.items.filter(
+    (item) => !valuesToFilter.includes(item.link.url)
+  );
+
+  return filtered.map((post) => ({
+    programs_id: post.link.url,
+  }));
+}
+
 const page = async ({ params }: any) => {
   const data: MinistriesType = await getPageContent(
     "ministries-by-slug",
     params.programs_id
   );
 
-  if (!data) return <Loading />;;
+  if (!data) return <Loading />;
   return (
     <Layout>
       <HeroSection

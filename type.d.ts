@@ -402,3 +402,11 @@ interface MinistriesNavLinksType {
     };
   };
 }
+interface UsersType {
+  users: {
+    nodes: Array<{
+      name: string;
+      slug: string;
+    }>;
+  };
+}
