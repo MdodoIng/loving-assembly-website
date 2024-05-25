@@ -7,12 +7,9 @@ import teamsQuery from "./teams";
 import teamPageQuery from "./teamPage";
 import blogsQuery from "./blogs";
 import blogsBySlugQuery from "./blogs-by-slug";
-import ministriesNavLinksQuery from "./mics/ministries-nav-links";
-import footerLinksQuery from "./mics/footer-links";
 import usersQuery from "./ministries/users";
 import ourChurchQuery from "./our-church";
-import liveLinkQuery from "./mics/live-link";
-
+import utilitiesQuery from "./mics/utilities";
 export {
   homeQuery,
   kidsOfExcellenceQuery,
@@ -23,9 +20,7 @@ export {
   teamPageQuery,
   blogsBySlugQuery,
   blogsQuery,
-  ministriesNavLinksQuery,
-  footerLinksQuery,
+  utilitiesQuery,
   usersQuery,
   ourChurchQuery,
-  liveLinkQuery
 };

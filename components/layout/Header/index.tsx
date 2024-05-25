@@ -19,18 +19,14 @@ const Header = () => {
       link: string;
     }[];
     liveLink: string;
+    logo: string;
   }>();
 
   useLayoutEffect(() => {
     async function getData() {
-      const [blog, ministries, liveLink]: [
-        BlogsType,
-        MinistriesNavLinksType,
-        LiveLinkType
-      ] = await Promise.all([
+      const [blog, utilities]: [BlogsType, UtilitiesType] = await Promise.all([
         getPageContent("blogs"),
-        getPageContent("ministries-nav-links"),
-        getPageContent("live-link"),
+        getPageContent("utilities"),
       ]);
 
       const blogSubLinks = [...blog.blogs.edges].slice(0, 3).map((item) => {
@@ -40,11 +36,11 @@ const Header = () => {
         };
         return d;
       });
-      const ministriesSubLinks = [...ministries.utility.acf.items].map(
+      const ministriesSubLinks = utilities.utility.acf.ministriesMenuLinks.map(
         (item) => {
           const d = {
-            title: item.link.title,
-            link: `/contact-us/${item.link.url}`,
+            title: item.title,
+            link: `/contact-us/${item.link}`,
           };
           return d;
         }
@@ -52,13 +48,20 @@ const Header = () => {
       setMenuLinks({
         blogs: blogSubLinks,
         ministries: ministriesSubLinks,
-        liveLink: liveLink.utility.acf.link,
+        liveLink: utilities.utility.acf.liveLink,
+        logo: utilities.utility.acf.logo.sourceUrl,
       });
     }
     getData();
   }, []);
 
-  if (!menuLinks?.blogs && !menuLinks?.ministries) return;
+  if (
+    !menuLinks?.blogs &&
+    !menuLinks?.liveLink &&
+    !menuLinks?.logo &&
+    !menuLinks?.ministries
+  )
+    return;
 
   const links = [
     {
@@ -98,7 +101,7 @@ const Header = () => {
     >
       <Link href="/" shallow>
         <Image
-          src={logo}
+          src={menuLinks.logo}
           alt=""
           width={220}
           height={160}
@@ -153,7 +156,12 @@ const Header = () => {
           </li>
         ))}
       </menu>
-      <Link href={`${menuLinks.liveLink}`} shallow target="_blank" className="max-lg:hidden">
+      <Link
+        href={`${menuLinks.liveLink}`}
+        shallow
+        target="_blank"
+        className="max-lg:hidden"
+      >
         <NormalBtn
           mode="night"
           className="hover:bg-primary hover:border-primary hover:text-white"
@@ -164,7 +172,12 @@ const Header = () => {
 
       {/* mobile  */}
 
-      <NavMobile links={links} liveLink={menuLinks.liveLink} expand={expand} setExpand={setExpand} />
+      <NavMobile
+        links={links}
+        liveLink={menuLinks.liveLink}
+        expand={expand}
+        setExpand={setExpand}
+      />
     </nav>
   );
 };

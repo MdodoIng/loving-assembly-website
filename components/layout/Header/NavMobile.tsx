@@ -72,11 +72,11 @@ const NavMobile = ({ links, expand, setExpand, liveLink }: Props) => {
       {/*  */}
 
       <div
-        className={`flex flex-col left-0 items-start justify-start gap-4 absolute top-20 bg-white/90 backdrop-blur-sm  pl-5 pr-20 py-6 rounded-[10px] shadow-md z-50 w-max lg:hidden duration-300 ${
-          toggle ? "translate-x-[0%]" : "-translate-x-[200%]"
+        className={`flex flex-col right-0 items-end justify-start gap-4 absolute top-20 bg-white/90 backdrop-blur-sm  pr-5 pl-20 py-6 rounded-[10px] shadow-md z-50 w-max lg:hidden duration-300 ${
+          toggle ? "translate-x-[0%]" : "translate-x-[200%]"
         }`}
       >
-        <menu className="flex flex-col items-start justify-start gap-6 ">
+        <menu className="flex flex-col items-end justify-start gap-6 ">
           {links.map((item, idx) => (
             <li
               onClick={() =>
@@ -86,7 +86,7 @@ const NavMobile = ({ links, expand, setExpand, liveLink }: Props) => {
               className="font-semibold text-sm cursor-pointer"
             >
               {item.subLinks ? (
-                <div className="relative z-0 flex flex-col items-start justify-center">
+                <div className="relative z-0 flex flex-col items-end justify-center">
                   <span className="flex items-center justify-start gap-1">
                     {item.title}
                     <Image
@@ -101,7 +101,7 @@ const NavMobile = ({ links, expand, setExpand, liveLink }: Props) => {
                   </span>
                   {/*  */}
                   {expand === idx && (
-                    <div className="flex flex-col items-start pl-4 justify-center gap-4 py-3">
+                    <div className="flex flex-col items-end pr-4 justify-center gap-4 py-3">
                       {item.subLinks.map((subLink, subLinkIdx) => (
                         <Link
                           key={subLinkIdx}

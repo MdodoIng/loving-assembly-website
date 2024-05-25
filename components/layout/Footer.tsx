@@ -18,39 +18,38 @@ const bottomLinks = [
 ];
 
 const Footer = () => {
-  const [footerLinks, setFooterLinks] = useState<
-    {
-      title: string;
-      link: string;
-    }[]
-  >();
+  const [footerLinks, setFooterLinks] = useState<{
+    links: { title: string; link: string }[];
+    logo: string;
+  }>();
 
   useEffect(() => {
     async function getData() {
-      const links: MinistriesNavLinksType = await getPageContent(
-        "footer-links"
-      );
+      const links: UtilitiesType = await getPageContent("utilities");
 
-      const ministriesSubLinks = [...links.utility.acf.items].map((item) => {
+      const ministriesSubLinks = links.utility.acf.footerLinks.map((item) => {
         const d = {
-          title: item.link.title,
-          link: `/contact-us/${item.link.url}`,
+          title: item.title,
+          link: `/contact-us/${item.link}`,
         };
         return d;
       });
-      setFooterLinks(ministriesSubLinks);
+      setFooterLinks({
+        links: ministriesSubLinks,
+        logo: links.utility.acf.logo.sourceUrl,
+      });
     }
     getData();
   }, []);
 
-  if (!footerLinks) return;
+  if (!footerLinks?.links && !footerLinks?.logo) return;
 
   const data = [
     {
       title: "Team",
       link: "/our-team",
     },
-    ...footerLinks!,
+    ...footerLinks.links!,
     {
       title: "Contact Us",
       link: "/contact-us",
@@ -60,11 +59,11 @@ const Footer = () => {
     <SectionWrapper classBottom={`${main_padding.t} flex-col items-center`}>
       <Link href="/" scroll shallow data-aos="fade-up" data-aos-duration="700">
         <Image
-          src={logo}
+          src={footerLinks.logo}
           alt=""
           loading="lazy"
-          placeholder="blur"
           height={120}
+          width={160}
           className=""
         />
       </Link>
@@ -72,7 +71,11 @@ const Footer = () => {
       <menu className="flex items-center justify-center gap-6 lg:mt-16 md:mt-14 mt-6 max-sm:flex-wrap ">
         {data.map((item, idx) => (
           <li key={idx}>
-            <Link href={item.link} shallow className="font-semibold text-base px-4 py-2 border rounded-lg hover:border-black border-transparent duration-300">
+            <Link
+              href={item.link}
+              shallow
+              className="font-semibold text-base px-4 py-2 border rounded-lg hover:border-black border-transparent duration-300"
+            >
               {item.title}
             </Link>
           </li>

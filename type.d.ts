@@ -389,21 +389,6 @@ interface BlogsBySlugType {
   };
 }
 
-interface MinistriesNavLinksType {
-  utility: {
-    title: string;
-    id: string;
-    acf: {
-      items: Array<{
-        link: {
-          target: string;
-          title: string;
-          url: string;
-        };
-      }>;
-    };
-  };
-}
 interface UsersType {
   users: {
     nodes: Array<{
@@ -451,11 +436,22 @@ interface OurChurchType {
   };
 }
 
-interface LiveLinkType {
+interface UtilitiesType {
   utility: {
     title: string;
     acf: {
-      link: string;
+      logo: {
+        sourceUrl: string;
+      };
+      liveLink: string;
+      ministriesMenuLinks: Array<{
+        link: string;
+        title: string;
+      }>;
+      footerLinks: Array<{
+        link: string;
+        title: string;
+      }>;
     };
   };
 }

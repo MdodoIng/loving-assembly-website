@@ -3,17 +3,15 @@ import {
   blogsBySlugQuery,
   blogsQuery,
   contactUsQuery,
-  footerLinksQuery,
   homeQuery,
   kidsOfExcellenceQuery,
-  liveLinkQuery,
   manOfValourQuery,
-  ministriesNavLinksQuery,
   ministriesQuery,
   ourChurchQuery,
   teamPageQuery,
   teamsQuery,
   usersQuery,
+  utilitiesQuery,
 } from "./queries";
 
 async function fetchApi(query = "", { variables }: Record<string, any> = {}) {
@@ -52,11 +50,9 @@ type Ids =
   | "blogs"
   | "blogs-by-slug"
   | "ministries-by-slug"
-  | "ministries-nav-links"
-  | "footer-links"
   | "users"
   | "our-church"
-  | "live-link";
+  | "utilities";
 
 export async function getPageContent(id: Ids, slug?: string) {
   const query = {
@@ -69,11 +65,9 @@ export async function getPageContent(id: Ids, slug?: string) {
     blogs: blogsQuery,
     "blogs-by-slug": blogsBySlugQuery,
     "ministries-by-slug": ministriesQuery,
-    "ministries-nav-links": ministriesNavLinksQuery,
-    "footer-links": footerLinksQuery,
     users: usersQuery,
     "our-church": ourChurchQuery,
-    "live-link": liveLinkQuery,
+    utilities: utilitiesQuery,
   };
   const data = await fetchApi(query[id], { variables: { slug } });
   return data;

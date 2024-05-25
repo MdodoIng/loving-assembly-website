@@ -19,7 +19,7 @@ const Layout = ({ children }: { children: ReactNode }) => {
   }, []);
   return (
     <>
-      <main className="flex flex-col w-full flex-1 items-center justify-center text-black relative z-10">
+      <main className="flex flex-col w-full flex-1 items-center justify-center text-black relative z-10 overflow-hidden">
         <Header />
         {children}
         <Footer />
