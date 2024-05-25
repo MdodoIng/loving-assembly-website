@@ -8,13 +8,13 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
-export async function generateStaticParams() {
-  const data: UsersType = await getPageContent("users");
+// export async function generateStaticParams() {
+//   const data: UsersType = await getPageContent("users");
 
-  return data.users.nodes.map((post) => ({
-    author_id: post.slug,
-  }));
-}
+//   return data.users.nodes.map((post) => ({
+//     author_id: post.slug,
+//   }));
+// }
 
 const page = async ({ params }: any) => {
   const data: BlogsBySlugType = await getPageContent(

@@ -20,8 +20,8 @@ type Props = {
         }[];
       }
   )[];
-  setExpand: React.Dispatch<React.SetStateAction<number>>;
-  expand: number;
+  setExpand: React.Dispatch<React.SetStateAction<any>>;
+  expand: any;
 };
 const NavMobile = ({ links, expand, setExpand }: Props) => {
   const [toggle, setToggle] = useState(false);
@@ -78,7 +78,7 @@ const NavMobile = ({ links, expand, setExpand }: Props) => {
         <menu className="flex flex-col items-start justify-start gap-2 ">
           {links.map((item, idx) => (
             <li
-              onClick={() => (expand !== idx ? setExpand(idx) : setExpand(0))}
+              onClick={() => (expand !== idx ? setExpand(idx) : setExpand(null))}
               key={idx}
               className="font-semibold text-sm cursor-pointer"
             >
@@ -103,7 +103,7 @@ const NavMobile = ({ links, expand, setExpand }: Props) => {
                         <Link
                           key={subLinkIdx}
                           onClick={() => {
-                            setExpand(0), setToggle(false);
+                            setExpand(null), setToggle(false);
                           }}
                           href={subLink.link}
                           shallow

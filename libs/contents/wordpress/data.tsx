@@ -9,6 +9,7 @@ import {
   manOfValourQuery,
   ministriesNavLinksQuery,
   ministriesQuery,
+  ourChurchQuery,
   teamPageQuery,
   teamsQuery,
   usersQuery,
@@ -40,22 +41,22 @@ async function fetchApi(query = "", { variables }: Record<string, any> = {}) {
   return json.data;
 }
 
-export async function getPageContent(
-  id:
-    | "home"
-    | "kids-of-excellence"
-    | "man-of-valour"
-    | "contact-us"
-    | "teams"
-    | "team-page"
-    | "blogs"
-    | "blogs-by-slug"
-    | "ministries-by-slug"
-    | "ministries-nav-links"
-    | "footer-links"
-    | "users",
-  slug?: string
-) {
+type Ids =
+  | "home"
+  | "kids-of-excellence"
+  | "man-of-valour"
+  | "contact-us"
+  | "teams"
+  | "team-page"
+  | "blogs"
+  | "blogs-by-slug"
+  | "ministries-by-slug"
+  | "ministries-nav-links"
+  | "footer-links"
+  | "users"
+  | "our-church";
+
+export async function getPageContent(id: Ids, slug?: string) {
   const query = {
     home: homeQuery,
     "kids-of-excellence": kidsOfExcellenceQuery,
@@ -69,6 +70,7 @@ export async function getPageContent(
     "ministries-nav-links": ministriesNavLinksQuery,
     "footer-links": footerLinksQuery,
     users: usersQuery,
+    "our-church": ourChurchQuery,
   };
   const data = await fetchApi(query[id], { variables: { slug } });
   return data;

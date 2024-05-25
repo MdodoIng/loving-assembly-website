@@ -8,7 +8,7 @@ import NavMobile from "./NavMobile";
 import { getPageContent } from "@/libs/contents/wordpress/data";
 
 const Header = () => {
-  const [expand, setExpand] = useState(0);
+  const [expand, setExpand] = useState<any>(null);
   const [menuLinks, setMenuLinks] = useState<{
     blogs: {
       title: string;
@@ -53,19 +53,23 @@ const Header = () => {
 
   const links = [
     {
-      title: "Home",
-      link: "/",
+      title: "LGA",
+      link: "",
+      subLinks: [
+        {
+          title: "Our Team",
+          link: "/our-team",
+        },
+        {
+          title: "Our Church",
+          link: "/our-church",
+        },
+      ],
     },
     {
       title: "Ministries",
       link: "",
-      subLinks: [
-        {
-          title: "Team",
-          link: "/our-team",
-        },
-        ...menuLinks?.ministries!,
-      ],
+      subLinks: menuLinks?.ministries!,
     },
     {
       title: "Blog",
@@ -80,7 +84,7 @@ const Header = () => {
 
   return (
     <nav
-      onMouseLeave={() => setExpand(0)}
+      onMouseLeave={() => setExpand(null)}
       className="flex items-center lg:justify-center justify-between gap-28 absolute top-5 bg-white/50 backdrop-blur-sm md:px-20 px-2 py-1 rounded-[10px] shadow-md z-50 max-lg:w-[90vw] overflow-x-clip"
     >
       <Link href="/" shallow>
@@ -96,7 +100,7 @@ const Header = () => {
       <menu className="flex items-center justify-center gap-10  max-lg:hidden">
         {links.map((item, idx) => (
           <li
-            onClick={() => (expand !== idx ? setExpand(idx) : setExpand(0))}
+            onClick={() => (expand !== idx ? setExpand(idx) : setExpand(null))}
             onMouseOver={() => setExpand(idx)}
             key={idx}
             className="font-bold text-sm cursor-pointer"
@@ -118,7 +122,7 @@ const Header = () => {
                 {/*  */}
                 {expand === idx && (
                   <div className="absolute top-0">
-                    <div className="flex flex-col items-start justify-center gap-5 mt-[30%] bg-white/90 backdrop-blur-md w-max px-6 py-10 rounded-[10px] shadow-md ">
+                    <div className="flex flex-col items-start justify-center gap-5 mt-[65px] bg-white/90 backdrop-blur-md w-max px-6 py-10 rounded-[10px] shadow-md ">
                       {item.subLinks.map((subLink, subLinkIdx) => (
                         <Link
                           key={subLinkIdx}
@@ -140,7 +144,10 @@ const Header = () => {
           </li>
         ))}
       </menu>
-      <NormalBtn mode="night" className="max-lg:hidden hover:bg-primary hover:border-primary hover:text-white">
+      <NormalBtn
+        mode="night"
+        className="max-lg:hidden hover:bg-primary hover:border-primary hover:text-white"
+      >
         Live
       </NormalBtn>
 

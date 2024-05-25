@@ -4,13 +4,19 @@ const data = `{
       title
       slug
       acf : acfHome {
-        bannerSection {
-          bannerImage {
+        heroSection {
+          bannerImages {
             sourceUrl
             mediaDetails {
-              width
               height
+              width
             }
+          }
+          title
+          subtitle
+          button {
+            title
+            link
           }
         }
         firstSectionWelcome {
@@ -20,6 +26,9 @@ const data = `{
           button2Text
           description
           title
+          rightImage {
+            sourceUrl
+          }
         }
         
         secondSectionChurch {
@@ -65,29 +74,12 @@ const data = `{
             title
           }
         }
-        fifthSection {
-          sectionTitle
-          sectionDescription
-          sectionTitleTwo
-          sectionDescriptionTwo
-          sectionImage{
-            sourceUrl
-            mediaDetails {
-              width
-              height
-            }
+        slider {
+          sourceUrl
+          mediaDetails{
+            height
+            width
           }
-          posts {
-            title
-            description
-            image {
-              sourceUrl
-              mediaDetails {
-               height
-               width
-               }
-              }
-           }
         }
         sixthSection {
           description
@@ -115,6 +107,16 @@ const data = `{
           description
           fieldGroupName
           title
+        }
+        associated {
+          title
+          subtitle
+          contents {
+            title
+            icon {
+              sourceUrl
+            }
+          }
         }
       }
     }

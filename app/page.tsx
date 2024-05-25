@@ -4,8 +4,7 @@ import Layout from "@/components/layout";
 import main_padding from "@/styles/padding";
 import LeftContentRightImg from "@/ui/LeftContentRightImg";
 import OurPrograms from "@/components/Home/OurPrograms";
-import WomenOfDestinyBreakfast from "@/components/Home/WomenOfDestinyBreakfast";
-import Journey from "@/components/Home/Journey";
+import Slider from "@/components/Home/Slider";
 import VisionAndMission from "@/components/Home/VisionAndMission";
 import JoinUs from "@/components/Home/JoinUs";
 import Ministering from "@/components/Home/Ministering";
@@ -13,14 +12,21 @@ import Ministering from "@/components/Home/Ministering";
 import { getPageContent } from "@/libs/contents/wordpress/data";
 import descriptionExtractor from "@/libs/hooks/descriptionExtractor";
 import Loading from "./loading";
+import Associated from "@/components/Home/Associated";
 
 export default async function Home() {
-  const [data, teams]: [HomePageType, TeamsType] = await Promise.all([
-    getPageContent("home"),
-    getPageContent("teams"),
-  ]);
+  // const [data, teams]: [HomePageType, TeamsType] = await Promise.all([
+  //   getPageContent("home"),
+  //   getPageContent("teams"),
+  // ]);
+  // const [data, teams]: [HomePageType, TeamsType] = await Promise.all([
+  //   getPageContent("home"),
+  //   getPageContent("teams"),
+  // ]);
 
-  if (!data && !teams) return <Loading />;
+  const data: HomePageType = await getPageContent("home");
+
+  // if (!data && !teams) return <Loading />;
 
   return (
     <Layout>
@@ -41,29 +47,18 @@ export default async function Home() {
           image={data.page.acf.secondSectionChurch.sectionImage.sourceUrl}
           playBtn={true}
           imageLink={data.page.acf.secondSectionChurch.sectionImage.sourceUrl}
-        />
-      </SectionWrapper>
-      <SectionWrapper classBottom={main_padding.y}>
-        <LeftContentRightImg
-          border={true}
-          title={data.page.acf.thirdSectionWho.title}
-          subtitle={descriptionExtractor(
-            data.page.acf.thirdSectionWho.description
-          )}
           direction="opposite"
-          btn1={{
-            title: data.page.acf.thirdSectionWho.buttonText,
-            link: data.page.acf.thirdSectionWho.buttonLink,
-          }}
-          image={data.page.acf.thirdSectionWho.sectionImage.sourceUrl}
         />
       </SectionWrapper>
+     
       <OurPrograms data={data} />
-      <WomenOfDestinyBreakfast data={data} />
-      <Journey data={data} />
+
+      <Slider data={data} />
+
       <VisionAndMission data={data} />
       <JoinUs data={data} />
-      <Ministering data={data} teams={teams} />
+      {/* <Ministering data={data} teams={teams} /> */}
+      <Associated data={data} />
     </Layout>
   );
 }

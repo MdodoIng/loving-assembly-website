@@ -5,21 +5,23 @@ import { HeadSubtitle, HeadTitle } from "@/ui/Typography";
 
 import Image from "next/image";
 
-const Journey = ({ data }: { data: HomePageType }) => {
+const Journey = ({ data }: { data: OurChurchType }) => {
   return (
     <SectionWrapper classBottom={`${main_padding.y} items-center flex-col`}>
       <HeadTitle border className="text-center max-w-[900px]">
-        {data.page.acf.fifthSection.sectionTitleTwo}
+        {data.page.acf.journey.title}
       </HeadTitle>
       <HeadSubtitle className="sm:mt-4 mt-2 text-center max-w-[900px] text-black">
-        {data.page.acf.fifthSection.sectionDescriptionTwo}
+        {data.page.acf.journey.description}
       </HeadSubtitle>
       <div className="lg:mt-16 md:mt-14 mt-6 flex flex-col w-full justify-center items-center sm:gap-24 gap-16">
-        {data.page.acf.fifthSection.posts.map((item, idx) => (
+        {data.page.acf.journey.posts.map((item, idx) => (
           <div
             key={idx}
             className={`w-full flex md:gap-20 gap-6 ${
-              idx % 2 === 0 ? "md:flex-row flex-col" : "md:flex-row-reverse flex-col"
+              idx % 2 === 0
+                ? "md:flex-row flex-col"
+                : "md:flex-row-reverse flex-col"
             }`}
           >
             <Image

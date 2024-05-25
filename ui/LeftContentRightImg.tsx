@@ -37,25 +37,26 @@ const LeftContentRightImg = ({
           direction === "opposite" && "md:order-1"
         } `}
       >
-        
         <HeadTitle border={border}>{title}</HeadTitle>
         <HeadSubtitle className="sm:mt-4 mt-2">{subtitle}</HeadSubtitle>
         <div>
-          {(btn1 || btn2) && (
+          {(btn1?.title || btn2?.title) && (
             <div className="flex items-center justify-start md:gap-6 gap-3 md:mt-6 mt-3">
-              {btn1 && (
-                <NormalBtn href={btn1?.link} className="max-md:w-full">
-                  {btn1?.title}
-                </NormalBtn>
+              {btn1?.title && (
+                <Link href={`${btn1?.link}`} shallow className="max-md:w-full">
+                  <NormalBtn className="max-md:w-full">{btn1?.title}</NormalBtn>
+                </Link>
               )}
-              {btn2 && (
-                <NormalBtn
-                  mode="day"
-                  href={btn2?.link}
-                  className="max-md:w-full"
-                >
-                  {btn2?.title}
-                </NormalBtn>
+              {btn2?.title && (
+                <Link href={`${btn2?.link}`} shallow className="max-md:w-full">
+                  <NormalBtn
+                    mode="day"
+                    href={btn2?.link}
+                    className="max-md:w-full"
+                  >
+                    {btn2?.title}
+                  </NormalBtn>
+                </Link>
               )}
             </div>
           )}

@@ -10,6 +10,7 @@ import blogsBySlugQuery from "./blogs-by-slug";
 import ministriesNavLinksQuery from "./mics/ministries-nav-links";
 import footerLinksQuery from "./mics/footer-links";
 import usersQuery from "./ministries/users";
+import ourChurchQuery from "./our-church";
 
 export {
   homeQuery,
@@ -24,4 +25,5 @@ export {
   ministriesNavLinksQuery,
   footerLinksQuery,
   usersQuery,
+  ourChurchQuery,
 };

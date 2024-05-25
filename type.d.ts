@@ -4,13 +4,19 @@ interface HomePageType {
     title: string;
     slug: string;
     acf: {
-      bannerSection: {
-        bannerImage: {
+      heroSection: {
+        bannerImages: Array<{
           sourceUrl: string;
           mediaDetails: {
-            width: number;
             height: number;
+            width: number;
           };
+        }>;
+        title: string;
+        subtitle: string;
+        button: {
+          title: string;
+          link: string;
         };
       };
       firstSectionWelcome: {
@@ -20,31 +26,17 @@ interface HomePageType {
         button2Text?: string;
         description?: string;
         title?: string;
-      };
-      fifthSection: {
-        sectionTitle: string;
-        sectionDescription: string;
-        sectionTitleTwo: string;
-        sectionDescriptionTwo: string;
-        sectionImage: {
+        rightImage: {
           sourceUrl: string;
-          mediaDetails: {
-            width: number;
-            height: number;
-          };
         };
-        posts: Array<{
-          title: string;
-          image: {
-            sourceUrl: string;
-            mediaDetails: {
-              height: number;
-              width: number;
-            };
-          };
-          description: string;
-        }>;
       };
+      slider: {
+        sourceUrl: string;
+        mediaDetails: {
+          height: number;
+          width: number;
+        };
+      }[];
       secondSectionChurch: {
         button1Link?: string;
         button1Text?: string;
@@ -113,6 +105,16 @@ interface HomePageType {
         description: any;
         fieldGroupName: string;
         title: any;
+      };
+      associated: {
+        title: string;
+        subtitle: string;
+        contents: Array<{
+          title: string;
+          icon: {
+            sourceUrl: string;
+          };
+        }>;
       };
     };
   };
@@ -408,5 +410,43 @@ interface UsersType {
       name: string;
       slug: string;
     }>;
+  };
+}
+interface OurChurchType {
+  page: {
+    id: string;
+    title: string;
+    acf: {
+      heroSection: {
+        tittle: string;
+        description: string;
+        bannerimage: {
+          sourceUrl: string;
+        };
+      };
+      faithAndTransformation: {
+        title: string;
+        description: string;
+        contents: Array<{
+          title: string;
+          description: string;
+        }>;
+      };
+      journey: {
+        title: string;
+        description: string;
+        posts: Array<{
+          title: string;
+          description: string;
+          image: {
+            sourceUrl: string;
+            mediaDetails: {
+              height: number;
+              width: number;
+            };
+          };
+        }>;
+      };
+    };
   };
 }

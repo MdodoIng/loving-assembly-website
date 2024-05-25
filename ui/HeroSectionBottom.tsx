@@ -3,6 +3,7 @@ import React from "react";
 import { HeadSubtitle, HeadTitle } from "./Typography";
 import { NormalBtn } from "./buttons";
 import { usePathname } from "next/navigation";
+import Link from "next/link";
 
 type Props = {
   title?: string;
@@ -21,6 +22,8 @@ const HeroSectionBottom = ({
   border,
 }: Props) => {
   const pathname = usePathname();
+
+  console.log(btn2);
   return (
     <div className="w-full grid md:grid-cols-2 lg:gap-20 md:gap-14 sm:gap-6 gap-4">
       <div
@@ -57,17 +60,19 @@ const HeroSectionBottom = ({
         className="flex flex-col gap-6"
       >
         {description && <HeadSubtitle>{description}</HeadSubtitle>}
-        {(btn1 || btn2) && (
+        {(btn1?.title?.length! > 1 || btn2?.title?.length! > 1) && (
           <div className="flex items-center justify-start md:gap-6 sm:gap-4 gap-2  max-sm:flex-wrap">
-            {btn1 && (
-              <NormalBtn href={btn1?.link} className="max-sm:w-full">
-                {btn1?.title}
-              </NormalBtn>
+            {btn1?.title?.length! > 1 && (
+              <Link href={`${btn1?.link}`} shallow className="max-sm:w-full">
+                <NormalBtn className="max-sm:w-full">{btn1?.title}</NormalBtn>
+              </Link>
             )}
-            {btn2 && (
-              <NormalBtn mode="day" href={btn2?.link} className="max-sm:w-full">
-                {btn2?.title}
-              </NormalBtn>
+            {btn2?.title?.length! > 1 && (
+              <Link href={`${btn2?.link}`} shallow className="max-sm:w-full">
+                <NormalBtn mode="day" className="max-sm:w-full">
+                  {btn2?.title}
+                </NormalBtn>
+              </Link>
             )}
           </div>
         )}
