@@ -1,5 +1,5 @@
 import Image from "next/image";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useLayoutEffect, useState } from "react";
 import logo from "@/assets/icons/logo.webp";
 import arrowDown from "@/assets/icons/arrow down.svg";
 import Link from "next/link";
@@ -21,7 +21,7 @@ const Header = () => {
     liveLink: string;
   }>();
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     async function getData() {
       const [blog, ministries, liveLink]: [
         BlogsType,
@@ -102,7 +102,7 @@ const Header = () => {
           alt=""
           width={220}
           height={160}
-          className="lg:h-[80px] h-[62px] w-auto object-contain"
+          className="lg:h-[80px] h-[62px] w-auto max-lg:!max-w-max object-contain"
         />
       </Link>
 
@@ -153,10 +153,10 @@ const Header = () => {
           </li>
         ))}
       </menu>
-      <Link href={`${menuLinks.liveLink}`} shallow target="_blank">
+      <Link href={`${menuLinks.liveLink}`} shallow target="_blank" className="max-lg:hidden">
         <NormalBtn
           mode="night"
-          className="max-lg:hidden hover:bg-primary hover:border-primary hover:text-white"
+          className="hover:bg-primary hover:border-primary hover:text-white"
         >
           Live
         </NormalBtn>
