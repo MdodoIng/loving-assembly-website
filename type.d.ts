@@ -450,3 +450,12 @@ interface OurChurchType {
     };
   };
 }
+
+interface LiveLinkType {
+  utility: {
+    title: string;
+    acf: {
+      link: string;
+    };
+  };
+}

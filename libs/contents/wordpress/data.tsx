@@ -6,6 +6,7 @@ import {
   footerLinksQuery,
   homeQuery,
   kidsOfExcellenceQuery,
+  liveLinkQuery,
   manOfValourQuery,
   ministriesNavLinksQuery,
   ministriesQuery,
@@ -54,7 +55,8 @@ type Ids =
   | "ministries-nav-links"
   | "footer-links"
   | "users"
-  | "our-church";
+  | "our-church"
+  | "live-link";
 
 export async function getPageContent(id: Ids, slug?: string) {
   const query = {
@@ -71,6 +73,7 @@ export async function getPageContent(id: Ids, slug?: string) {
     "footer-links": footerLinksQuery,
     users: usersQuery,
     "our-church": ourChurchQuery,
+    "live-link": liveLinkQuery,
   };
   const data = await fetchApi(query[id], { variables: { slug } });
   return data;

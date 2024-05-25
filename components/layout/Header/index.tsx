@@ -18,15 +18,20 @@ const Header = () => {
       title: string;
       link: string;
     }[];
+    liveLink: string;
   }>();
 
   useEffect(() => {
     async function getData() {
-      const [blog, ministries]: [BlogsType, MinistriesNavLinksType] =
-        await Promise.all([
-          getPageContent("blogs"),
-          getPageContent("ministries-nav-links"),
-        ]);
+      const [blog, ministries, liveLink]: [
+        BlogsType,
+        MinistriesNavLinksType,
+        LiveLinkType
+      ] = await Promise.all([
+        getPageContent("blogs"),
+        getPageContent("ministries-nav-links"),
+        getPageContent("live-link"),
+      ]);
 
       const blogSubLinks = [...blog.blogs.edges].slice(0, 3).map((item) => {
         const d = {
@@ -44,7 +49,11 @@ const Header = () => {
           return d;
         }
       );
-      setMenuLinks({ blogs: blogSubLinks, ministries: ministriesSubLinks });
+      setMenuLinks({
+        blogs: blogSubLinks,
+        ministries: ministriesSubLinks,
+        liveLink: liveLink.utility.acf.link,
+      });
     }
     getData();
   }, []);
@@ -85,7 +94,7 @@ const Header = () => {
   return (
     <nav
       onMouseLeave={() => setExpand(null)}
-      className="flex items-center lg:justify-center justify-between gap-28 absolute top-5 bg-white/50 backdrop-blur-sm md:px-20 px-2 py-1 rounded-[10px] shadow-md z-50 max-lg:w-[90vw] overflow-x-clip"
+      className="flex items-center lg:justify-center justify-between gap-28 absolute top-5 bg-white/50 backdrop-blur-sm md:px-20 px-6 py-1 rounded-[10px] shadow-md z-50 max-lg:w-[90vw] overflow-x-clip"
     >
       <Link href="/" shallow>
         <Image
@@ -93,7 +102,7 @@ const Header = () => {
           alt=""
           width={220}
           height={160}
-          className="lg:h-[80px] h-[63px] w-auto object-contain"
+          className="lg:h-[80px] h-[62px] w-auto object-contain"
         />
       </Link>
 
@@ -144,16 +153,18 @@ const Header = () => {
           </li>
         ))}
       </menu>
-      <NormalBtn
-        mode="night"
-        className="max-lg:hidden hover:bg-primary hover:border-primary hover:text-white"
-      >
-        Live
-      </NormalBtn>
+      <Link href={`${menuLinks.liveLink}`} shallow target="_blank">
+        <NormalBtn
+          mode="night"
+          className="max-lg:hidden hover:bg-primary hover:border-primary hover:text-white"
+        >
+          Live
+        </NormalBtn>
+      </Link>
 
       {/* mobile  */}
 
-      <NavMobile links={links} expand={expand} setExpand={setExpand} />
+      <NavMobile links={links} liveLink={menuLinks.liveLink} expand={expand} setExpand={setExpand} />
     </nav>
   );
 };

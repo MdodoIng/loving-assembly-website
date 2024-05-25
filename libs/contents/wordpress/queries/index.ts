@@ -11,6 +11,7 @@ import ministriesNavLinksQuery from "./mics/ministries-nav-links";
 import footerLinksQuery from "./mics/footer-links";
 import usersQuery from "./ministries/users";
 import ourChurchQuery from "./our-church";
+import liveLinkQuery from "./mics/live-link";
 
 export {
   homeQuery,
@@ -26,4 +27,5 @@ export {
   footerLinksQuery,
   usersQuery,
   ourChurchQuery,
+  liveLinkQuery
 };

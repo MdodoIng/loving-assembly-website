@@ -22,8 +22,9 @@ type Props = {
   )[];
   setExpand: React.Dispatch<React.SetStateAction<any>>;
   expand: any;
+  liveLink?: string;
 };
-const NavMobile = ({ links, expand, setExpand }: Props) => {
+const NavMobile = ({ links, expand, setExpand, liveLink }: Props) => {
   const [toggle, setToggle] = useState(false);
   return (
     <>
@@ -71,14 +72,16 @@ const NavMobile = ({ links, expand, setExpand }: Props) => {
       {/*  */}
 
       <div
-        className={`flex flex-col left-0 items-start justify-start gap-4 absolute top-20 bg-white/90 backdrop-blur-sm  px-2 py-4 rounded-[10px] shadow-md z-50 w-[90vw] lg:hidden duration-300 ${
+        className={`flex flex-col left-0 items-start justify-start gap-4 absolute top-20 bg-white/90 backdrop-blur-sm  pl-5 pr-20 py-6 rounded-[10px] shadow-md z-50 w-max lg:hidden duration-300 ${
           toggle ? "translate-x-[0%]" : "translate-x-[200%]"
         }`}
       >
-        <menu className="flex flex-col items-start justify-start gap-2 ">
+        <menu className="flex flex-col items-start justify-start gap-6 ">
           {links.map((item, idx) => (
             <li
-              onClick={() => (expand !== idx ? setExpand(idx) : setExpand(null))}
+              onClick={() =>
+                expand !== idx ? setExpand(idx) : setExpand(null)
+              }
               key={idx}
               className="font-semibold text-sm cursor-pointer"
             >
@@ -98,7 +101,7 @@ const NavMobile = ({ links, expand, setExpand }: Props) => {
                   </span>
                   {/*  */}
                   {expand === idx && (
-                    <div className="flex flex-col items-start pl-4 justify-center gap-3 py-2">
+                    <div className="flex flex-col items-start pl-4 justify-center gap-4 py-3">
                       {item.subLinks.map((subLink, subLinkIdx) => (
                         <Link
                           key={subLinkIdx}
@@ -123,13 +126,15 @@ const NavMobile = ({ links, expand, setExpand }: Props) => {
             </li>
           ))}
         </menu>
-        <NormalBtn
-          mode="day"
-          onClick={() => setToggle(false)}
-          className="bg-transparent w-full "
-        >
-          Live
-        </NormalBtn>
+        <Link href={`${liveLink}`} shallow target="_blank">
+          <NormalBtn
+            mode="day"
+            onClick={() => setToggle(false)}
+            className="bg-transparent mt-4 "
+          >
+            Live
+          </NormalBtn>
+        </Link>
       </div>
     </>
   );
