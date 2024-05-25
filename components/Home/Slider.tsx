@@ -22,7 +22,7 @@ const Guiding = ({ data }: { data: HomePageType }) => {
   const navigationPrevRef = useRef(null);
   const navigationNextRef = useRef(null);
   return (
-    <SectionWrapper classBottom={`${main_padding.y} flex-col items-center`}>
+    <SectionWrapper classBottom={` flex-col items-center`}>
       <div className=" lg:mt-16 md:mt-14 mt-6 w-full  sm:py-10">
         <Swiper
           slidesPerView={"auto"}
