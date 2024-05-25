@@ -41,7 +41,7 @@ const NavMobile = ({ links, expand, setExpand }: Props) => {
             y1={toggle ? "14.916" : "15.03"}
             x2={toggle ? "58.916" : "49.4213"}
             y2={toggle ? "59.8006" : "15.03"}
-            stroke="#DD3333"
+            stroke="#521575"
             strokeWidth="5.94"
             strokeLinecap="round"
             className="duration-300"
@@ -51,7 +51,7 @@ const NavMobile = ({ links, expand, setExpand }: Props) => {
             y1="37.03"
             x2="58.4757"
             y2="37.03"
-            stroke="#DD3333"
+            stroke="#521575"
             strokeWidth="5.94"
             strokeLinecap="round"
             className={`${toggle && "opacity-0"} `}
@@ -61,7 +61,7 @@ const NavMobile = ({ links, expand, setExpand }: Props) => {
             y1={toggle ? "57.7998" : "59.03"}
             x2={toggle ? "56.7998" : "49.4213"}
             y2={toggle ? "15" : "59.03"}
-            stroke="#DD3333"
+            stroke="#521575"
             strokeWidth="5.94"
             strokeLinecap="round"
           />

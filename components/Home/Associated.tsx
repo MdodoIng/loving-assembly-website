@@ -8,8 +8,8 @@ import Image from "next/image";
 
 const Associated = ({ data }: { data: HomePageType }) => {
   return (
-    <SectionWrapper classBottom={`${main_padding.y} flex-col items-center `}>
-      <div className="w-full flex flex-col items-center bg-off-white rounded-xl md:py-16 py-8 md:px-14 px-6">
+    <SectionWrapper classBottom={`${main_padding.y} flex-col items-center  `}>
+      <div className="w-full flex flex-col items-center bg-off-white rounded-xl md:py-16 py-8 md:px-14 px-6 ">
         <HeadTitle border className="capitalize text-center ">
           {data.page.acf.associated.title}
         </HeadTitle>

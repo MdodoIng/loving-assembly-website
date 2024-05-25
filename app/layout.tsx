@@ -5,7 +5,7 @@ import "@/styles/globals.css";
 const manrope = Manrope({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Loving Assembly",
+  title: "Loving Grace Assembly",
   description: "",
   manifest: "favicon_io/site.webmanifest",
 };

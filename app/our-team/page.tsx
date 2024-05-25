@@ -11,26 +11,26 @@ import React from "react";
 import Loading from "../loading";
 
 const Page = async () => {
-  const teams: TeamsType = await getPageContent("teams");
+  // const teams: TeamsType = await getPageContent("teams");
 
-  // const [data, teams]: [TeamPageType, TeamsType] = await Promise.all([
-  //   getPageContent("team-page"),
-  //   getPageContent("teams"),
-  // ]);
+  const [data, teams]: [TeamPageType, TeamsType] = await Promise.all([
+    getPageContent("team-page"),
+    getPageContent("teams"),
+  ]);
 
-  // if (!data && !teams) return  <Loading />;
+  if (!data && !teams) return <Loading />;
 
   return (
     <Layout>
       <SectionWrapper
         classBottom={`${main_padding.y} flex-col items-center mt-40`}
       >
-        {/* <HeadTitle border className="text-center max-w-[900px]">
+        <HeadTitle border className="text-center max-w-[900px]">
           {data.page.acf.title}
         </HeadTitle>
         <HeadSubtitle className="sm:mt-4 mt-2 text-center max-w-[900px] text-black">
           {data.page.acf.description}
-        </HeadSubtitle> */}
+        </HeadSubtitle>
         <section className="grid md:grid-cols-2 lg:gap-20 gap-10 lg:mt-16 md:mt-14 mt-6">
           {teams.teams.edges
             .sort(() => -1)

@@ -21,7 +21,7 @@ const HeroSection = ({ data }: { data: HomePageType }) => {
   return (
     <section className="flex flex-col justify-end w-full">
       <div
-        className={`w-full md:h-svh max-md:min-h-[900px] overflow-hidden flex items-end justify-center relative z-0 pb-10 ${main_padding.x}`}
+        className={`w-full h-svh  overflow-hidden flex items-end justify-center relative z-0 pb-16 ${main_padding.x}`}
       >
         <Swiper
           slidesPerView={1}
@@ -61,7 +61,7 @@ const HeroSection = ({ data }: { data: HomePageType }) => {
             shallow
             className="mt-4 max-sm:w-full"
           >
-            <NormalBtn className="max-sm:w-full">
+            <NormalBtn className="max-sm:w-full border-transparent" mode="day">
               {data.page.acf.heroSection.button.title}
             </NormalBtn>
           </Link>

@@ -20,7 +20,6 @@ export default async function Home() {
     getPageContent("teams"),
   ]);
 
-
   // const data: HomePageType = await getPageContent("home");
 
   if (!data && !teams) return <Loading />;
@@ -47,7 +46,7 @@ export default async function Home() {
           direction="opposite"
         />
       </SectionWrapper>
-     
+
       <OurPrograms data={data} />
 
       <Slider data={data} />
