@@ -49,23 +49,28 @@ const HeroSection = ({ data }: { data: HomePageType }) => {
         </Swiper>
 
         {/* bottom content */}
-        <div className="flex items-center justify-center flex-col md:max-w-[600px] w-full bg-white/30 backdrop-blur-[19px] z-10 py-8 px-10 rounded-lg text-center">
-          <h1 className="text-3xl font-black text-secondary">
-            {data.page.acf.heroSection.title}
-          </h1>
-          <p className="text-lg text-black capitalize mt-1">
-            {data.page.acf.heroSection.subtitle}
-          </p>
-          <Link
-            href={`${data.page.acf.heroSection.button.link}`}
-            shallow
-            className="mt-4 max-sm:w-full"
-          >
-            <NormalBtn className="max-sm:w-full border-transparent" mode="day">
-              {data.page.acf.heroSection.button.title}
-            </NormalBtn>
-          </Link>
-        </div>
+        {data.page.acf.heroSection.title && (
+          <div className="flex items-center justify-center flex-col md:max-w-[600px] w-full bg-white/30 backdrop-blur-[19px] z-10 py-8 px-10 rounded-lg text-center">
+            <h1 className="text-3xl font-black text-secondary">
+              {data.page.acf.heroSection.title}
+            </h1>
+            <p className="text-lg text-black capitalize mt-1">
+              {data.page.acf.heroSection.subtitle}
+            </p>
+            <Link
+              href={`${data.page.acf.heroSection.button.link}`}
+              shallow
+              className="mt-4 max-sm:w-full"
+            >
+              <NormalBtn
+                className="max-sm:w-full border-transparent"
+                mode="day"
+              >
+                {data.page.acf.heroSection.button.title}
+              </NormalBtn>
+            </Link>
+          </div>
+        )}
       </div>
 
       <SectionWrapper classBottom={main_padding.y}>
