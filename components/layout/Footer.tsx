@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import SectionWrapper from "../SectionWrapper";
 import Link from "next/link";
-import logo from "@/assets/icons/logo.webp";
 import Image from "next/image";
 import main_padding from "@/styles/padding";
 import { getPageContent } from "@/libs/contents/wordpress/data";

@@ -109,6 +109,10 @@ const data = `{
           fieldGroupName
           instaLink
           title
+          backgroundImage {
+            sourceUrl
+          
+          }
         }
         eighthSection {
           description

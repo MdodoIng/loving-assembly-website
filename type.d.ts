@@ -107,6 +107,9 @@ interface HomePageType {
         facebookLink: any;
         instaLink: any;
         title: any;
+        backgroundImage: {
+          sourceUrl: string;
+        };
       };
       eighthSection: {
         description: any;

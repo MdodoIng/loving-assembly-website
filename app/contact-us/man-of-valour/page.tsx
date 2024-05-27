@@ -2,7 +2,6 @@ import About from "@/components/contact-us/[programs_id]/About";
 import HeroSection from "@/components/contact-us/men-of-valor/HeroSection";
 import Layout from "@/components/layout";
 import React from "react";
-import logo from "@/assets/icons/our programs/Men of Valor.webp";
 import Features from "@/components/contact-us/men-of-valor/Features";
 import { getPageContent } from "@/libs/contents/wordpress/data";
 import descriptionExtractor from "@/libs/hooks/descriptionExtractor";

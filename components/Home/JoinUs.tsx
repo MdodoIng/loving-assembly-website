@@ -21,10 +21,9 @@ const JoinUs = ({ data }: { data: HomePageType }) => {
         classBottom={` sm:py-24 py-14 flex-col items-center`}
       >
         <Image
-          src={bg}
+          src={data.page.acf.seventhSectionJoinus.backgroundImage.sourceUrl}
           fill
           loading="lazy"
-          placeholder="blur"
           className="-z-10 object-cover opacity-30"
           alt={""}
         />

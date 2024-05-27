@@ -3,7 +3,6 @@ import Layout from "../layout";
 import SectionWrapper from "../SectionWrapper";
 import { HeadSubtitle, HeadTitle } from "@/ui/Typography";
 import main_padding from "@/styles/padding";
-import dummi from "@/assets/images/Home/associated.png";
 import Image from "next/image";
 
 const Associated = ({ data }: { data: HomePageType }) => {

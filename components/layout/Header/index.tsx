@@ -1,6 +1,5 @@
 import Image from "next/image";
 import React, { useEffect, useLayoutEffect, useState } from "react";
-import logo from "@/assets/icons/logo.webp";
 import arrowDown from "@/assets/icons/arrow down.svg";
 import Link from "next/link";
 import { NormalBtn } from "@/ui/buttons";
