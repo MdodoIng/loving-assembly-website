@@ -18,7 +18,6 @@ const data = `{
               height
               width
             }
-          }
         }
           title
           subtitle
