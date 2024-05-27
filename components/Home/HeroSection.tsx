@@ -38,7 +38,7 @@ const HeroSection = ({ data }: { data: HomePageType }) => {
           {data.page.acf.heroSection.bannerImages.map((item, idx) => (
             <SwiperSlide
               key={idx}
-              className="overflow-hidden w-full h-full max-lg:hidden"
+              className="overflow-hidden w-full h-full max-lg:!hidden"
             >
               <Image
                 src={item.sourceUrl}
@@ -52,7 +52,7 @@ const HeroSection = ({ data }: { data: HomePageType }) => {
           {data.page.acf.heroSection.bannerImagesMobile.map((item, idx) => (
             <SwiperSlide
               key={idx}
-              className="overflow-hidden w-full h-full lg:hidden"
+              className="overflow-hidden w-full h-full lg:!hidden"
             >
               <Image
                 src={item.sourceUrl}
