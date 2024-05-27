@@ -57,7 +57,7 @@ const Guiding = ({ data }: { data: HomePageType }) => {
           {data.page.acf.slider.map((item, idx) => (
             <SwiperSlide
               key={idx}
-              className="!w-[80%] rounded-[18px] h-full overflow-hidden bg-primary aspect-square md:aspect-[16/11] relative"
+              className="!w-[80%] rounded-[18px] h-full overflow-hidden bg-primary aspect-square md:aspect-[16/10] relative"
             >
               <Image
                 src={item.sourceUrl}

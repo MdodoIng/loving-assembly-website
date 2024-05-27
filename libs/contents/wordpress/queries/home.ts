@@ -33,8 +33,14 @@ const data = `{
           button2Text
           description
           title
-          rightImage {
-            sourceUrl
+          right {
+            image {
+              sourceUrl
+            }
+            title {
+              text
+              backgroundColor
+            }
           }
         }
         
@@ -105,9 +111,7 @@ const data = `{
         }
         seventhSectionJoinus {
           description
-          facebookLink
           fieldGroupName
-          instaLink
           title
           backgroundImage {
             sourceUrl

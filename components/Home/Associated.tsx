@@ -32,7 +32,7 @@ const Associated = ({ data }: { data: HomePageType }) => {
                 width={140}
                 height={140}
                 loading="lazy"
-                className="h-[150px] w-auto object-contain"
+                className="h-[200px] w-auto object-contain"
               />
               <p className="mt-2 font-bold text-secondary text-lg capitalize text-center">
                 {item.title}

@@ -33,8 +33,14 @@ interface HomePageType {
         button2Text?: string;
         description?: string;
         title?: string;
-        rightImage: {
-          sourceUrl: string;
+        right: {
+          image: {
+            sourceUrl: string;
+          };
+          title: {
+            text: string;
+            backgroundColor: string;
+          };
         };
       };
       slider: {
@@ -104,8 +110,6 @@ interface HomePageType {
       };
       seventhSectionJoinus: {
         description: any;
-        facebookLink: any;
-        instaLink: any;
         title: any;
         backgroundImage: {
           sourceUrl: string;

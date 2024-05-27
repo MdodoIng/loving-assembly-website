@@ -15,14 +15,14 @@ import Loading from "./loading";
 import Associated from "@/components/Home/Associated";
 
 export default async function Home() {
-  const [data, teams]: [HomePageType, TeamsType] = await Promise.all([
-    getPageContent("home"),
-    getPageContent("teams"),
-  ]);
+  // const [data, teams]: [HomePageType, TeamsType] = await Promise.all([
+  //   getPageContent("home"),
+  //   getPageContent("teams"),
+  // ]);
 
-  // const data: HomePageType = await getPageContent("home");
+  const data: HomePageType = await getPageContent("home");
 
-  if (!data && !teams) return <Loading />;
+  // if (!data && !teams) return <Loading />;
 
   return (
     <Layout>
@@ -53,7 +53,7 @@ export default async function Home() {
 
       <VisionAndMission data={data} />
       <JoinUs data={data} />
-      <Ministering data={data} teams={teams} />
+      {/* <Ministering data={data} teams={teams} /> */}
       <Associated data={data} />
     </Layout>
   );
