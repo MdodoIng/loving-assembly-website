@@ -1,6 +1,5 @@
 import React from "react";
 import SectionWrapper from "../SectionWrapper";
-import bg from "@/assets/images/Home/joins us.webp";
 import Image from "next/image";
 import { HeadSubtitle, HeadTitle } from "@/ui/Typography";
 import insta from "@/assets/icons/instagram.svg";

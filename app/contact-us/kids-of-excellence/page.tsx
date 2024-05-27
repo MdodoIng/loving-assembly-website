@@ -1,7 +1,6 @@
 import HeroSection from "@/components/contact-us/[programs_id]/HeroSection";
 import Layout from "@/components/layout";
 import React from "react";
-import bg from "@/assets/images/our programmes/Kids Of Excellence bg.webp";
 import Events from "@/components/contact-us/kids-of-excellence/Events";
 import Guiding from "@/components/contact-us/kids-of-excellence/Guiding";
 import { getPageContent } from "@/libs/contents/wordpress/data";
