@@ -12,6 +12,14 @@ const data = `{
               width
             }
           }
+          bannerImagesMobile {
+            sourceUrl
+            mediaDetails {
+              height
+              width
+            }
+          }
+        }
           title
           subtitle
           button {

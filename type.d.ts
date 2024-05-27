@@ -12,6 +12,13 @@ interface HomePageType {
             width: number;
           };
         }>;
+        bannerImagesMobile: {
+          sourceUrl: string;
+          mediaDetails: {
+            height: number;
+            width: number;
+          };
+        }[];
         title: string;
         subtitle: string;
         button: {

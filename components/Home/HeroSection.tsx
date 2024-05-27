@@ -36,7 +36,24 @@ const HeroSection = ({ data }: { data: HomePageType }) => {
           className="mySwiper !absolute top-0 left-0 inset-0 w-full h-full !-z-10"
         >
           {data.page.acf.heroSection.bannerImages.map((item, idx) => (
-            <SwiperSlide key={idx} className="overflow-hidden w-full h-full">
+            <SwiperSlide
+              key={idx}
+              className="overflow-hidden w-full h-full max-md:hidden"
+            >
+              <Image
+                src={item.sourceUrl}
+                alt=""
+                width={item.mediaDetails.width}
+                height={item.mediaDetails.height}
+                className="w-full h-full object-cover object-top"
+              />
+            </SwiperSlide>
+          ))}
+          {data.page.acf.heroSection.bannerImagesMobile.map((item, idx) => (
+            <SwiperSlide
+              key={idx}
+              className="overflow-hidden w-full h-full md:hidden"
+            >
               <Image
                 src={item.sourceUrl}
                 alt=""
