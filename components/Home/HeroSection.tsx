@@ -27,7 +27,7 @@ const HeroSection = ({ data }: { data: HomePageType }) => {
           slidesPerView={1}
           spaceBetween={0}
           effect="ease"
-          loop
+          loop={true}
           speed={1700}
           autoplay={{
             delay: 4500,
