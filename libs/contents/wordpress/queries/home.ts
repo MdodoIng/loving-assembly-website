@@ -111,11 +111,9 @@ const data = `{
         }
         seventhSectionJoinus {
           description
-          fieldGroupName
           title
           backgroundImage {
             sourceUrl
-          
           }
         }
         eighthSection {

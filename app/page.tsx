@@ -26,6 +26,7 @@ export default async function Home() {
 
   return (
     <Layout>
+
       <HeroSection data={data} />
       <SectionWrapper classBottom={main_padding.y}>
         <LeftContentRightImg
@@ -53,7 +54,7 @@ export default async function Home() {
 
       <VisionAndMission data={data} />
       <JoinUs data={data} />
-      <Ministering data={data} teams={teams} />
+      {/* <Ministering data={data} teams={teams} /> */}
       <Associated data={data} />
     </Layout>
   );
