@@ -38,7 +38,7 @@ const HeroSection = ({ data }: { data: HomePageType }) => {
           {data.page.acf.heroSection.bannerImages.map((item, idx) => (
             <SwiperSlide
               key={idx}
-              className="overflow-hidden w-full h-full max-md:hidden"
+              className="overflow-hidden w-full h-full max-lg:hidden"
             >
               <Image
                 src={item.sourceUrl}
@@ -52,7 +52,7 @@ const HeroSection = ({ data }: { data: HomePageType }) => {
           {data.page.acf.heroSection.bannerImagesMobile.map((item, idx) => (
             <SwiperSlide
               key={idx}
-              className="overflow-hidden w-full h-full md:hidden"
+              className="overflow-hidden w-full h-full lg:hidden"
             >
               <Image
                 src={item.sourceUrl}
@@ -91,7 +91,7 @@ const HeroSection = ({ data }: { data: HomePageType }) => {
       </div>
 
       <SectionWrapper classBottom={main_padding.y}>
-        <div className="w-full grid md:grid-cols-2 max-md:grid-rows-2 lg:gap-20 md:gap-14 gap-6">
+        <div className="w-full grid md:grid-cols-2 max-md:grid-rows-2 lg:gap-20 md:gap-14 gap-6 md:py-14">
           <div
             data-aos="fade-up"
             data-aos-duration="700"
@@ -133,13 +133,13 @@ const HeroSection = ({ data }: { data: HomePageType }) => {
           <div
             data-aos="fade-up"
             data-aos-duration="700"
-            className="flex flex-col items-center justify-end gap-6 px-6 py-8 rounded-2xl overflow-visible w-full h-full relative z-0"
+            className="flex flex-col items-center justify-end gap-6 px-6 py-8 rounded-2xl  w-full h-full relative z-0"
           >
             <Image
               src={data.page.acf.firstSectionWelcome.right.image.sourceUrl}
               alt=""
               fill
-              className="w-full h-full object-cover !overflow-visible -z-10"
+              className="w-full h-full object-cover -z-10"
             />
             <p
               style={{
