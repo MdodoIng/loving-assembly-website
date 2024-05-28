@@ -91,7 +91,7 @@ const HeroSection = ({ data }: { data: HomePageType }) => {
       </div>
 
       <SectionWrapper classBottom={main_padding.y}>
-        <div className="w-full grid md:grid-cols-2  lg:gap-20 md:gap-14 gap-6 md:py-14">
+        <div className="w-full grid md:grid-cols-2  lg:gap-20 md:gap-14 gap-6 md:py-14 items-center">
           <div
             data-aos="fade-up"
             data-aos-duration="700"
@@ -133,20 +133,21 @@ const HeroSection = ({ data }: { data: HomePageType }) => {
           <div
             data-aos="fade-up"
             data-aos-duration="700"
-            className="flex flex-col items-center max-md:aspect-square justify-end gap-6 px-6 py-8 rounded-[20px] overflow-hidden  w-full h-full relative z-0"
+            className="flex flex-col items-center justify-end gap-6 rounded-[20px] overflow-hidden  w-full h-full relative z-0"
           >
             <Image
               src={data.page.acf.firstSectionWelcome.right.image.sourceUrl}
               alt=""
-              fill
-              className="w-full h-full object-cover -z-10"
+              width={600}
+              height={400}
+              className="w-full h-auto object-contain -z-10"
             />
             <p
               style={{
                 backgroundColor:
                   data.page.acf.firstSectionWelcome.right.title.backgroundColor,
               }}
-              className="uppercase  px-8 py-[10px]  text-center rounded-[6px] sm:text-lg text-xs text-white font-black "
+              className="uppercase absolute md:bottom-8 bottom-4 px-8 py-[10px]  text-center rounded-[6px] sm:text-lg text-xs text-white font-black "
             >
               {data.page.acf.firstSectionWelcome.right.title.text}
             </p>
