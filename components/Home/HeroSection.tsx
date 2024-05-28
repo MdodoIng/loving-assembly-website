@@ -133,14 +133,14 @@ const HeroSection = ({ data }: { data: HomePageType }) => {
           <div
             data-aos="fade-up"
             data-aos-duration="700"
-            className="flex flex-col items-center justify-end gap-6 rounded-[20px] overflow-hidden  w-full h-full relative z-0"
+            className="flex flex-col items-center justify-end gap-6 rounded-[20px] overflow-hidden  w-full h-full relative z-0 md:w-[115%]"
           >
             <Image
               src={data.page.acf.firstSectionWelcome.right.image.sourceUrl}
               alt=""
               width={600}
               height={400}
-              className="w-full h-auto object-contain -z-10"
+              className=" w-full  h-auto object-cover -z-10"
             />
             <p
               style={{
