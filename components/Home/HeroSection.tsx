@@ -91,7 +91,7 @@ const HeroSection = ({ data }: { data: HomePageType }) => {
       </div>
 
       <SectionWrapper classBottom={main_padding.y}>
-        <div className="w-full grid md:grid-cols-2 max-md:grid-rows-2 lg:gap-20 md:gap-14 gap-6 md:py-14">
+        <div className="w-full grid md:grid-cols-2  lg:gap-20 md:gap-14 gap-6 md:py-14">
           <div
             data-aos="fade-up"
             data-aos-duration="700"
@@ -133,7 +133,7 @@ const HeroSection = ({ data }: { data: HomePageType }) => {
           <div
             data-aos="fade-up"
             data-aos-duration="700"
-            className="flex flex-col items-center justify-end gap-6 px-6 py-8 rounded-2xl  w-full h-full relative z-0"
+            className="flex flex-col items-center max-md:aspect-square justify-end gap-6 px-6 py-8 rounded-[20px] overflow-hidden  w-full h-full relative z-0"
           >
             <Image
               src={data.page.acf.firstSectionWelcome.right.image.sourceUrl}
