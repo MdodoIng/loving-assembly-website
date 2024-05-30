@@ -21,6 +21,7 @@ export default async function Home() {
   ]);
 
   // const data: HomePageType = await getPageContent("home");
+  
 
   if (!data && !teams) return <Loading />;
 
