@@ -34,8 +34,10 @@ const JoinUs = ({ data }: { data: HomePageType }) => {
             <Link
               href={`${data.page.acf.seventhSectionJoinus.button.link}`}
               target="_blank"
+
+              className="mt-4"
             >
-              <NormalBtn>
+              <NormalBtn mode="day">
                 {data.page.acf.seventhSectionJoinus.button.title}
               </NormalBtn>
             </Link>
