@@ -1,14 +1,16 @@
 "use client";
-import React, { ReactNode, useLayoutEffect } from "react";
+import React, { ReactNode, useEffect, useLayoutEffect, useState } from "react";
 import Header from "./Header";
 import Footer from "./Footer";
 
 import AOS from "aos";
 import "aos/dist/aos.css"; // You can also use <link> for styles
 import Curser from "./Curser";
+import Loading from "@/app/loading";
 // ..
 
 const Layout = ({ children }: { children: ReactNode }) => {
+  const [isLoading, setIsLoading] = useState(false);
   useLayoutEffect(() => {
     if (typeof document !== "undefined") {
       AOS.init({
@@ -17,6 +19,16 @@ const Layout = ({ children }: { children: ReactNode }) => {
       });
     }
   }, []);
+
+  useEffect(() => {
+    const t = setTimeout(() => {
+      setIsLoading(true);
+    }, 700);
+
+    return () => clearTimeout(t);
+  }, []);
+
+  if (!isLoading) return <Loading />;
   return (
     <>
       <main className="flex flex-col w-full flex-1 items-center justify-center text-black relative z-10 overflow-hidden">
