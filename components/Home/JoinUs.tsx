@@ -34,7 +34,8 @@ const JoinUs = ({ data }: { data: HomePageType }) => {
             <Link
               href={`${data.page.acf.seventhSectionJoinus.button.link}`}
               target="_blank"
-
+              data-aos="fade-up"
+              data-aos-duration="700"
               className="mt-4"
             >
               <NormalBtn mode="day">

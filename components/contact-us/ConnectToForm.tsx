@@ -15,6 +15,8 @@ const ConnectToForm = ({ data }: { data: ContactUsPageType }) => {
         {data.page.acf.connectToForm.subtitle}
       </HeadSubtitle>
       <Link
+        data-aos="fade-up"
+        data-aos-duration="700"
         href={`${data.page.acf.connectToForm.button.link}`}
         target="_blank"
         className="mt-6"

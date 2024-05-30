@@ -20,9 +20,6 @@ export default async function Home() {
     getPageContent("teams"),
   ]);
 
-  setTimeout(() => {
-    
-  }, 7000);
 
   // const data: HomePageType = await getPageContent("home");
   
