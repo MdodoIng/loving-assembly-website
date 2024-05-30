@@ -1,5 +1,4 @@
 import React from "react";
-import Layout from "../layout";
 import SectionWrapper from "../SectionWrapper";
 import { HeadSubtitle, HeadTitle } from "@/ui/Typography";
 import main_padding from "@/styles/padding";
@@ -23,8 +22,7 @@ const Associated = ({ data }: { data: HomePageType }) => {
               data-aos-duration="700"
               data-aos-delay={idx * 100}
               key={idx}
-              className="flex flex-col ic
-            "
+              className="flex flex-col items-center"
             >
               <Image
                 src={item.icon.sourceUrl}

@@ -4,9 +4,10 @@ import Image from "next/image";
 import { HeadSubtitle, HeadTitle } from "@/ui/Typography";
 import descriptionExtractor from "@/libs/hooks/descriptionExtractor";
 import main_padding from "@/styles/padding";
+import Link from "next/link";
+import { NormalBtn } from "@/ui/buttons";
 
 const JoinUs = ({ data }: { data: HomePageType }) => {
-
   return (
     <div className={`${main_padding.y} w-full flex items-center`}>
       <SectionWrapper
@@ -27,13 +28,22 @@ const JoinUs = ({ data }: { data: HomePageType }) => {
           <HeadSubtitle className="text-center text-off-white mt-8 leading-[200%]">
             {descriptionExtractor(
               data.page.acf.seventhSectionJoinus.description
-              
             )}
           </HeadSubtitle>
+          {data.page.acf.seventhSectionJoinus.button.title && (
+            <Link
+              href={`${data.page.acf.seventhSectionJoinus.button.link}`}
+              target="_blank"
+            >
+              <NormalBtn>
+                {data.page.acf.seventhSectionJoinus.button.title}
+              </NormalBtn>
+            </Link>
+          )}
         </div>
       </SectionWrapper>
     </div>
-  ); 
+  );
 };
 
 export default JoinUs;

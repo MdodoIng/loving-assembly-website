@@ -51,6 +51,7 @@ const data = `{
           button2Text
           description
           title
+          videoLink
           sectionImage {
             sourceUrl
             mediaDetails {
@@ -84,6 +85,7 @@ const data = `{
                 width
               }
             }
+            link
             title
           }
         }
@@ -114,6 +116,10 @@ const data = `{
           title
           backgroundImage {
             sourceUrl
+          }
+          button {
+            link
+            title
           }
         }
         eighthSection {

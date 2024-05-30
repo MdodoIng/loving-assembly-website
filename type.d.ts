@@ -56,6 +56,7 @@ interface HomePageType {
         button2Link?: string;
         button2Text?: string;
         description?: string;
+        videoLink?: string;
         title?: string;
         sectionImage: {
           sourceUrl: string;
@@ -90,6 +91,7 @@ interface HomePageType {
               height: number;
             };
           };
+          link: string;
           title: string;
         }[];
       };
@@ -113,6 +115,10 @@ interface HomePageType {
         title: any;
         backgroundImage: {
           sourceUrl: string;
+        };
+        button: {
+          link?: string;
+          title?: string;
         };
       };
       eighthSection: {

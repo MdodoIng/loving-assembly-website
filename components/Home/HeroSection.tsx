@@ -147,11 +147,12 @@ const HeroSection = ({ data }: { data: HomePageType }) => {
                 backgroundColor:
                   data.page.acf.firstSectionWelcome.right.title.backgroundColor,
               }}
-              className="uppercase absolute md:bottom-8 bottom-4 px-8 py-[10px]  text-center rounded-[6px] sm:text-lg text-xs text-white font-black "
+              className="uppercase absolute md:bottom-8 bottom-4 px-8 py-[10px]  text-center rounded-[6px] sm:text-lg text-xs text-white font-black font-asap"
             >
               {data.page.acf.firstSectionWelcome.right.title.text}
             </p>
           </div>
+          
         </div>
       </SectionWrapper>
     </section>

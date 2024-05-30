@@ -15,14 +15,14 @@ import Loading from "./loading";
 import Associated from "@/components/Home/Associated";
 
 export default async function Home() {
-  const [data, teams]: [HomePageType, TeamsType] = await Promise.all([
-    getPageContent("home"),
-    getPageContent("teams"),
-  ]);
+  // const [data, teams]: [HomePageType, TeamsType] = await Promise.all([
+  //   getPageContent("home"),
+  //   getPageContent("teams"),
+  // ]);
 
-  // const data: HomePageType = await getPageContent("home");
+  const data: HomePageType = await getPageContent("home");
 
-  if (!data && !teams) return <Loading />;
+  // if (!data && !teams) return <Loading />;
 
   return (
     <Layout>
@@ -43,7 +43,7 @@ export default async function Home() {
           }}
           image={data.page.acf.secondSectionChurch.sectionImage.sourceUrl}
           playBtn={true}
-          imageLink={data.page.acf.secondSectionChurch.sectionImage.sourceUrl}
+          videoLink={data.page.acf.secondSectionChurch.videoLink}
           direction="opposite"
         />
       </SectionWrapper>

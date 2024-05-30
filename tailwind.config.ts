@@ -16,6 +16,10 @@ const config: Config = {
         tertiary: "#383838",
         "off-white": "#F0F0F0",
       },
+      fontFamily: {
+        manrope: "var(--font--manrope)",
+        asap: "var(--font--asap)",
+      },
     },
   },
   plugins: [],

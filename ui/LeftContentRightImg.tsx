@@ -12,7 +12,7 @@ type Props = {
   btn2?: { title?: string; link?: string };
   direction?: "opposite" | "normal";
   image: StaticImageData | string;
-  imageLink?: string;
+  videoLink?: string;
   playBtn?: boolean;
   border?: boolean;
 };
@@ -25,7 +25,7 @@ const LeftContentRightImg = ({
   direction = "normal",
   image,
   playBtn,
-  imageLink,
+  videoLink,
   border,
 }: Props) => {
   return (
@@ -62,9 +62,9 @@ const LeftContentRightImg = ({
           )}
         </div>
       </div>
-      {imageLink ? (
+      {videoLink ? (
         <Link
-          href={imageLink}
+          href={videoLink}
           target="_blank"
           data-aos="fade-up"
           data-aos-duration="700"
