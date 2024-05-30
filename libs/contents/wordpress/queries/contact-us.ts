@@ -20,6 +20,14 @@ const data = `
           }
         }
       }
+      connectToForm {
+        title
+        subtitle
+        button {
+          link
+          title
+        }
+      }
       secondSection {
         title
         description

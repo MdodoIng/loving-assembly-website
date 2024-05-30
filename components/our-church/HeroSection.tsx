@@ -17,7 +17,7 @@ const HeroSection = ({
   subtitle?: string;
   heroSectionImage: StaticImageData | string;
   statement?: string;
-  description?:string;
+  description?: string;
 }) => {
   return (
     <section className="flex flex-col justify-end w-full">
@@ -29,9 +29,15 @@ const HeroSection = ({
         className="object-cover h-full w-full -z-10 sm:max-h-[80vh] max-sm:h-[80vh]  "
       />
 
-      <SectionWrapper classBottom={main_padding.y} classTop={``}>
-        <HeroSectionBottom title={title} subtitle={statement} description={description} />
-      </SectionWrapper>
+      {title && (
+        <SectionWrapper classBottom={main_padding.y} classTop={``}>
+          <HeroSectionBottom
+            title={title}
+            subtitle={statement}
+            description={description}
+          />
+        </SectionWrapper>
+      )}
     </section>
   );
 };

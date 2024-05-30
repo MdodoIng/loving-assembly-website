@@ -281,6 +281,14 @@ interface ContactUsPageType {
           };
         }>;
       };
+      connectToForm: {
+        title?: string;
+        subtitle?: string;
+        button: {
+          link?: string;
+          title?: string;
+        };
+      };
       secondSection: {
         title: string;
         description: string;
