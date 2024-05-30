@@ -4,6 +4,7 @@ import main_padding from "@/styles/padding";
 import { HeadSubtitle, HeadTitle } from "@/ui/Typography";
 
 import Image from "next/image";
+import Link from "next/link";
 
 
 const OurPrograms = ({ data }: { data: HomePageType }) => {
@@ -18,7 +19,8 @@ const OurPrograms = ({ data }: { data: HomePageType }) => {
 
       <div className="grid lg:grid-cols-5 md:grid-cols-4 sm:grid-cols-3 grid-cols-2 lg:gap-10 gap-6 lg:mt-16 md:mt-14 mt-6">
         {data.page.acf.fourthSection.offerings.map((item, idx) => (
-          <div
+          <Link 
+          href={`/${item.link}`}
             key={idx}
             data-aos="fade-up"
             data-aos-duration="400"
@@ -37,7 +39,7 @@ const OurPrograms = ({ data }: { data: HomePageType }) => {
             <p className="bg-secondary sm:px-6 px-4 py-2  w-full text-center text-white font-semibold sm:text-sm text-xs">
               {item.title}
             </p>
-          </div>
+          </Link>
         ))}
       </div>
     </SectionWrapper>

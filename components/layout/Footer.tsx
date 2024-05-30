@@ -29,7 +29,7 @@ const Footer = () => {
       const ministriesSubLinks = links.utility.acf.footerLinks.map((item) => {
         const d = {
           title: item.title,
-          link: `/contact-us/${item.link}`,
+          link: `/${item.link}`,
         };
         return d;
       });

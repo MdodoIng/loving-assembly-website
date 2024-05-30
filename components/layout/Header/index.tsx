@@ -39,7 +39,7 @@ const Header = () => {
         (item) => {
           const d = {
             title: item.title,
-            link: `/contact-us/${item.link}`,
+            link: `/${item.link}`,
           };
           return d;
         }
