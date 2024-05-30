@@ -1,8 +1,8 @@
-import HeroSection from "@/components/contact-us/[programs_id]/HeroSection";
+import HeroSection from "@/components/[programs_id]/HeroSection";
 import Layout from "@/components/layout";
 import React from "react";
-import Events from "@/components/contact-us/kids-of-excellence/Events";
-import Guiding from "@/components/contact-us/kids-of-excellence/Guiding";
+import Events from "@/components/kids-of-excellence/Events";
+import Guiding from "@/components/kids-of-excellence/Guiding";
 import { getPageContent } from "@/libs/contents/wordpress/data";
 import Loading from "@/app/loading";
 

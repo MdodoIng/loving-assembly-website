@@ -1,6 +1,6 @@
 import Loading from "@/app/loading";
-import About from "@/components/contact-us/[programs_id]/About";
-import HeroSection from "@/components/contact-us/[programs_id]/HeroSection";
+import About from "@/components/[programs_id]/About";
+import HeroSection from "@/components/[programs_id]/HeroSection";
 import Layout from "@/components/layout";
 
 import { getPageContent } from "@/libs/contents/wordpress/data";

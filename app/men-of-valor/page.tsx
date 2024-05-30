@@ -1,8 +1,8 @@
-import About from "@/components/contact-us/[programs_id]/About";
-import HeroSection from "@/components/contact-us/men-of-valor/HeroSection";
+import About from "@/components/[programs_id]/About";
+import HeroSection from "@/components/men-of-valor/HeroSection";
 import Layout from "@/components/layout";
 import React from "react";
-import Features from "@/components/contact-us/men-of-valor/Features";
+import Features from "@/components/men-of-valor/Features";
 import { getPageContent } from "@/libs/contents/wordpress/data";
 import descriptionExtractor from "@/libs/hooks/descriptionExtractor";
 import Loading from "@/app/loading";
