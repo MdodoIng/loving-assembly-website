@@ -21,7 +21,7 @@ const HeroSection = ({ data }: { data: ManOfValourType }) => {
         alt=""
         width={data.page.acf.bannerImage.mediaDetails.width}
         height={data.page.acf.bannerImage.mediaDetails.height}
-        className="object-cover h-full w-full -z-10 sm:max-h-[80vh] max-sm:h-[80vh] object-top "
+        className="object-cover sm:h-[90vh] w-full -z-10 sm:max-h-[80vh] max-sm:h-[80vh] object-top "
       />
 
       <SectionWrapper classBottom={`${main_padding.y} flex-col items-center`}>

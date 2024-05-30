@@ -26,7 +26,7 @@ const HeroSection = ({
         alt=""
         width={1440}
         height={1000}
-        className="object-cover h-full w-full -z-10 sm:max-h-[80vh] max-sm:h-[80vh]  "
+        className="object-cover sm:h-[90vh] w-full -z-10 sm:max-h-[80vh] max-sm:h-[80vh]  "
       />
 
       {title && (
