@@ -37,7 +37,7 @@ export default async function Home() {
           subtitle={data.page.acf.secondSectionChurch.description}
           btn1={{
             title: data.page.acf.secondSectionChurch.button1Text,
-            link: data.page.acf.secondSectionChurch.button1Text,
+            link: data.page.acf.secondSectionChurch.button1Link,
           }}
           btn2={{
             title: data.page.acf.secondSectionChurch.button2Text,
