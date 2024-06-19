@@ -21,9 +21,9 @@ const Page = async () => {
   if (!data && !teams) return <Loading />;
 
   return (
-    <Layout>
+    <Layout  headerTransparent >
       <SectionWrapper
-        classBottom={`${main_padding.y} flex-col items-center mt-40`}
+        classBottom={`${main_padding.y} flex-col items-center mt-20`}
       >
         <HeadTitle border className="text-center max-w-[900px]">
           {data.page.acf.title}

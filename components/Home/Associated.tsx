@@ -6,8 +6,11 @@ import Image from "next/image";
 
 const Associated = ({ data }: { data: HomePageType }) => {
   return (
-    <SectionWrapper classBottom={`${main_padding.y} flex-col items-center  `}>
-      <div className="w-full flex flex-col items-center bg-off-white rounded-xl md:py-16 py-8 md:px-14 px-6 ">
+    <div className={`${main_padding.y} w-full flex items-center`}>
+      <SectionWrapper
+        classTop="bg-off-white"
+        classBottom={`sm:py-28 py-16 flex-col items-center  `}
+      >
         <HeadTitle border className="capitalize text-center ">
           {data.page.acf.associated.title}
         </HeadTitle>
@@ -38,8 +41,8 @@ const Associated = ({ data }: { data: HomePageType }) => {
             </div>
           ))}
         </div>
-      </div>
-    </SectionWrapper>
+      </SectionWrapper>
+    </div>
   );
 };
 

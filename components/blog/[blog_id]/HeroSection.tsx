@@ -21,7 +21,7 @@ const HeroSection = ({
     <section className="flex flex-col justify-end w-full">
       {imageContain ? (
         <SectionWrapper>
-          <div className=" mt-40" data-aos="fade-up" data-aos-duration="700">
+          <div className=" mt-20" data-aos="fade-up" data-aos-duration="700">
             <Image
               src={heroSectionImage}
               alt=""
@@ -37,7 +37,7 @@ const HeroSection = ({
           alt=""
           width={1440}
           height={900}
-          className="object-cover sm:h-[90vh] w-full -z-10 sm:max-h-[90vh] max-sm:h-[80vh]"
+          className="object-cover sm:h-[90vh] w-full -z-10 sm:max-h-[80vh] max-sm:h-[80vh]"
         />
       )}
 

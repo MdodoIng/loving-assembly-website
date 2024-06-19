@@ -25,7 +25,7 @@ const page = async ({ params }: any) => {
   if (!data) return <Loading />;
 
   return (
-    <Layout>
+    <Layout headerTransparent>
       <HeroSection
         heroSectionImage={data.users.edges[0].node.avatar.url}
         author={""}

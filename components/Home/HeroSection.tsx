@@ -21,13 +21,13 @@ const HeroSection = ({ data }: { data: HomePageType }) => {
   return (
     <section className="flex flex-col justify-end w-full">
       <div
-        className={`w-full h-svh  overflow-hidden flex items-end justify-center relative z-0 pb-16 ${main_padding.x}`}
+        className={`w-full lg:h-[80svh] h-[calc(100svh-70px)]  overflow-hidden flex items-end justify-center relative z-0 pb-16 ${main_padding.x}`}
       >
         <Swiper
           slidesPerView={1}
           spaceBetween={0}
           effect="ease"
-          loop={true}
+          loop
           speed={1700}
           autoplay={{
             delay: 4500,
