@@ -30,14 +30,15 @@ const Ministering = ({
           .map((item, idx) => (
             <div
               key={idx}
+              data-aos="fade-up"
+              data-aos-duration="700"
+              data-aos-delay={idx * 300}
               className="border border-black flex flex-col rounded-[10px] overflow-hidden"
             >
               <Image
                 src={item.node.acf.teamMemberDetails.image.sourceUrl}
                 alt=""
-                data-aos="fade-up"
-                data-aos-duration="700"
-                data-aos-delay={idx * 300}
+              
                 loading="lazy"
                 width={item.node.acf.teamMemberDetails.image.mediaDetails.width}
                 height={
@@ -58,7 +59,7 @@ const Ministering = ({
                   data-aos="fade-up"
                   data-aos-duration="700"
                   data-aos-delay={idx * 300}
-                  className="md:mt-2 mt-1 text-base uppercase font-bold leading-[150%]"
+                  className="md:mt-2 mt-1 text-lg uppercase font-bold leading-[150%]"
                 >
                   {item.node.acf.teamMemberDetails.designation}
                 </p>

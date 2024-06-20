@@ -38,13 +38,13 @@ const LeftContentRightImg = ({
         } `}
       >
         <HeadTitle border={border}>{title}</HeadTitle>
-        <HeadSubtitle className="sm:mt-4 mt-2">{subtitle}</HeadSubtitle>
+        <HeadSubtitle className="sm:mt-10 mt-2">{subtitle}</HeadSubtitle>
         <div>
           {(btn1?.title || btn2?.title) && (
-            <div className="flex items-center justify-start md:gap-6 gap-3 md:mt-6 mt-3">
+            <div className="flex items-center justify-start md:gap-6 gap-3 md:mt-14 mt-3">
               {btn1?.title && (
                 <Link href={`${btn1?.link}`} shallow className="max-md:w-full">
-                  <NormalBtn className="max-md:w-full">{btn1?.title}</NormalBtn>
+                  <NormalBtn className="max-md:w-full sm:text-[1rem]">{btn1?.title}</NormalBtn>
                 </Link>
               )}
               {btn2?.title && (
@@ -52,7 +52,7 @@ const LeftContentRightImg = ({
                   <NormalBtn
                     mode="day"
                     href={btn2?.link}
-                    className="max-md:w-full"
+                    className="max-md:w-full sm:text-[1rem]"
                   >
                     {btn2?.title}
                   </NormalBtn>

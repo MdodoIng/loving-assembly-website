@@ -107,7 +107,7 @@ const Header = ({ headerTransparent }: { headerTransparent?: boolean }) => {
             alt=""
             width={220}
             height={160}
-            className="lg:h-[80px] h-[62px] w-auto max-lg:!max-w-max object-contain"
+            className="lg:h-[90px] h-[62px] w-auto max-lg:!max-w-max object-contain"
           />
         </Link>
 
@@ -137,15 +137,15 @@ const Header = ({ headerTransparent }: { headerTransparent?: boolean }) => {
                   </span>
                   {/*  */}
                   {expand === idx && (
-                    <div className="absolute top-0">
-                      <div className="flex flex-col items-start justify-center  mt-[65px] bg-white/90 backdrop-blur-md w-max px-2 py-6 rounded-[10px] shadow-md gap-1">
+                    <div className="absolute top-0 w-[230px] ">
+                      <div className="flex flex-col items-start justify-center w-full  mt-[65px] bg-white/90 backdrop-blur-md  px-2 py-6 rounded-[10px] shadow-md gap-1">
                         {item.subLinks.map((subLink, subLinkIdx) => (
                           <Link
                             key={subLinkIdx}
                             onClick={() => setExpand(0)}
                             href={subLink.link}
                             shallow
-                            className="text-center px-4 hover:bg-secondary hover:text-white duration-300 w-full  py-2 rounded-md"
+                            className="text-start px-4 hover:bg-secondary hover:text-white duration-300 w-full  py-2 rounded-md"
                           >
                             {subLink.title}
                           </Link>
@@ -159,20 +159,21 @@ const Header = ({ headerTransparent }: { headerTransparent?: boolean }) => {
               )}
             </li>
           ))}
-        </menu>
-        <Link
-          href={`${menuLinks.liveLink}`}
-          shallow
-          target="_blank"
-          className="max-lg:hidden"
-        >
-          <NormalBtn
-            mode="night"
-            className="hover:bg-primary hover:border-primary hover:text-white"
+          <Link
+            href={`${menuLinks.liveLink}`}
+            shallow
+            target="_blank"
+            className="max-lg:hidden translate-x-20"
           >
-            Live
-          </NormalBtn>
-        </Link>
+            <NormalBtn
+              mode="night"
+              className="hover:bg-primary hover:border-primary hover:text-white"
+            >
+              Live
+            </NormalBtn>
+          </Link>
+        </menu>
+        <div className="max-lg:hidden"/>
 
         {/* mobile  */}
 

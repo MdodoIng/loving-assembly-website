@@ -31,7 +31,7 @@ const OurPrograms = ({ data }: { data: HomePageType }) => {
               data-aos="fade-up"
               data-aos-duration="400"
               data-aos-delay={idx * 300}
-              className="bg-off-white rounded-[10px] overflow-hidden flex flex-col items-center justify-between pt-4"
+              className="bg-off-white rounded-[10px] overflow-hidden flex flex-col items-center justify-between pt-6"
             >
               <div />
               <Image
@@ -40,9 +40,9 @@ const OurPrograms = ({ data }: { data: HomePageType }) => {
                 width={160}
                 height={160}
                 loading="lazy"
-                className="h-[120px] w-auto aspect-square object-contain px-3"
+                className="h-[120px] w-auto aspect-square object-contain px-3 pb-3"
               />
-              <p className="text-secondary sm:px-6 px-4 py-2  w-full text-center bg-white font-semibold sm:text-sm text-xs">
+              <p className="text-secondary sm:px-6 px-4 py-4 font-extrabold  w-full text-center bg-white sm:text-sm text-xs">
                 {item.title}
               </p>
             </Link>

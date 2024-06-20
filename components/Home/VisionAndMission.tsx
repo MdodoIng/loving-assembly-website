@@ -18,12 +18,12 @@ const VisionAndMission = ({ data }: { data: HomePageType }) => {
         {data.page.acf.sixthSection.boxSection.map((item, idx) => (
           <div
             key={idx}
+            data-aos="fade-up"
+            data-aos-duration="700"
+            data-aos-delay={idx * 300}
             className="border border-black flex flex-col rounded-[10px] overflow-hidden"
           >
             <Image
-              data-aos="fade-up"
-              data-aos-duration="700"
-              data-aos-delay={idx * 300}
               src={item.image.sourceUrl}
               alt=""
               loading="lazy"
@@ -44,7 +44,7 @@ const VisionAndMission = ({ data }: { data: HomePageType }) => {
                 data-aos="fade-up"
                 data-aos-duration="700"
                 data-aos-delay={idx * 300}
-                className="md:mt-3 mt-1 text-base leading-[150%]"
+                className="md:mt-3 mt-1 text-lg leading-[150%]"
               >
                 {item.description}
               </p>

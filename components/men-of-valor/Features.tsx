@@ -34,7 +34,7 @@ const Features = ({ data }: { data: ManOfValourType }) => {
               data-aos="fade-up"
               data-aos-duration="700"
               data-aos-delay={idx * 300}
-              className="mt-4 text-base text-center leading-[190%]"
+              className="mt-4 text-lg text-center leading-[190%]"
             >
               {item.description}
             </p>

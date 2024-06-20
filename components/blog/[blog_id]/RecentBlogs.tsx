@@ -33,7 +33,7 @@ const RecentBlogs = ({ data }: { data: BlogsType }) => {
               <h5 className="text-secondary font-bold line-clamp-1">
                 {item.node.acf.title}
               </h5>
-              <p className="line-clamp-2 text-xs mt-1">
+              <p className="line-clamp-2 text-xs mt-1 font-semibold leading-[120%]">
                 {item.node.acf.content}
               </p>
             </div>

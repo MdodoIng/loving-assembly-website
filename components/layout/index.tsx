@@ -23,7 +23,7 @@ const Layout = ({ children, headerTransparent }: { children: ReactNode;headerTra
   useEffect(() => {
     const t = setTimeout(() => {
       setIsLoading(true);
-    }, 700);
+    }, 1200);
 
     return () => clearTimeout(t);
   }, []);

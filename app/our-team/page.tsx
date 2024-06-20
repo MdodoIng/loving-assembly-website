@@ -21,7 +21,7 @@ const Page = async () => {
   if (!data && !teams) return <Loading />;
 
   return (
-    <Layout  headerTransparent >
+    <Layout headerTransparent>
       <SectionWrapper
         classBottom={`${main_padding.y} flex-col items-center mt-20`}
       >
@@ -37,6 +37,9 @@ const Page = async () => {
             .map((item, idx) => (
               <div
                 key={idx}
+                data-aos="fade-up"
+                data-aos-duration="700"
+                data-aos-delay={idx * 300}
                 className="w-full flex flex-col border border-black h-full rounded-xl "
               >
                 <Image
@@ -49,9 +52,6 @@ const Page = async () => {
                   height={
                     item.node.acf.teamMemberDetails.image.mediaDetails.height
                   }
-                  data-aos="fade-up"
-                  data-aos-duration="700"
-                  data-aos-delay={idx * 300}
                   className=" rounded-[10px] overflow-hidden  aspect-[16/17] shrink-0 max-h-[900px] object-cover object-top"
                 />
                 <div className="flex flex-col h-full md:py-6 py-3 md:px-10 px-3">
@@ -140,7 +140,7 @@ const Page = async () => {
                           data-aos="fade-up"
                           data-aos-duration="700"
                           data-aos-delay={idx * 300}
-                          className="text-base"
+                          className="sm:text-[1rem]"
                         >
                           Read More
                         </NormalBtn>

@@ -80,7 +80,7 @@ const HeroSection = ({ data }: { data: HomePageType }) => {
               className="mt-4 max-sm:w-full"
             >
               <NormalBtn
-                className="max-sm:w-full border-transparent"
+                className="max-sm:w-full border-transparent text-lg"
                 mode="day"
               >
                 {data.page.acf.heroSection.button.title}
@@ -110,7 +110,7 @@ const HeroSection = ({ data }: { data: HomePageType }) => {
                       shallow
                       className="max-sm:w-full"
                     >
-                      <NormalBtn className="max-sm:w-full">
+                      <NormalBtn className="max-sm:w-full sm:text-[1rem]">
                         {data.page.acf.firstSectionWelcome.buttion1Text}
                       </NormalBtn>
                     </Link>
@@ -121,7 +121,7 @@ const HeroSection = ({ data }: { data: HomePageType }) => {
                       shallow
                       className="max-sm:w-full"
                     >
-                      <NormalBtn mode="day" className="max-sm:w-full">
+                      <NormalBtn mode="day" className="max-sm:w-full sm:text-[1rem]">
                         {data.page.acf.firstSectionWelcome.button2Text}
                       </NormalBtn>
                     </Link>
