@@ -21,6 +21,10 @@ const JoinUs = ({ data }: { data: HomePageType }) => {
           className="-z-10 object-cover "
           alt={""}
         />
+
+
+
+        
         <div className="flex flex-col items-center py-14 px-14 bg-black/15 backdrop-blur-xl rounded-lg ">
           <HeadTitle border className="border-white text-white">
             {data.page.acf.seventhSectionJoinus.title}
