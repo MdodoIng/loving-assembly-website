@@ -38,7 +38,7 @@ const JoinUs = ({ data }: { data: HomePageType }) => {
               data-aos-duration="700"
               className="mt-4"
             >
-              <NormalBtn mode="day">
+              <NormalBtn mode="day" className="sm:text-[1rem]">
                 {data.page.acf.seventhSectionJoinus.button.title}
               </NormalBtn>
             </Link>
