@@ -95,6 +95,8 @@ const Header = ({ headerTransparent }: { headerTransparent?: boolean }) => {
     },
   ];
 
+  
+
   return (
     <SectionWrapper classTop={`${!headerTransparent && "bg-white"} `}>
       <nav
