@@ -45,7 +45,7 @@ const HeroSection = ({ data }: { data: HomePageType }) => {
                 alt=""
                 width={item.mediaDetails.width}
                 height={item.mediaDetails.height}
-                className="w-full h-full object-cover object-top"
+                className="w-full h-auto object-contain object-top"
               />
             </SwiperSlide>
           ))}
@@ -59,7 +59,7 @@ const HeroSection = ({ data }: { data: HomePageType }) => {
                 alt=""
                 width={item.mediaDetails.width}
                 height={item.mediaDetails.height}
-                className="w-full h-full object-cover object-top"
+                className="w-full h-auto object-contain object-top"
               />
             </SwiperSlide>
           ))}
