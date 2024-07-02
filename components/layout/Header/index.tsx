@@ -21,6 +21,10 @@ const Header = ({ headerTransparent }: { headerTransparent?: boolean }) => {
     }[];
     liveLink: string;
     logo: string;
+    forwardToAmazon: {
+      name: string;
+      link: string;
+    };
   }>();
 
   useLayoutEffect(() => {
@@ -51,6 +55,7 @@ const Header = ({ headerTransparent }: { headerTransparent?: boolean }) => {
         ministries: ministriesSubLinks,
         liveLink: utilities.utility.acf.liveLink,
         logo: utilities.utility.acf.logo.sourceUrl,
+        forwardToAmazon: utilities.utility.acf.forwardToAmazon,
       });
     }
     getData();
@@ -94,8 +99,6 @@ const Header = ({ headerTransparent }: { headerTransparent?: boolean }) => {
       link: "/contact-us",
     },
   ];
-
-  
 
   return (
     <SectionWrapper classTop={`${!headerTransparent && "bg-white"} `}>
@@ -161,21 +164,36 @@ const Header = ({ headerTransparent }: { headerTransparent?: boolean }) => {
               )}
             </li>
           ))}
-          <Link
-            href={`${menuLinks.liveLink}`}
-            shallow
-            target="_blank"
-            className="max-lg:hidden translate-x-20"
-          >
-            <NormalBtn
-              mode="night"
-              className="hover:bg-primary hover:border-primary hover:text-white"
+          <div className="flex items-center justify-center gap-4">
+            <Link
+              href={`${menuLinks.forwardToAmazon.link}`}
+              shallow
+              target="_blank"
+              className="max-lg:hidden translate-x-20"
             >
-              Live
-            </NormalBtn>
-          </Link>
+              <NormalBtn
+                mode="day"
+                className="hover:bg-primary hover:border-primary hover:text-white"
+              >
+                {menuLinks.forwardToAmazon.name}
+              </NormalBtn>
+            </Link>
+            <Link
+              href={`${menuLinks.liveLink}`}
+              shallow
+              target="_blank"
+              className="max-lg:hidden translate-x-20"
+            >
+              <NormalBtn
+                mode="night"
+                className="hover:bg-primary hover:border-primary hover:text-white"
+              >
+                Live
+              </NormalBtn>
+            </Link>
+          </div>
         </menu>
-        <div className="max-lg:hidden"/>
+        <div className="max-lg:hidden" />
 
         {/* mobile  */}
 
@@ -184,6 +202,7 @@ const Header = ({ headerTransparent }: { headerTransparent?: boolean }) => {
           liveLink={menuLinks.liveLink}
           expand={expand}
           setExpand={setExpand}
+          forwardToAmazon={menuLinks.forwardToAmazon}
         />
       </nav>
     </SectionWrapper>

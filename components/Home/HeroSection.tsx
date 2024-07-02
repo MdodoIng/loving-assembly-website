@@ -71,7 +71,7 @@ const HeroSection = ({ data }: { data: HomePageType }) => {
             <h1 className="text-3xl font-black text-secondary">
               {data.page.acf.heroSection.title}
             </h1>
-            <p className="text-lg text-black capitalize mt-1">
+            <p className="text-lg text-black  mt-1">
               {data.page.acf.heroSection.subtitle}
             </p>
             <Link
@@ -150,7 +150,7 @@ const HeroSection = ({ data }: { data: HomePageType }) => {
                 backgroundColor:
                   data.page.acf.firstSectionWelcome.right.title.backgroundColor,
               }}
-              className="uppercase absolute md:bottom-8 bottom-4 px-8 py-[10px]  text-center rounded-[6px] sm:text-lg text-xs text-white font-bold tracking-wider font-asap"
+              className=" absolute md:bottom-8 bottom-4 px-8 py-[10px]  text-center rounded-[6px] sm:text-lg text-xs text-white font-bold tracking-wider font-asap"
             >
               {data.page.acf.firstSectionWelcome.right.title.text}
             </p>

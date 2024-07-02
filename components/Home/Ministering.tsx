@@ -59,7 +59,7 @@ const Ministering = ({
                   data-aos="fade-up"
                   data-aos-duration="700"
                   data-aos-delay={idx * 300}
-                  className="md:mt-2 mt-1 text-lg uppercase font-bold leading-[150%]"
+                  className="md:mt-2 mt-1 text-lg font-bold leading-[150%]"
                 >
                   {item.node.acf.teamMemberDetails.designation}
                 </p>

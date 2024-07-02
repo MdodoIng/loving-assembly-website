@@ -36,7 +36,7 @@ const About = ({
           <p className="leading-[190%] text-lg">{description}</p>
           <NormalBtn
             onClick={() => router.push(`/${button.link}`)}
-            className="mt-6 max-sm:w-full capitalize"
+            className="mt-6 max-sm:w-full "
           >
             {button.title}
           </NormalBtn>

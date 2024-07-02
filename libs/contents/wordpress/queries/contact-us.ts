@@ -20,6 +20,20 @@ const data = `
           }
         }
       }
+      socialMedia {
+       title
+        subtitle
+        links {
+          icon {
+            sourceUrl
+            mediaDetails {
+              height
+              width
+            }
+          }
+          link
+        }
+      }
       connectToForm {
         title
         subtitle

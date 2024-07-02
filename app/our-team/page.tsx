@@ -59,7 +59,7 @@ const Page = async () => {
                     data-aos="fade-up"
                     data-aos-duration="700"
                     data-aos-delay={idx * 300}
-                    className=" font-bold uppercase text-black text-sm"
+                    className=" font-bold text-black text-sm"
                   >
                     {item.node.acf.teamMemberDetails.designation}
                   </p>

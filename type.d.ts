@@ -281,6 +281,20 @@ interface ContactUsPageType {
           };
         }>;
       };
+      socialMedia: {
+        title: string;
+        subtitle: string;
+        links: {
+          icon: {
+            sourceUrl: string;
+            mediaDetails: {
+              height: number;
+              width: number;
+            };
+          };
+          link: string;
+        }[];
+      };
       connectToForm: {
         title?: string;
         subtitle?: string;
@@ -476,6 +490,10 @@ interface UtilitiesType {
         link: string;
         title: string;
       }>;
+      forwardToAmazon: {
+        name: string;
+        link: string;
+      };
       footerLinks: Array<{
         link: string;
         title: string;

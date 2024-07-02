@@ -14,6 +14,10 @@ const utl = `
         link
         title
       }
+      forwardToAmazon {
+        name
+        link
+      }
       footerLinks {
         link
         title

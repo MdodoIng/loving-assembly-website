@@ -11,7 +11,7 @@ const Associated = ({ data }: { data: HomePageType }) => {
         classTop="bg-off-white"
         classBottom={`sm:py-28 py-16 flex-col items-center  `}
       >
-        <HeadTitle border className="capitalize text-center ">
+        <HeadTitle border className=" text-center ">
           {data.page.acf.associated.title}
         </HeadTitle>
         <HeadSubtitle className="mt-2 text-center max-w-[900px] ">
@@ -35,7 +35,7 @@ const Associated = ({ data }: { data: HomePageType }) => {
                 loading="lazy"
                 className="h-[200px] w-auto object-contain"
               />
-              <p className="mt-2 font-bold text-secondary text-lg capitalize text-center">
+              <p className="mt-2 font-bold text-secondary text-lg  text-center">
                 {item.title}
               </p>
             </div>

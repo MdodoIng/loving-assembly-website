@@ -5,6 +5,7 @@ import { getPageContent } from "@/libs/contents/wordpress/data";
 import React from "react";
 import Loading from "../loading";
 import ConnectToForm from "@/components/contact-us/ConnectToForm";
+import SocialMedia from "@/components/contact-us/SocialMedia";
 
 const page = async () => {
   const data: ContactUsPageType = await getPageContent("contact-us");
@@ -14,6 +15,7 @@ const page = async () => {
     <>
       <Layout>
         <HeroSection data={data} />
+        <SocialMedia data={data} />
         <ConnectToForm data={data} />
         <OurMinistries data={data} />
       </Layout>
