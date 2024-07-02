@@ -54,18 +54,6 @@ const page = async ({ params }: any) => {
     <Layout>
       <HeroSection
         heroSectionImage={data.node.acf.bannerImage.sourceUrl}
-        author={
-          <>
-            {formattedDate} - By&nbsp;
-            <Link
-              href={`/author/${data.node.author.node.slug}`}
-              shallow
-              className="capitalize"
-            >
-              {data.node.author.node.name}
-            </Link>
-          </>
-        }
         title={data.node.acf.title}
       />
       <SectionWrapper
