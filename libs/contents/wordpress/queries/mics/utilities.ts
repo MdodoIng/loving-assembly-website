@@ -1,6 +1,3 @@
-
-
-
 const utl = `
 {
   utility(id: "cG9zdDo0NDI=") {
@@ -9,7 +6,10 @@ const utl = `
       logo {
         sourceUrl
       }
-      liveLink
+       liveLink {
+            name
+            link
+          }
       ministriesMenuLinks {
         link
         title
@@ -25,7 +25,6 @@ const utl = `
     }
   }
 }
-`
+`;
 
-
-export default utl
+export default utl;

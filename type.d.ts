@@ -485,7 +485,10 @@ interface UtilitiesType {
       logo: {
         sourceUrl: string;
       };
-      liveLink: string;
+      liveLink: {
+        name: string;
+        link: string;
+      };
       ministriesMenuLinks: Array<{
         link: string;
         title: string;

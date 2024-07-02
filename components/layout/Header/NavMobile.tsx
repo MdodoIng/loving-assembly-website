@@ -22,7 +22,10 @@ type Props = {
   )[];
   setExpand: React.Dispatch<React.SetStateAction<any>>;
   expand: any;
-  liveLink?: string;
+  liveLink: {
+    name: string;
+    link: string;
+  };
   forwardToAmazon: {
     name: string;
     link: string;
@@ -39,13 +42,13 @@ const NavMobile = ({
   return (
     <>
       <div className="lg:hidden flex items-center gap-4">
-        <Link href={`${liveLink}`} shallow target="_blank">
+        <Link href={`${liveLink.link}`} shallow target="_blank">
           <NormalBtn
             mode="day"
             onClick={() => setToggle(false)}
             className="bg-transparent"
           >
-            Live
+            {liveLink.name}
           </NormalBtn>
         </Link>
         <div className="flex items-center justify-center w-[45px] h-[45px] ">

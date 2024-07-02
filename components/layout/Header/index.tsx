@@ -19,7 +19,10 @@ const Header = ({ headerTransparent }: { headerTransparent?: boolean }) => {
       title: string;
       link: string;
     }[];
-    liveLink: string;
+    liveLink: {
+      name: string;
+      link: string;
+    };
     logo: string;
     forwardToAmazon: {
       name: string;
@@ -179,7 +182,7 @@ const Header = ({ headerTransparent }: { headerTransparent?: boolean }) => {
               </NormalBtn>
             </Link>
             <Link
-              href={`${menuLinks.liveLink}`}
+              href={`${menuLinks.liveLink.link}`}
               shallow
               target="_blank"
               className="max-lg:hidden translate-x-20"
@@ -188,7 +191,7 @@ const Header = ({ headerTransparent }: { headerTransparent?: boolean }) => {
                 mode="night"
                 className="hover:bg-primary hover:border-primary hover:text-white"
               >
-                Live
+                {menuLinks.liveLink.name}
               </NormalBtn>
             </Link>
           </div>
