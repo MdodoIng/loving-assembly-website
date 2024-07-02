@@ -21,7 +21,7 @@ const HeroSection = ({ data }: { data: HomePageType }) => {
   return (
     <section className="flex flex-col justify-end w-full">
       <div
-        className={`w-full lg:h-[80svh] h-[calc(100svh-70px)]  overflow-hidden flex items-end justify-center relative z-0 pb-16 ${main_padding.x}`}
+        className={`w-full   overflow-hidden flex items-end justify-center relative z-0 `}
       >
         <Swiper
           slidesPerView={1}
@@ -33,7 +33,7 @@ const HeroSection = ({ data }: { data: HomePageType }) => {
             delay: 4500,
           }}
           modules={[Autoplay]}
-          className="mySwiper !absolute top-0 left-0 inset-0 w-full h-full !-z-10"
+          className="mySwiper  top-0 left-0 inset-0 w-full h-full !-z-10"
         >
           {data.page.acf.heroSection.bannerImages.map((item, idx) => (
             <SwiperSlide
@@ -121,7 +121,10 @@ const HeroSection = ({ data }: { data: HomePageType }) => {
                       shallow
                       className="max-sm:w-full"
                     >
-                      <NormalBtn mode="day" className="max-sm:w-full sm:text-[1rem]">
+                      <NormalBtn
+                        mode="day"
+                        className="max-sm:w-full sm:text-[1rem]"
+                      >
                         {data.page.acf.firstSectionWelcome.button2Text}
                       </NormalBtn>
                     </Link>
@@ -152,7 +155,6 @@ const HeroSection = ({ data }: { data: HomePageType }) => {
               {data.page.acf.firstSectionWelcome.right.title.text}
             </p>
           </div>
-          
         </div>
       </SectionWrapper>
     </section>
