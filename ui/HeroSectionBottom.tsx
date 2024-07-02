@@ -23,7 +23,7 @@ const HeroSectionBottom = ({
 }: Props) => {
   const pathname = usePathname();
 
-  console.log(btn2);
+  
   return (
     <div className="w-full grid md:grid-cols-2 lg:gap-20 md:gap-14 sm:gap-6 gap-4">
       <div

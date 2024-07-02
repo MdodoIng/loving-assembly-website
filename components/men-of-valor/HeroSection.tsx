@@ -5,7 +5,6 @@ import React from "react";
 import { HeadSubtitle, HeadTitle } from "@/ui/Typography";
 import descriptionExtractor from "@/libs/hooks/descriptionExtractor";
 
-
 const HeroSection = ({ data }: { data: ManOfValourType }) => {
   const words = data.page.acf.firstSection.content.split(" ");
   const midIndex = Math.ceil(words.length / 2);
@@ -34,13 +33,16 @@ const HeroSection = ({ data }: { data: ManOfValourType }) => {
         <div
           data-aos="fade-up"
           data-aos-duration="700"
-          className={`grid md:grid-cols-2 md:gap-10 gap-2 lg:mt-16 md:mt-14 mt-6 w-full sm:bg-off-white sm:px-8   sm:py-10 rounded-[10px] sm:text-lg text-sm sm:leading-[190%] leading-[170%]`}
+          className={`grid md:grid-cols-2 md:gap-10 gap-2 lg:mt-16 md:mt-14 mt-6 w-full sm:bg-off-white sm:px-8 sm:py-10 rounded-[10px] sm:text-lg text-sm sm:leading-[190%] leading-[170%]`}
         >
           {description.map((item, idx) => (
-            <p key={idx} className="block">
+            <p key={idx} className="md:block hidden ">
               {descriptionExtractor(item)}
             </p>
           ))}
+          <p className="block md:hidden ">
+            {descriptionExtractor(data.page.acf.firstSection.content)}
+          </p>
         </div>
       </SectionWrapper>
     </section>
