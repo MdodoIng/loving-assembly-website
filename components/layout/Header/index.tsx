@@ -117,7 +117,7 @@ const Header = ({
     <SectionWrapper classTop={`${!headerTransparent && "bg-white"} `}>
       <nav
         onMouseLeave={() => setExpand(null)}
-        className="flex items-center  justify-between gap-28 py-2  z-50 w-full"
+        className="flex items-center  justify-between sm:gap-28 gap-8 py-2  z-50 w-full"
       >
         <Link href="/" shallow>
           <Image
@@ -181,7 +181,6 @@ const Header = ({
             <Link
               href={`${menuLinks.forwardToAmazon.link}`}
               shallow
-              target="_blank"
               className="max-lg:hidden translate-x-20"
             >
               <NormalBtn

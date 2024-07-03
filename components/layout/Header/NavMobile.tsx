@@ -150,7 +150,7 @@ const NavMobile = ({
             </li>
           ))}
         </menu>
-        <Link href={`${forwardToAmazon.link}`} shallow target="_blank">
+        <Link href={`${forwardToAmazon.link}`} shallow>
           <NormalBtn
             mode="day"
             onClick={() => setToggle(false)}

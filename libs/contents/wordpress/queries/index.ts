@@ -10,6 +10,8 @@ import blogsBySlugQuery from "./blogs-by-slug";
 import usersQuery from "./ministries/users";
 import ourChurchQuery from "./our-church";
 import utilitiesQuery from "./mics/utilities";
+import buyNowQuery from "./buy-now";
+
 export {
   homeQuery,
   kidsOfExcellenceQuery,
@@ -23,4 +25,5 @@ export {
   utilitiesQuery,
   usersQuery,
   ourChurchQuery,
+  buyNowQuery,
 };

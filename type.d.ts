@@ -477,6 +477,23 @@ interface OurChurchType {
     };
   };
 }
+interface BuyNowPageType {
+  page: {
+    acf: {
+      title: string
+      subtitle: string
+      products: Array<{
+        title: string
+        subtitle: string
+        link: any
+        image: {
+          sourceUrl: string
+        }
+      }>
+      productButtonName: string
+    }
+  }
+}
 
 interface UtilitiesType {
   utility: {
