@@ -30,7 +30,7 @@ const Header = ({ headerTransparent }: { headerTransparent?: boolean }) => {
     };
   }>();
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     async function getData() {
       const [blog, utilities]: [BlogsType, UtilitiesType] = await Promise.all([
         getPageContent("blogs"),
