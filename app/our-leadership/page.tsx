@@ -135,7 +135,7 @@ const Page = async () => {
                         )}
                       </div>
 
-                      <Link href={`/our-team/${item.node.slug}`} shallow>
+                      <Link href={`/our-leadership/${item.node.slug}`} shallow>
                         <NormalBtn
                           data-aos="fade-up"
                           data-aos-duration="700"

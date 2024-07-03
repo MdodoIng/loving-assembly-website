@@ -45,8 +45,8 @@ const Footer = () => {
 
   const data = [
     {
-      title: "Team",
-      link: "/our-team",
+      title: "Our Leadership",
+      link: "/our-leadership",
     },
     ...footerLinks.links!,
     {

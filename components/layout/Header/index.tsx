@@ -78,8 +78,8 @@ const Header = ({ headerTransparent }: { headerTransparent?: boolean }) => {
       link: "",
       subLinks: [
         {
-          title: "Our Team",
-          link: "/our-team",
+          title: "Our Leadership",
+          link: "/our-leadership",
         },
         {
           title: "Our Church",

@@ -63,7 +63,7 @@ const Ministering = ({
                 >
                   {item.node.acf.teamMemberDetails.designation}
                 </p>
-                <Link href={`/our-team/${item.node.slug}`} shallow>
+                <Link href={`/our-leadership/${item.node.slug}`} shallow>
                   <NormalBtn className="mt-4 sm:w-max max-w-full">
                     Read More
                   </NormalBtn>
