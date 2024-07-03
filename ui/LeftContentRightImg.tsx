@@ -51,7 +51,7 @@ const LeftContentRightImg = ({
                 <Link href={`${btn2?.link}`} shallow className="max-md:w-full">
                   <NormalBtn
                     mode="day"
-                    href={btn2?.link}
+                 
                     className="max-md:w-full sm:text-[1rem]"
                   >
                     {btn2?.title}
