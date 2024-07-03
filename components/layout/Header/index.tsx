@@ -72,7 +72,7 @@ const Header = ({
       blogs: blogSubLinks,
       ministries: ministriesSubLinks,
     });
-  }, []);
+  }, [data]);
 
   if (
     !menuLinks?.blogs &&
