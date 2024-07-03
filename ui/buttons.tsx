@@ -17,11 +17,11 @@ const NormalBtn = ({
   className?: string;
 }) => {
   const router = useRouter();
-  const handleClick = () => href && router.push(href);
+
   return (
     <button
       onClick={() => {
-        handleClick;
+        href && router.push(href!);
         onClick;
       }}
       name="button"
