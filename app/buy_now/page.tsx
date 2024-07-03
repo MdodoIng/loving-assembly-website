@@ -10,15 +10,9 @@ const page = async () => {
   const data: BuyNowPageType = await getPageContent("buy-now");
   return (
     <SectionWrapper
-      classBottom={`${main_padding.y} flex-col items-center mt-40`}
+      classBottom={`${main_padding.b} flex-col items-center mt-40`}
     >
-      <HeadTitle border className="text-center max-w-[900px]">
-        {data.page.acf.title}
-      </HeadTitle>
-      <HeadSubtitle className="sm:mt-4 mt-2 text-center max-w-[900px] text-black">
-        {data.page.acf.subtitle}
-      </HeadSubtitle>
-      <div className="flex items-start justify-center flex-wrap  w-full lg:gap-10 gap-6 lg:mt-16 md:mt-14 mt-6">
+      <div className="flex items-start justify-center flex-wrap  w-full lg:gap-10 gap-6">
         {data.page.acf.products.map((item, idx) => (
           <div
             key={idx}
@@ -43,14 +37,16 @@ const page = async () => {
             >
               {item.title}
             </h2>
-            <p
-              data-aos="fade-up"
-              data-aos-duration="700"
-              data-aos-delay={idx * 300}
-              className="text-black/90 text-xs mt-1 line-clamp-2"
-            >
-              {item.subtitle}
-            </p>
+            {item.subtitle && (
+              <p
+                data-aos="fade-up"
+                data-aos-duration="700"
+                data-aos-delay={idx * 300}
+                className="text-black/90 text-xs mt-1 line-clamp-2"
+              >
+                {item.subtitle}
+              </p>
+            )}
             <Link href={`${item.link}`} target="_blank" className="mt-3">
               <NormalBtn mode="day" className="border-none">
                 {data.page.acf.productButtonName}

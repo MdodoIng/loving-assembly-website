@@ -480,8 +480,6 @@ interface OurChurchType {
 interface BuyNowPageType {
   page: {
     acf: {
-      title: string
-      subtitle: string
       products: Array<{
         title: string
         subtitle: string

@@ -114,10 +114,10 @@ const Header = ({
   ];
 
   return (
-    <SectionWrapper classTop={`${!headerTransparent && "bg-white"} `}>
+    <SectionWrapper classTop={`${!headerTransparent && "bg-off-white"} `}>
       <nav
         onMouseLeave={() => setExpand(null)}
-        className="flex items-center  justify-between sm:gap-28 gap-8 py-2  z-50 w-full"
+        className="flex items-center  justify-between sm:gap-28 gap-8 py-2  z-50 w-full "
       >
         <Link href="/" shallow>
           <Image
