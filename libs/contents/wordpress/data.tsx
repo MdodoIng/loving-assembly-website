@@ -29,7 +29,7 @@ async function fetchApi(query = "", { variables }: Record<string, any> = {}) {
       query,
       variables,
     }),
-    cache: "force-cache",
+    cache: "no-store",
   });
   const json = await res.json();
 
