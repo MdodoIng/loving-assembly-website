@@ -33,7 +33,7 @@ const page = async () => {
               width={240}
               height={240}
               loading="lazy"
-              className=" w-full object-cover rounded-md overflow-hidden"
+              className="w-full aspect-[16/12] object-cover rounded-md overflow-hidden"
             />
             <h2
               data-aos="fade-up"
