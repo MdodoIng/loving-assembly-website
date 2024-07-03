@@ -11,7 +11,7 @@ const NormalBtn = ({
   className,
 }: {
   children: ReactNode;
-  onClick?: any;
+  onClick?: () => void;
   href?: string;
   mode?: "night" | "day";
   className?: string;
@@ -20,8 +20,11 @@ const NormalBtn = ({
   const handleClick = () => href && router.push(href);
   return (
     <button
-      // @ts-ignore
-      onClick={(handleClick, onClick)}
+      onClick={() => {
+        handleClick;
+        onClick;
+      }}
+      name="button"
       className={twMerge(
         `px-8 py-3 border border-black font-semibold sm:text-sm text-xs rounded-md  ${
           mode === "night"

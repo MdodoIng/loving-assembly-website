@@ -12,7 +12,7 @@ const data = {
 const FaithAndTransformation = ({ data }: { data: OurChurchType }) => {
   return (
     <SectionWrapper classBottom={`${main_padding.y} flex-col items-center`}>
-      <span className="max-w-[900px]">
+      <span className="max-w-[820px]">
         <HeadTitle border className="text-center">
          {data.page.acf.faithAndTransformation.title}
         </HeadTitle>
