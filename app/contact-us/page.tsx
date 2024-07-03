@@ -13,12 +13,12 @@ const page = async () => {
 
   return (
     <>
-      <Layout>
+      <>
         <HeroSection data={data} />
         <SocialMedia data={data} />
         <ConnectToForm data={data} />
         <OurMinistries data={data} />
-      </Layout>
+      </>
     </>
   );
 };

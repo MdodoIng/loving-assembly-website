@@ -8,7 +8,7 @@ import FaithAndTransformation from "@/components/our-church/FaithAndTransformati
 const page = async () => {
   const data: OurChurchType = await getPageContent("our-church");
   return (
-    <Layout>
+    <>
       <HeroSection
         heroSectionImage={data.page.acf.heroSection.bannerimage.sourceUrl}
         title={data.page.acf.heroSection.tittle}
@@ -16,7 +16,7 @@ const page = async () => {
       />
       <FaithAndTransformation data={data} />
       <Journey data={data} />
-    </Layout>
+    </>
   );
 };
 

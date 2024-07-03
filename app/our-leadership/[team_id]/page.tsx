@@ -16,7 +16,7 @@ const page = async ({ params }: any) => {
 
   const index = teams.teams.edges.findIndex(
     (item) => item.node.slug === params.team_id
-    
+
   );
 
   const buttons = [
@@ -36,7 +36,7 @@ const page = async ({ params }: any) => {
     },
   ];
   return (
-    <Layout>
+    <>
       <HeroSection
         heroSectionImage={data.node.acf.teamMemberDetails.image.sourceUrl}
         title={data.node.acf.teamMemberDetails.name}
@@ -47,7 +47,7 @@ const page = async ({ params }: any) => {
       />
 
       <NavigationBtns buttons={buttons} />
-    </Layout>
+    </>
   );
 };
 

@@ -16,34 +16,36 @@ const bottomLinks = [
   },
 ];
 
-const Footer = () => {
+const Footer = ({
+  data,
+}: {
+  data: {
+    footerLinks: { title: string; link: string }[];
+    logo: string;
+  };
+}) => {
   const [footerLinks, setFooterLinks] = useState<{
     links: { title: string; link: string }[];
-    logo: string;
+    logo: any;
   }>();
 
   useEffect(() => {
-    async function getData() {
-      const links: UtilitiesType = await getPageContent("utilities");
-
-      const ministriesSubLinks = links.utility.acf.footerLinks.map((item) => {
-        const d = {
-          title: item.title,
-          link: `/${item.link}`,
-        };
-        return d;
-      });
-      setFooterLinks({
-        links: ministriesSubLinks,
-        logo: links.utility.acf.logo.sourceUrl,
-      });
-    }
-    getData();
-  }, []);
+    const ministriesSubLinks = data.footerLinks.map((item) => {
+      const d = {
+        title: item.title,
+        link: `/${item.link}`,
+      };
+      return d;
+    });
+    setFooterLinks({
+      links: ministriesSubLinks,
+      logo: data.logo,
+    });
+  }, [data.footerLinks, data.logo]);
 
   if (!footerLinks?.links && !footerLinks?.logo) return;
 
-  const data = [
+  const isData = [
     {
       title: "Our Leadership",
       link: "/our-leadership",
@@ -68,7 +70,7 @@ const Footer = () => {
       </Link>
 
       <menu className="flex items-center justify-center gap-6 lg:mt-16 md:mt-14 mt-6 max-sm:flex-wrap ">
-        {data.map((item, idx) => (
+        {isData.map((item, idx) => (
           <li key={idx}>
             <Link
               href={item.link}

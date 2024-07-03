@@ -9,7 +9,15 @@ import Curser from "./Curser";
 import Loading from "@/app/loading";
 // ..
 
-const Layout = ({ children, headerTransparent }: { children: ReactNode;headerTransparent?: boolean  }) => {
+const Layout = ({
+  children,
+  headerTransparent,
+  data,
+}: {
+  children: ReactNode;
+  headerTransparent?: boolean;
+  data: any;
+}) => {
   const [isLoading, setIsLoading] = useState(false);
   useLayoutEffect(() => {
     if (typeof document !== "undefined") {
@@ -32,9 +40,9 @@ const Layout = ({ children, headerTransparent }: { children: ReactNode;headerTra
   return (
     <>
       <main className="flex flex-col w-full flex-1 items-center justify-center text-black relative z-10 overflow-hidden ">
-        <Header headerTransparent={headerTransparent} />
+        <Header headerTransparent={headerTransparent} data={data} />
         {children}
-        <Footer />
+        <Footer data={data} />
       </main>
       <Curser />
     </>

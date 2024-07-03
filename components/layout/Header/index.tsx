@@ -8,10 +8,14 @@ import { getPageContent } from "@/libs/contents/wordpress/data";
 import SectionWrapper from "@/components/SectionWrapper";
 import main_padding from "@/styles/padding";
 
-const Header = ({ headerTransparent }: { headerTransparent?: boolean }) => {
-  const [expand, setExpand] = useState<any>(null);
-  const [menuLinks, setMenuLinks] = useState<{
+const Header = ({
+  headerTransparent,
+  data,
+}: {
+  headerTransparent?: boolean;
+  data: {
     blogs: {
+      node: any;
       title: string;
       link: string;
     }[];
@@ -28,40 +32,46 @@ const Header = ({ headerTransparent }: { headerTransparent?: boolean }) => {
       name: string;
       link: string;
     };
+  };
+}) => {
+  const [expand, setExpand] = useState<any>(null);
+  const [menuLinks, setMenuLinks] = useState<{
+    blogs: any[];
+    ministries: {
+      title: string;
+      link: string;
+    }[];
+    liveLink: {
+      name: string;
+      link: string;
+    };
+    logo: string;
+    forwardToAmazon: {
+      name: string;
+      link: string;
+    };
   }>();
 
   useEffect(() => {
-    async function getData() {
-      const [blog, utilities]: [BlogsType, UtilitiesType] = await Promise.all([
-        getPageContent("blogs"),
-        getPageContent("utilities"),
-      ]);
-
-      const blogSubLinks = [...blog.blogs.edges].slice(0, 3).map((item) => {
-        const d = {
-          title: item.node.acf.title,
-          link: `/blog/${item.node.slug}`,
-        };
-        return d;
-      });
-      const ministriesSubLinks = utilities.utility.acf.ministriesMenuLinks.map(
-        (item) => {
-          const d = {
-            title: item.title,
-            link: `/${item.link}`,
-          };
-          return d;
-        }
-      );
-      setMenuLinks({
-        blogs: blogSubLinks,
-        ministries: ministriesSubLinks,
-        liveLink: utilities.utility.acf.liveLink,
-        logo: utilities.utility.acf.logo.sourceUrl,
-        forwardToAmazon: utilities.utility.acf.forwardToAmazon,
-      });
-    }
-    getData();
+    const blogSubLinks = data.blogs.slice(0, 3).map((item) => {
+      const d = {
+        title: item.node.acf.title,
+        link: `/blog/${item.node.slug}`,
+      };
+      return d;
+    });
+    const ministriesSubLinks = data.ministries.map((item) => {
+      const d = {
+        title: item.title,
+        link: `/${item.link}`,
+      };
+      return d;
+    });
+    setMenuLinks({
+      ...data,
+      blogs: blogSubLinks,
+      ministries: ministriesSubLinks,
+    });
   }, []);
 
   if (

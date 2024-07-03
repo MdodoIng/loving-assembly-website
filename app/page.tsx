@@ -20,15 +20,12 @@ export default async function Home() {
     getPageContent("teams"),
   ]);
 
-
   // const data: HomePageType = await getPageContent("home");
-  
 
   if (!data && !teams) return <Loading />;
 
   return (
-    <Layout>
-
+    <>
       <HeroSection data={data} />
       <SectionWrapper classBottom={main_padding.y}>
         <LeftContentRightImg
@@ -58,6 +55,6 @@ export default async function Home() {
       <JoinUs data={data} />
       <Ministering data={data} teams={teams} />
       <Associated data={data} />
-    </Layout>
+    </>
   );
 }

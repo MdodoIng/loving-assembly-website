@@ -12,7 +12,7 @@ const page = async () => {
   
   if (!data) return <Loading />;
   return (
-    <Layout>
+    <>
       <HeroSection data={data} />
       <About
         description={descriptionExtractor(data.page.acf.secondSection.content)}
@@ -23,7 +23,7 @@ const page = async () => {
         }}
       />
       <Features data={data} />
-    </Layout>
+    </>
   );
 };
 

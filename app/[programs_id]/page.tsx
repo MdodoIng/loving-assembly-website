@@ -30,7 +30,7 @@ const page = async ({ params }: any) => {
 
   if (!data) return <Loading />;
   return (
-    <Layout>
+    <>
       <HeroSection
         heroSectionImage={
           data.pages.nodes[0].acf.bannerSection.bannerImage.sourceUrl
@@ -50,7 +50,7 @@ const page = async ({ params }: any) => {
           link: data.pages.nodes[0].acf.firstSection.buttonLink,
         }}
       />
-    </Layout>
+    </>
   );
 };
 

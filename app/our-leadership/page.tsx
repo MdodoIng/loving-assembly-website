@@ -21,7 +21,7 @@ const Page = async () => {
   if (!data && !teams) return <Loading />;
 
   return (
-    <Layout headerTransparent>
+    <>
       <SectionWrapper
         classBottom={`${main_padding.y} flex-col items-center mt-20`}
       >
@@ -152,7 +152,7 @@ const Page = async () => {
             ))}
         </section>
       </SectionWrapper>
-    </Layout>
+    </>
   );
 };
 

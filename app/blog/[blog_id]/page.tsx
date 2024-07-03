@@ -51,7 +51,7 @@ const page = async ({ params }: any) => {
   if (!data) return <Loading />;
 
   return (
-    <Layout>
+    <>
       <HeroSection
         heroSectionImage={data.node.acf.bannerImage.sourceUrl}
         title={data.node.acf.title}
@@ -72,7 +72,7 @@ const page = async ({ params }: any) => {
       </SectionWrapper>
 
       <NavigationBtns buttons={buttons} />
-    </Layout>
+    </>
   );
 };
 
