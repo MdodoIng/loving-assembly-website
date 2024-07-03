@@ -7,7 +7,7 @@ import AOS from "aos";
 import "aos/dist/aos.css"; // You can also use <link> for styles
 import Curser from "./Curser";
 import Loading from "@/app/loading";
-// ..
+
 
 const Layout = ({
   children,
