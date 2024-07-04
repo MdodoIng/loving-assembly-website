@@ -15,7 +15,7 @@ const Ministering = ({
   data: HomePageType;
   teams: TeamsType;
 }) => {
-  const router = useRouter();
+  const isTeam = teams.teams.edges.filter((item) => item.node.acf.ministering);
   return (
     <SectionWrapper classBottom={`${main_padding.y} items-center flex-col`}>
       <HeadTitle border className="text-center max-w-[900px]">
@@ -25,7 +25,7 @@ const Ministering = ({
         {data.page.acf.eighthSection.description}
       </HeadSubtitle>
       <div className="lg:mt-16 md:mt-14 mt-6  lg:gap-16 md:gap-14 gap-6 grid md:grid-cols-2 max-w-[1440px] ">
-        {teams.teams.edges
+        {isTeam
           .sort(() => -1)
           .map((item, idx) => (
             <div
@@ -38,7 +38,6 @@ const Ministering = ({
               <Image
                 src={item.node.acf.teamMemberDetails.image.sourceUrl}
                 alt=""
-              
                 loading="lazy"
                 width={item.node.acf.teamMemberDetails.image.mediaDetails.width}
                 height={

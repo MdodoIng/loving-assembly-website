@@ -31,7 +31,7 @@ const Page = async () => {
         <HeadSubtitle className="sm:mt-4 mt-2 text-center max-w-[900px] text-black">
           {data.page.acf.description}
         </HeadSubtitle>
-        <section className="grid md:grid-cols-2 lg:gap-20 gap-10 lg:mt-16 md:mt-14 mt-6">
+        <section className="grid xl:grid-cols-3 md:grid-cols-2 lg:gap-10 gap-10 lg:mt-16 md:mt-14 mt-6">
           {teams.teams.edges
             .sort(() => -1)
             .map((item, idx) => (
@@ -110,7 +110,7 @@ const Page = async () => {
                     )}
                     <div className="mt-8 flex items-center justify-between gap-10">
                       <div className="flex items-center gap-4">
-                        {item.node.acf.teamMemberDetails.socialMedia.map(
+                        {item.node.acf.teamMemberDetails.socialMedia?.map(
                           (socialMedia, socialMediaIdx) => (
                             <Link
                               key={socialMediaIdx}

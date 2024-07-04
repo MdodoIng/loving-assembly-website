@@ -329,6 +329,7 @@ interface TeamsType {
         title: string;
         slug: string;
         acf: {
+          ministering: boolean;
           teamMemberDetails: {
             name: string;
             image: {
@@ -481,16 +482,16 @@ interface BuyNowPageType {
   page: {
     acf: {
       products: Array<{
-        title: string
-        subtitle: string
-        link: any
+        title: string;
+        subtitle: string;
+        link: any;
         image: {
-          sourceUrl: string
-        }
-      }>
-      productButtonName: string
-    }
-  }
+          sourceUrl: string;
+        };
+      }>;
+      productButtonName: string;
+    };
+  };
 }
 
 interface UtilitiesType {

@@ -18,7 +18,7 @@ const page = async () => {
             key={idx}
             data-aos-duration="700"
             data-aos-delay={idx * 300}
-            className="bg-off-white rounded-[10px] overflow-hidden flex flex-col items-start justify-start p-4 sm:max-w-[280px]"
+            className="bg-off-white rounded-[10px] overflow-hidden flex flex-col items-start justify-start p-4 sm:w-[280px] w-full "
           >
             <Image
               data-aos="fade-up"
@@ -27,7 +27,7 @@ const page = async () => {
               width={240}
               height={240}
               loading="lazy"
-              className="w-full aspect-[16/12] object-cover rounded-md overflow-hidden"
+              className="w-full h-auto object-contain rounded-md overflow-hidden"
             />
             <h2
               data-aos="fade-up"
@@ -48,7 +48,7 @@ const page = async () => {
               </p>
             )}
             <Link href={`${item.link}`} target="_blank" className="mt-3">
-              <NormalBtn mode="day" className="border-none">
+              <NormalBtn  className="border-none">
                 {data.page.acf.productButtonName}
               </NormalBtn>
             </Link>

@@ -7,6 +7,7 @@ const teams = `
         title
         slug
         acf: acfTeamsPosttype {
+          ministering
           teamMemberDetails {
             name
             image {
