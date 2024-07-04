@@ -177,11 +177,11 @@ const Header = ({
               )}
             </li>
           ))}
-          <div className="flex items-center justify-center gap-4">
+          <div className="flex items-center justify-center gap-4 max-lg:hidden ml-6">
             <Link
               href={`${menuLinks.forwardToAmazon.link}`}
               shallow
-              className="max-lg:hidden translate-x-20"
+              className=""
             >
               <NormalBtn
                 mode="day"
@@ -194,7 +194,7 @@ const Header = ({
               href={`${menuLinks.liveLink.link}`}
               shallow
               target="_blank"
-              className="max-lg:hidden translate-x-20"
+              className=""
             >
               <NormalBtn
                 mode="night"
@@ -205,7 +205,7 @@ const Header = ({
             </Link>
           </div>
         </menu>
-        <div className="max-lg:hidden" />
+     
 
         {/* mobile  */}
 
