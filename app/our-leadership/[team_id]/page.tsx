@@ -3,11 +3,6 @@ import Layout from "@/components/layout";
 import HeroSection from "@/components/our-leadership/[team_id]/HeroSection";
 import { getPageContent } from "@/libs/contents/wordpress/data";
 import descriptionExtractor from "@/libs/hooks/descriptionExtractor";
-
-import React from "react";
-
-
-
 const page = async ({ params }: any) => {
   const teams: TeamsType = await getPageContent("teams");
   const data = teams.teams.edges.filter(
@@ -16,7 +11,6 @@ const page = async ({ params }: any) => {
 
   const index = teams.teams.edges.findIndex(
     (item) => item.node.slug === params.team_id
-
   );
 
   const buttons = [
@@ -52,3 +46,11 @@ const page = async ({ params }: any) => {
 };
 
 export default page;
+
+export async function generateStaticParams() {
+  const teams: TeamsType = await getPageContent("teams");
+
+  return teams.teams.edges.map((post) => ({
+    team_id: post.node.slug,
+  }));
+}

@@ -80,3 +80,11 @@ const page = async ({ params }: any) => {
 };
 
 export default page;
+
+export async function generateStaticParams() {
+  const data: BlogsType = await getPageContent("blogs");
+
+  return data.blogs.edges.map((item) => ({
+    author_id: item.node.author.node.slug,
+  }));
+}

@@ -7,21 +7,6 @@ import { getPageContent } from "@/libs/contents/wordpress/data";
 import descriptionExtractor from "@/libs/hooks/descriptionExtractor";
 import React from "react";
 
-// export async function generateStaticParams() {
-//   const data: MinistriesNavLinksType = await getPageContent(
-//     "ministries-nav-links"
-//   );
-//   const valuesToFilter = ["kids-of-excellence", "man-of-valour"];
-
-//   const filtered = data.utility.acf.items.filter(
-//     (item) => !valuesToFilter.includes(item.link.url)
-//   );
-
-//   return filtered.map((post) => ({
-//     programs_id: post.link.url,
-//   }));
-// }
-
 const page = async ({ params }: any) => {
   const data: MinistriesType = await getPageContent(
     "ministries-by-slug",
@@ -55,3 +40,16 @@ const page = async ({ params }: any) => {
 };
 
 export default page;
+
+export async function generateStaticParams() {
+  const data: UtilitiesType = await getPageContent("utilities");
+  const valuesToFilter = ["kids-of-excellence", "man-of-valour"];
+
+  const filtered = data.utility.acf.ministriesMenuLinks.filter(
+    (item) => !valuesToFilter.includes(item.link)
+  );
+
+  return filtered.map((post) => ({
+    programs_id: post.link,
+  }));
+}

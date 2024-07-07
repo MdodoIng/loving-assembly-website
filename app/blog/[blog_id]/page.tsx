@@ -77,3 +77,11 @@ const page = async ({ params }: any) => {
 };
 
 export default page;
+
+export async function generateStaticParams() {
+  const blogs: BlogsType = await getPageContent("blogs");
+
+  return blogs.blogs.edges.map((blog) => ({
+    blog_id: blog.node.slug,
+  }));
+}
