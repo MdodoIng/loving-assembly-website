@@ -8,13 +8,6 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
-// export async function generateStaticParams() {
-//   const data: UsersType = await getPageContent("users");
-
-//   return data.users.nodes.map((post) => ({
-//     author_id: post.slug,
-//   }));
-// }
 
 const page = async ({ params }: any) => {
   const data: BlogsBySlugType = await getPageContent(
@@ -27,15 +20,15 @@ const page = async ({ params }: any) => {
   return (
     <>
       <HeroSection
-        heroSectionImage={data.users.edges[0].node.avatar.url}
+        heroSectionImage={data.users.edges[0]?.node.avatar.url}
         author={""}
-        title={data.users.edges[0].node.name}
+        title={data.users.edges[0]?.node.name}
         imageContain={true}
       />
       <SectionWrapper
         classBottom={`${main_padding.b} grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 gap-6`}
       >
-        {data.users.edges[0].node.blogs.edges.map((item, idx) => (
+        {data.users.edges[0]?.node.blogs.edges.map((item, idx) => (
           <Link
             href={`/blog/${item.node.slug}`}
             key={idx}
@@ -84,7 +77,7 @@ export default page;
 export async function generateStaticParams() {
   const data: BlogsType = await getPageContent("blogs");
 
-  return data.blogs.edges.map((item) => ({
+  return data.blogs.edges?.map((item) => ({
     author_id: item.node.author.node.slug,
   }));
 }

@@ -13,13 +13,13 @@ const page = async ({ params }: any) => {
     params.programs_id
   );
 
-  const isData = data.pages.nodes[0];
+  const isData = data?.pages?.nodes[0];
 
   if (!isData) return <Loading />;
   return (
     <>
       <HeroSection
-        heroSectionImage={isData?.acf.bannerSection.bannerImage.sourceUrl}
+        heroSectionImage={isData?.acf.bannerSection.bannerImage?.sourceUrl}
         subtitle={isData?.acf.bannerSection.subtitle}
         title={isData?.acf.bannerSection.title}
         statement={isData?.acf.bannerSection.subtitle}
@@ -43,7 +43,7 @@ export async function generateStaticParams() {
   const data: UtilitiesType = await getPageContent("utilities");
   const valuesToFilter = ["kids-of-excellence", "man-of-valour"];
 
-  const filtered = data.utility.acf.ministriesMenuLinks.filter(
+  const filtered = data.utility?.acf?.ministriesMenuLinks?.filter(
     (item) => !valuesToFilter.includes(item.link)
   );
 

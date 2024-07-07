@@ -50,7 +50,7 @@ export default page;
 export async function generateStaticParams() {
   const teams: TeamsType = await getPageContent("teams");
 
-  return teams.teams.edges.map((post) => ({
+  return teams.teams.edges?.map((post) => ({
     team_id: post.node.slug,
   }));
 }

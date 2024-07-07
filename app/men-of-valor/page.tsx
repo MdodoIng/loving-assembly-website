@@ -15,11 +15,11 @@ const page = async () => {
     <>
       <HeroSection data={data} />
       <About
-        description={descriptionExtractor(data.page.acf.secondSection.content)}
-        logo={data.page.acf.secondSection.logo.sourceUrl}
+        description={descriptionExtractor(data?.page.acf.secondSection.content)}
+        logo={data?.page.acf.secondSection.logo.sourceUrl}
         button={{
-          title: data.page.acf.secondSection.buttonText,
-          link: data.page.acf.secondSection.buttonLink
+          title: data?.page.acf.secondSection.buttonText,
+          link: data?.page.acf.secondSection.buttonLink
         }}
       />
       <Features data={data} />

@@ -19,11 +19,11 @@ import Link from "next/link";
 
 const page = async ({ params }: any) => {
   const blogs: BlogsType = await getPageContent("blogs");
-  const data = blogs.blogs.edges.filter(
+  const data = blogs.blogs.edges?.filter(
     (item) => item.node.slug === params.blog_id
   )[0];
 
-  const index = blogs.blogs.edges.findIndex(
+  const index = blogs.blogs.edges?.findIndex(
     (item) => item.node.slug === params.blog_id
   );
 
@@ -31,14 +31,14 @@ const page = async ({ params }: any) => {
     {
       title: "Prev",
       link:
-        index === 0 ? "" : `/blog/${blogs.blogs.edges[index - 1].node.slug}`,
+        index === 0 ? "" : `/blog/${blogs?.blogs.edges[index - 1].node.slug}`,
     },
     {
       title: "Next",
       link:
-        index === blogs.blogs.edges.length - 1
+        index === blogs?.blogs.edges.length - 1
           ? ""
-          : `/blog/${blogs.blogs.edges[index + 1].node.slug}`,
+          : `/blog/${blogs.blogs?.edges[index + 1].node.slug}`,
     },
   ];
 
@@ -53,7 +53,7 @@ const page = async ({ params }: any) => {
   return (
     <>
       <HeroSection
-        heroSectionImage={data.node.acf.bannerImage.sourceUrl}
+        heroSectionImage={data?.node.acf.bannerImage.sourceUrl}
         title={data.node.acf.title}
       />
       <SectionWrapper
@@ -81,7 +81,7 @@ export default page;
 export async function generateStaticParams() {
   const blogs: BlogsType = await getPageContent("blogs");
 
-  return blogs.blogs.edges.map((blog) => ({
+  return blogs.blogs.edges?.map((blog) => ({
     blog_id: blog.node.slug,
   }));
 }
