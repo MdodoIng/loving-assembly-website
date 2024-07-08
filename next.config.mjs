@@ -10,13 +10,11 @@ const nextConfig = {
   eslint: {
     ignoreDuringBuilds: true,
   },
-  experimental : {
-    appDir : true
-  },
-  trailingSlash: true,
-  output: "export",
+  
+  // trailingSlash: true,
+  // output: "export",
 
-  staticPageGenerationTimeout: 1000,
+  // staticPageGenerationTimeout: 1000,
 };
 
 export default nextConfig;
