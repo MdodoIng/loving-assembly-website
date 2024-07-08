@@ -12,6 +12,8 @@ const nextConfig = {
   },
   trailingSlash: true,
   output: "export",
+
+  staticPageGenerationTimeout: 1000,
 };
 
 export default nextConfig;
