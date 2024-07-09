@@ -48,7 +48,7 @@ const page = async () => {
               </p>
             )}
             <Link href={`${item.link}`} target="_blank" className="mt-3">
-              <NormalBtn  className="border-none">
+              <NormalBtn className="border-none">
                 {data.page.acf.productButtonName}
               </NormalBtn>
             </Link>
@@ -60,3 +60,5 @@ const page = async () => {
 };
 
 export default page;
+
+
