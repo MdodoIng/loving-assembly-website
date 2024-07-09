@@ -1,0 +1,21 @@
+<!-- ---
+import Layout from "../layouts/Layout.astro";
+import HeroSection from "@/components/[programs_id]/HeroSection";
+
+import Events from "@/components/kids-of-excellence/Events";
+import Guiding from "@/components/kids-of-excellence/Guiding";
+import { getPageContent } from "@/libs/contents/wordpress/data";
+
+const data: KidsOfExcellenceType = await getPageContent("kids-of-excellence");
+---
+
+<Layout>
+  <HeroSection
+    heroSectionImage={data.page.acf.bannerImage.sourceUrl}
+    title="Kids Of Excellence"
+  
+  />
+  <Guiding client:only data={data} />
+  <Events client:only data={data} />
+</Layout> -->
+

@@ -1,0 +1,50 @@
+---
+import Associated from "@/components/Home/Associated";
+import HeroSection from "@/components/Home/HeroSection";
+import JoinUs from "@/components/Home/JoinUs";
+import Ministering from "@/components/Home/Ministering";
+import OurPrograms from "@/components/Home/OurPrograms";
+import VisionAndMission from "@/components/Home/VisionAndMission";
+import SectionWrapper from "@/components/SectionWrapper";
+import Layout from "@/layouts/Layout.astro";
+import { getPageContent } from "@/libs/contents/wordpress/data";
+import main_padding from "@/styles/padding";
+import LeftContentRightImg from "@/ui/LeftContentRightImg";
+import Slider from "@/components/Home/Slider";
+const [data, teams]: [HomePageType, TeamsType] = await Promise.all([
+  getPageContent("home"),
+  getPageContent("teams"),
+]);
+---
+
+<Layout>
+  <HeroSection client:only data={data} />
+  <SectionWrapper client:only classBottom={main_padding.y}>
+    <LeftContentRightImg client:only
+      border={true}
+      title={data.page.acf.secondSectionChurch.title}
+      subtitle={data.page.acf.secondSectionChurch.description}
+      btn1={{
+        title: data.page.acf.secondSectionChurch.button1Text,
+        link: data.page.acf.secondSectionChurch.button1Link,
+      }}
+      btn2={{
+        title: data.page.acf.secondSectionChurch.button2Text,
+        link: data.page.acf.secondSectionChurch.button2Link,
+      }}
+      image={data.page.acf.secondSectionChurch.sectionImage.sourceUrl}
+      playBtn={true}
+      videoLink={data.page.acf.secondSectionChurch.videoLink}
+      direction="opposite"
+    />
+  </SectionWrapper>
+
+  <OurPrograms client:only data={data} />
+
+  <Slider client:only data={data} />
+
+  <VisionAndMission client:only data={data} />
+  <JoinUs client:only data={data} />
+  <Ministering client:only data={data} teams={teams} />
+  <Associated client:only data={data} /> 
+</Layout>

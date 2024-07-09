@@ -1,0 +1,18 @@
+---
+import Layout from "../layouts/Layout.astro";
+import HeroSection from "@/components/contact-us/HeroSection";
+import OurMinistries from "@/components/contact-us/OurMinistries";
+import { getPageContent } from "@/libs/contents/wordpress/data";
+
+import ConnectToForm from "@/components/contact-us/ConnectToForm";
+import SocialMedia from "@/components/contact-us/SocialMedia";
+
+const data: ContactUsPageType = await getPageContent("contact-us");
+---
+
+<Layout>
+  <HeroSection data={data} />
+  <SocialMedia data={data} />
+  <ConnectToForm data={data} />
+  <OurMinistries data={data} />
+</Layout>

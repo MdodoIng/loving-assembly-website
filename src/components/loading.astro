@@ -1,0 +1,19 @@
+---
+import logo from "@/assets/icons/logo.webp";
+import { Image } from "astro:assets";
+---
+
+<div
+  id="loading-screen"
+  class="w-screen h-svh bg-off-white flex items-center justify-center fixed z-50 top-0 left-0"
+>
+  <div
+    role="status"
+    class="flex items-center justify-center sm:h-40 h-20 max-w-sm rounded-lg animate-pulse"
+  >
+    <Image src={logo} alt="" class="h-full w-full object-contain" />
+    <span class="sr-only">Loading...</span>
+  </div>
+</div>
+
+

@@ -1,0 +1,56 @@
+---
+import SectionWrapper from "@/components/SectionWrapper";
+import HeroSection from "@/components/blog/[blog_id]/HeroSection";
+import NavigationBtns from "@/components/blog/[blog_id]/NavigationBtns";
+import RecentBlogs from "@/components/blog/[blog_id]/RecentBlogs";
+import Content from "@/components/blog/[blog_id]/Content";
+import Layout from "@/layouts/Layout.astro";
+import { getPageContent } from "@/libs/contents/wordpress/data";
+import main_padding from "@/styles/padding";
+
+export async function getStaticPaths() {
+  const data: BlogsType = await getPageContent("blogs");
+  return data.blogs.edges.map(({ node: { slug } }) => {
+    return {
+      params: { blog_id: slug },
+    };
+  });
+}
+
+const { blog_id } = Astro.params;
+
+const blogs: BlogsType = await getPageContent("blogs");
+const data = blogs.blogs.edges.filter((item) => item.node.slug === blog_id)[0];
+
+const index = blogs.blogs.edges.findIndex((item) => item.node.slug === blog_id);
+
+const buttons = [
+  {
+    title: "Prev",
+    link: index === 0 ? "" : `/blog/${blogs.blogs.edges[index - 1].node.slug}`,
+  },
+  {
+    title: "Next",
+    link:
+      index === blogs.blogs.edges.length - 1
+        ? ""
+        : `/blog/${blogs.blogs.edges[index + 1].node.slug}`,
+  },
+];
+---
+
+<Layout>
+  <HeroSection
+    heroSectionImage={data.node.acf.bannerImage.sourceUrl}
+    title={data.node.acf.title}
+  />
+  <SectionWrapper
+    classBottom={`md:gap-20 gap-10 max-md:flex-col md:justify-between  ${main_padding.b}`}
+    classTop="justify-start "
+  >
+    <Content data={data.node.acf.content} />
+    <RecentBlogs data={blogs} />
+  </SectionWrapper>
+
+  <NavigationBtns buttons={buttons} />
+</Layout>

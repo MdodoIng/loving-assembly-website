@@ -1,0 +1,19 @@
+---
+import { getPageContent } from "@/libs/contents/wordpress/data";
+import Journey from "@/components/our-church/Journey";
+import HeroSection from "@/components/our-church/HeroSection";
+import FaithAndTransformation from "@/components/our-church/FaithAndTransformation";
+import Layout from "@/layouts/Layout.astro";
+
+const data: OurChurchType = await getPageContent("our-church");
+---
+
+<Layout>
+  <HeroSection
+    heroSectionImage={data.page.acf.heroSection.bannerimage.sourceUrl}
+    title={data.page.acf.heroSection.tittle}
+    description={data.page.acf.heroSection.description}
+  />
+  <FaithAndTransformation data={data} />
+  <Journey data={data} />
+</Layout>

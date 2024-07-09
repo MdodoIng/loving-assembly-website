@@ -1,0 +1,44 @@
+---
+import About from "@/components/[programs_id]/About";
+import HeroSection from "@/components/[programs_id]/HeroSection";
+import Layout from "@/layouts/Layout.astro";
+
+import { getPageContent } from "@/libs/contents/wordpress/data";
+import descriptionExtractor from "@/libs/hooks/descriptionExtractor";
+
+export async function getStaticPaths() {
+  const data: UtilitiesType = await getPageContent("utilities");
+  return data.utility.acf.ministriesMenuLinks.map(({ link }) => {
+    return {
+      params: { programs_id: link },
+    };
+  });
+}
+
+const { programs_id } = Astro.params;
+
+const data: MinistriesType = await getPageContent(
+  "ministries-by-slug",
+  programs_id
+);
+
+const isData = data.pages.nodes[0];
+---
+
+<Layout>
+  <HeroSection
+    heroSectionImage={isData?.acf.bannerSection.bannerImage.sourceUrl}
+    subtitle={isData?.acf.bannerSection.subtitle}
+    title={isData?.acf.bannerSection.title}
+    statement={isData?.acf.bannerSection.subtitle}
+  />
+
+  <About
+    logo={isData?.acf.firstSection.icon.sourceUrl}
+    description={descriptionExtractor(isData?.acf.firstSection.content)}
+    button={{
+      title: isData?.acf.firstSection.buttonText,
+      link: isData?.acf.firstSection.buttonLink,
+    }}
+  />
+</Layout>

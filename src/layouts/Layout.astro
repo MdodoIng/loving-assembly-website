@@ -1,0 +1,96 @@
+---
+import BaseHead from "@/components/layout/BaseHead.astro";
+import Curser from "@/components/layout/Curser";
+import Footer from "@/components/layout/Footer";
+import Header from "@/components/layout/Header";
+import { getPageContent } from "@/libs/contents/wordpress/data";
+import Loading from "@/components/loading.astro";
+import "@/styles/globals.css";
+
+type Props = {
+  title?: string;
+  headerTransparent?: boolean;
+};
+const [blog, utilities]: [BlogsType, UtilitiesType] = await Promise.all([
+  getPageContent("blogs"),
+  getPageContent("utilities"),
+]);
+
+const data: {
+  blogs: any[];
+  ministries: {
+    title: string;
+    link: string;
+  }[];
+  liveLink: {
+    name: string;
+    link: string;
+  };
+  logo: any;
+  forwardToAmazon: {
+    name: string;
+    link: string;
+  };
+  footerLinks: {
+    title: string;
+    link: string;
+  }[];
+} = {
+  blogs: blog.blogs.edges,
+  logo: utilities.utility.acf.logo.sourceUrl,
+  ministries: utilities.utility.acf.ministriesMenuLinks,
+  footerLinks: utilities.utility.acf.footerLinks,
+  liveLink: utilities.utility.acf.liveLink,
+  forwardToAmazon: utilities.utility.acf.forwardToAmazon,
+};
+
+const { title = "Loving Grace Assembly", headerTransparent } = Astro.props;
+---
+
+<html lang="en" class="scroll-smooth antialiased">
+  <head>
+    <BaseHead title={title} description={""} icon={data.logo} />
+    <style>
+      body {
+        font-family: "Poppins", sans-serif;
+      }
+    </style>
+  </head>
+
+  <body class="">
+    <!-- <Loading /> -->
+    <main
+      class="flex flex-col w-full flex-1 items-center justify-center text-black relative z-10 overflow-hidden"
+    >
+      <Header client:only headerTransparent={headerTransparent} data={data} />
+      <slot />
+      <Footer data={data} client:only />
+    </main>
+    <Curser client:only />
+    <script>
+      import "@/components/layout/aos";
+    </script>
+    <!-- <script>
+      function handlePageLoad() {
+        const loadingScreen = document.querySelector<HTMLDivElement>("#loading-screen");
+
+        if (loadingScreen) {
+          loadingScreen.style.display = "none";
+        }
+      }
+
+      function handleBeforePreparation() {
+        const loadingScreen = document.querySelector<HTMLDivElement>("#loading-screen");
+        if (loadingScreen) {
+          loadingScreen.style.display = "flex";
+        }
+      }
+
+      document.addEventListener("astro:page-load", handlePageLoad);
+      document.addEventListener(
+        "astro:before-preparation",
+        handleBeforePreparation
+      );
+    </script> -->
+  </body>
+</html>

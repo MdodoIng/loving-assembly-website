@@ -1,0 +1,72 @@
+---
+import SectionWrapper from "@/components/SectionWrapper";
+import HeroSection from "@/components/blog/[blog_id]/HeroSection";
+import Layout from "@/layouts/Layout.astro";
+import { getPageContent } from "@/libs/contents/wordpress/data";
+import main_padding from "@/styles/padding";
+
+export async function getStaticPaths() {
+  const data: UsersType = await getPageContent("users");
+  return data.users.nodes.map(({ slug }) => {
+    return {
+      params: { author_id: slug },
+    };
+  });
+}
+
+const { author_id } = Astro.params;
+
+const data: BlogsBySlugType = await getPageContent("blogs-by-slug", author_id);
+---
+
+<Layout>
+  <HeroSection
+    heroSectionImage={data.users.edges[0].node.avatar.url}
+    author={""}
+    title={data.users.edges[0].node.name}
+    imageContain={true}
+  />
+  <SectionWrapper
+    classBottom={`${main_padding.b} grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 gap-6`}
+  >
+    {
+      data.users.edges[0].node.blogs.edges.map((item, idx) => (
+        <a
+          href={`/blog/${item.node.slug}`}
+          data-aos="fade-up"
+          data-aos-duration="700"
+          data-aos-delay={idx * 300}
+          class="bg-off-white rounded-[10px] overflow-hidden"
+        >
+          <img
+            src={item.node.acf.bannerImage.sourceUrl}
+            alt=""
+            width={500}
+            height={500}
+            loading="lazy"
+            class="w-full aspect-[16/12] h-auto object-cover rounded-b-[10px]"
+          />
+          <div class="px-6 py-8">
+            <h2
+              data-aos="fade-up"
+              data-aos-duration="700"
+              data-aos-delay={idx * 300}
+              class="text-lg font-semibold text-primary leading-[150%]"
+            >
+              {item.node.acf.title}
+            </h2>
+
+            <p
+              data-aos="fade-up"
+              data-aos-duration="700"
+              data-aos-delay={idx * 300}
+              class="mt-2 text-sm leading-[150%] line-clamp-3"
+            >
+              {item.node.acf.content}
+            </p>
+          </div>
+        </a>
+      ))
+    }
+  </SectionWrapper>
+</Layout>
