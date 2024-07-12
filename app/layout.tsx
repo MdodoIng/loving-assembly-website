@@ -13,8 +13,6 @@ export const metadata: Metadata = {
   manifest: "favicon_io/site.webmanifest",
 };
 
-const next = require('next')
-const app = next({})
 
 export default async function RootLayout({
   children,
