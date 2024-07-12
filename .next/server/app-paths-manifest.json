@@ -8,8 +8,13 @@
   "/men-of-valor/page": "app/men-of-valor/page.js",
   "/our-church/page": "app/our-church/page.js",
   "/our-leadership/[team_id]/page": "app/our-leadership/[team_id]/page.js",
+<<<<<<< HEAD
   "/our-leadership/page": "app/our-leadership/page.js",
   "/page": "app/page.js",
+=======
+  "/page": "app/page.js",
+  "/our-leadership/page": "app/our-leadership/page.js",
+>>>>>>> 7e8d0d4 (afsa)
   "/author/[author_id]/page": "app/author/[author_id]/page.js",
   "/blog/[blog_id]/page": "app/blog/[blog_id]/page.js"
 }

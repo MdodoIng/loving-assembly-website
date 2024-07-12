@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 // File: /workspaces/loving-assembly-website/app/our-leadership/[team_id]/page.tsx
+=======
+// File: /home/ameen/Desktop/codeface/loving-assembly-website/app/our-leadership/[team_id]/page.tsx
+>>>>>>> 7e8d0d4 (afsa)
 import * as entry from '../../../../../app/our-leadership/[team_id]/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 
