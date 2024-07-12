@@ -13,7 +13,6 @@ export const metadata: Metadata = {
   manifest: "favicon_io/site.webmanifest",
 };
 
-
 export default async function RootLayout({
   children,
 }: Readonly<{

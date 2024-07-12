@@ -1,0 +1,15 @@
+{
+  "/_not-found": "app/_not-found.js",
+  "/[programs_id]/page": "app/[programs_id]/page.js",
+  "/buy_now/page": "app/buy_now/page.js",
+  "/contact-us/page": "app/contact-us/page.js",
+  "/favicon.ico/route": "app/favicon.ico/route.js",
+  "/kids-of-excellence/page": "app/kids-of-excellence/page.js",
+  "/men-of-valor/page": "app/men-of-valor/page.js",
+  "/our-church/page": "app/our-church/page.js",
+  "/our-leadership/[team_id]/page": "app/our-leadership/[team_id]/page.js",
+  "/our-leadership/page": "app/our-leadership/page.js",
+  "/page": "app/page.js",
+  "/author/[author_id]/page": "app/author/[author_id]/page.js",
+  "/blog/[blog_id]/page": "app/blog/[blog_id]/page.js"
+}
