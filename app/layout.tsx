@@ -10,7 +10,7 @@ const asap = Asap({ subsets: ["latin"], variable: "--font--asap" });
 export const metadata: Metadata = {
   title: "Loving Grace Assembly",
   description: "",
-  manifest: "favicon_io/site.webmanifest",
+  manifest: "site.webmanifest",
 };
 
 export default async function RootLayout({
